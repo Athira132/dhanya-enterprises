@@ -44,7 +44,7 @@ export default function Hero() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-red-700">
               Digitally
             </span>{" "}
-            with <span className="text-primary">Dhanya Enterprises</span>
+            with <span className="text-[var(--brand-red)]">Dhanya Enterprises</span>
           </h1>
 
           <p className="font-sans text-base sm:text-lg text-text-secondary leading-relaxed max-w-xl">

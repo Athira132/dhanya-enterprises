@@ -60,7 +60,7 @@ export default function Navbar() {
               />
               <span className="font-heading font-black text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-tight text-dark leading-none flex flex-col">
                 DHANYA
-                <span className="text-[10px] sm:text-xs font-black tracking-widest text-[#E30613] uppercase mt-0.5">
+                <span className="text-[10px] sm:text-xs font-black tracking-widest text-[var(--brand-red)] uppercase mt-0.5">
                   ENTERPRISES
                 </span>
               </span>

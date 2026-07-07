@@ -1,7 +1,11 @@
 @import "tailwindcss";
 
+:root {
+  --brand-red: #E30613;
+}
+
 @theme inline {
-  --color-primary: #E30613;
+  --color-primary: var(--brand-red);
   --color-primary-hover: #C2040F;
   --color-dark: #222222;
   --color-bg-light: #F8F8F8;

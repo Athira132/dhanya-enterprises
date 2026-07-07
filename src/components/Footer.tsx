@@ -42,7 +42,7 @@ export default function Footer() {
             />
             <span className="font-heading font-black text-xl tracking-wider text-white leading-none flex flex-col">
               DHANYA
-              <span className="text-[10px] font-black tracking-widest text-[#E30613] uppercase mt-0.5">
+              <span className="text-[10px] font-black tracking-widest text-[var(--brand-red)] uppercase mt-0.5">
                 ENTERPRISES
               </span>
             </span>
