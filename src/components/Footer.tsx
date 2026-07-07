@@ -31,15 +31,21 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
         {/* Brand Col */}
         <div className="flex flex-col gap-6">
-          <Link href="/#home" className="flex items-center">
+          <Link href="/#home" className="flex items-center gap-3.5 group">
             <Image
-              src="/images/logo-full.png"
+              src="/images/logo.png"
               alt="Dhanya Enterprises Logo"
-              width={160}
-              height={40}
-              className="h-10 w-auto object-contain brightness-0 invert"
+              width={60}
+              height={60}
+              className="h-14 w-auto object-contain brightness-0 invert transition-transform duration-300 group-hover:scale-105"
               priority
             />
+            <span className="font-heading font-black text-xl tracking-wider text-white leading-none flex flex-col">
+              DHANYA
+              <span className="text-[10px] font-black tracking-widest text-[#E30613] uppercase mt-0.5">
+                ENTERPRISES
+              </span>
+            </span>
           </Link>
           <p className="font-sans text-sm leading-relaxed text-gray-500">
             A premium full-service digital marketing agency dedicated to growing brands, accelerating revenue, and establishing digital market leadership across India.
@@ -100,9 +106,9 @@ export default function Footer() {
           <ul className="flex flex-col gap-3 font-sans text-sm">
             {quickLinks.map((link) => (
               <li key={link.name}>
-                <a href={link.href} className="hover:text-primary hover:translate-x-1 inline-block transition-all duration-300">
+                <Link href={link.href} className="hover:text-primary hover:translate-x-1 inline-block transition-all duration-300">
                   {link.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -116,9 +122,9 @@ export default function Footer() {
           <ul className="flex flex-col gap-3 font-sans text-sm">
             {services.map((service) => (
               <li key={service.name}>
-                <a href={service.href} className="hover:text-primary hover:translate-x-1 inline-block transition-all duration-300">
+                <Link href={service.href} className="hover:text-primary hover:translate-x-1 inline-block transition-all duration-300">
                   {service.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
