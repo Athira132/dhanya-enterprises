@@ -3,22 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { TrendingUp, Star, Target, Users, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 export default function Hero() {
-  const floatingBadgeVariants = (delay: number) => ({
-    animate: {
-      y: [0, -12, 0],
-      transition: {
-        duration: 4,
-        repeat: Infinity,
-        repeatType: "reverse" as const,
-        ease: "easeInOut" as const,
-        delay: delay,
-      },
-    },
-  });
-
   return (
     <section id="home" className="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden bg-white">
       {/* Decorative Background Elements - White with subtle abstract red gradient shapes */}
@@ -85,7 +72,7 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Right Side: Image + Floating Cards */}
+        {/* Right Side: Image */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -104,66 +91,6 @@ export default function Hero() {
             {/* Dark overlay gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-dark/20 via-transparent to-transparent" />
           </div>
-
-          {/* Floating Glass Card 1: SEO Growth */}
-          <motion.div
-            variants={floatingBadgeVariants(0)}
-            animate="animate"
-            className="absolute -top-6 -left-6 glass-card p-4 rounded-2xl flex items-center gap-3.5 shadow-lg border border-white/50"
-          >
-            <div className="p-2.5 bg-green-500/10 text-green-600 rounded-xl">
-              <TrendingUp size={22} />
-            </div>
-            <div>
-              <p className="font-sans text-[10px] text-text-secondary font-semibold uppercase tracking-wider">SEO Growth</p>
-              <h4 className="font-heading font-black text-lg text-dark leading-tight">+235%</h4>
-            </div>
-          </motion.div>
-
-          {/* Floating Glass Card 2: Rating */}
-          <motion.div
-            variants={floatingBadgeVariants(1.2)}
-            animate="animate"
-            className="absolute top-1/2 -right-8 glass-card p-4 rounded-2xl flex items-center gap-3.5 shadow-lg border border-white/50"
-          >
-            <div className="p-2.5 bg-yellow-500/10 text-yellow-500 rounded-xl">
-              <Star size={22} fill="#eab308" className="text-yellow-500 fill-yellow-500" />
-            </div>
-            <div>
-              <p className="font-sans text-[10px] text-text-secondary font-semibold uppercase tracking-wider">Agency Rating</p>
-              <h4 className="font-heading font-black text-lg text-dark leading-tight">4.9 / 5</h4>
-            </div>
-          </motion.div>
-
-          {/* Floating Glass Card 3: ROI Campaign */}
-          <motion.div
-            variants={floatingBadgeVariants(0.6)}
-            animate="animate"
-            className="absolute -bottom-8 -left-2 glass-card p-4 rounded-2xl flex items-center gap-3.5 shadow-lg border border-white/50"
-          >
-            <div className="p-2.5 bg-primary/10 text-primary rounded-xl">
-              <Target size={22} />
-            </div>
-            <div>
-              <p className="font-sans text-[10px] text-text-secondary font-semibold uppercase tracking-wider">Campaign ROI</p>
-              <h4 className="font-heading font-black text-lg text-dark leading-tight">High Conversion</h4>
-            </div>
-          </motion.div>
-
-          {/* Floating Glass Card 4: Reach */}
-          <motion.div
-            variants={floatingBadgeVariants(1.8)}
-            animate="animate"
-            className="absolute bottom-12 -right-6 glass-card p-4 rounded-2xl flex items-center gap-3.5 shadow-lg border border-white/50"
-          >
-            <div className="p-2.5 bg-blue-500/10 text-blue-500 rounded-xl">
-              <Users size={22} />
-            </div>
-            <div>
-              <p className="font-sans text-[10px] text-text-secondary font-semibold uppercase tracking-wider">Social Reach</p>
-              <h4 className="font-heading font-black text-lg text-dark leading-tight">1M+ Monthly</h4>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>
