@@ -44,7 +44,16 @@ export default function Hero() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-red-700">
               Digitally
             </span>{" "}
-            with <span className="text-[var(--brand-red)]">Dhanya Enterprises</span>
+            with{" "}
+            <span className="block mt-4 relative w-[240px] sm:w-[320px] md:w-[380px] lg:w-[440px] aspect-[633/276]">
+              <Image
+                src="/images/hero-brand.png"
+                alt="Dhanya Enterprises Logo"
+                fill
+                priority
+                className="object-contain object-left"
+              />
+            </span>
           </h1>
 
           <p className="font-sans text-base sm:text-lg text-text-secondary leading-relaxed max-w-xl">
