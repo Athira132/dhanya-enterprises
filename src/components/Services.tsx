@@ -10,7 +10,6 @@ export default function Services() {
     {
       id: "digital-business-card",
       title: "Digital Business Card",
-      price: "₹999",
       icon: <CreditCard size={24} />,
       image: "/images/portfolio_real_estate.jpg",
       description: "Create professional NFC and QR-enabled digital visiting cards to share contact info instantly.",
@@ -18,7 +17,6 @@ export default function Services() {
     {
       id: "website-development",
       title: "Website Development",
-      price: "₹1999+",
       icon: <Code size={24} />,
       image: "/images/portfolio_ecommerce.jpg",
       description: "Responsive websites for businesses, portfolios, schools, hospitals, and startups designed to convert.",
@@ -26,7 +24,6 @@ export default function Services() {
     {
       id: "digital-marketing",
       title: "Digital Marketing",
-      price: "₹2999+",
       icon: <Megaphone size={24} />,
       image: "/images/portfolio_education.jpg",
       description: "Google Ads, Facebook Ads, Instagram Marketing, SEO, and Content Marketing that generate real leads.",
@@ -34,7 +31,6 @@ export default function Services() {
     {
       id: "sales-marketing-training",
       title: "Sales & Marketing Training",
-      price: "₹3999+",
       icon: <GraduationCap size={24} />,
       image: "/images/hero_team.jpg",
       description: "Professional and highly interactive training programs for individuals and sales teams.",
@@ -42,7 +38,6 @@ export default function Services() {
     {
       id: "logo-branding",
       title: "Logo & Branding",
-      price: "₹1499+",
       icon: <Palette size={24} />,
       image: "/images/portfolio_fashion.jpg",
       description: "Modern logo design, brand identity, brochures, and visual marketing collateral.",
@@ -50,7 +45,6 @@ export default function Services() {
     {
       id: "social-media-management",
       title: "Social Media Management",
-      price: "₹2499+",
       icon: <Share2 size={24} />,
       image: "/images/portfolio_restaurant.jpg",
       description: "Daily post creation, scheduling, audience engagement, and organic social growth strategies.",
@@ -58,7 +52,6 @@ export default function Services() {
     {
       id: "graphic-design",
       title: "Graphic Design",
-      price: "₹999+",
       icon: <PenTool size={24} />,
       image: "/images/portfolio_healthcare.jpg",
       description: "Posters, flyers, banners, social media creatives, and print advertisements.",
@@ -126,10 +119,7 @@ export default function Services() {
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  {/* Price Tag Overlay */}
-                  <div className="absolute top-4 right-4 bg-primary text-white font-sans font-bold text-xs px-3.5 py-1.5 rounded-full shadow-md z-10">
-                    {service.price}
-                  </div>
+
                   {/* Icon Container */}
                   <div className="absolute -bottom-6 left-6 w-12 h-12 bg-white rounded-xl flex items-center justify-center text-primary border border-border-light shadow-sm transition-all duration-300 group-hover:bg-primary group-hover:text-white glow-red-icon z-20">
                     {service.icon}
