@@ -29,8 +29,8 @@ export default function HomeFaq() {
       a: "Our Sales & Marketing Training is fully customizable. We conduct live bootcamps (online, offline, or hybrid) covering ad setups, objection handling, closing scripts, and CRM automation, customized directly to your business model.",
     },
     {
-      q: "Where is your office located, and do you serve clients outside Bangalore?",
-      a: "Our executive offices are situated on MG Road, Bangalore, Karnataka. However, we serve clients remotely across all major cities in India and globally, providing video consultation syncs and transparent weekly reporting.",
+      q: "Where is your office located, and do you serve clients outside Pattambi?",
+      a: "Our primary office is situated in Hayath Complex, Opp. Police station, Pattambi, Kerala. However, we serve clients remotely across all major cities in India and globally, providing video consultation syncs and transparent weekly reporting.",
     },
   ];
 

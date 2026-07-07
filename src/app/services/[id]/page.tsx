@@ -512,7 +512,7 @@ const servicesData: Record<
     ],
     faqs: [
       { q: "Which social networks do you manage?", a: "We manage Instagram, Facebook, LinkedIn, YouTube, Pinterest, and Twitter (X) platforms." },
-      { q: "Do you shoot raw video for Reels?", a: "We edit raw video files sent by your team. For local Bangalore clients, offline shoot assistance can be arranged." },
+      { q: "Do you shoot raw video for Reels?", a: "We edit raw video files sent by your team. For local Kerala / Pattambi clients, offline shoot assistance can be arranged." },
       { q: "Can I approve posts before they go live?", a: "Yes, we share the entire month's content calendar for your edits and approval before scheduling." },
       { q: "How do you schedule posts?", a: "We use professional dashboard tools like Meta Business Suite to schedule content at optimal engagement hours." },
       { q: "How do you increase followers?", a: "We use organic hashtags, reels optimization, shareable infographic templates, and interaction tactics." },
@@ -1130,7 +1130,7 @@ export default function ServicePage({ params }: { params: Promise<{ id: string }
                           value={formData.phone}
                           onChange={handleInputChange}
                           className="font-sans text-sm border border-border-light rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all bg-white"
-                          placeholder="+91 98401 23456"
+                          placeholder="+91 99619 92772"
                         />
                       </div>
                     </div>
@@ -1205,7 +1205,7 @@ export default function ServicePage({ params }: { params: Promise<{ id: string }
                         {isSubmitting ? "Sending..." : "Enquire Now"}
                       </button>
                       <a
-                        href={`https://wa.me/919840123456?text=Hi,%20I%27m%20interested%20in%20a%20free%20consultation%20for%20${encodeURIComponent(service.title)}.`}
+                        href="https://wa.me/919961992772?text=Hello%20Dhanya%20Enterprises,%20I%20found%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20services.%20Please%20contact%20me."
                         target="_blank"
                         rel="noopener noreferrer"
                         className="bg-white border border-[#25D366] text-[#25D366] hover:bg-[#25D366]/5 font-sans font-bold text-sm py-4 rounded-xl transition-all duration-300 text-center flex items-center justify-center gap-2 transform hover:-translate-y-0.5 cursor-pointer"

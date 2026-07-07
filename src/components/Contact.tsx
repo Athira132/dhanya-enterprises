@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, Mail, MapPin, Clock, CheckCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, CheckCircle, Navigation } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -24,7 +24,7 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API request
+    // Simulate API request or link to WhatsApp
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitSuccess(true);
@@ -81,7 +81,7 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleInputChange}
                       className="font-sans text-sm border border-border-light rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all bg-[#FAFAFA]"
-                      placeholder="John Doe"
+                      placeholder="Your Name"
                     />
                   </div>
                   <div className="flex flex-col gap-2">
@@ -96,7 +96,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleInputChange}
                       className="font-sans text-sm border border-border-light rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all bg-[#FAFAFA]"
-                      placeholder="john@example.com"
+                      placeholder="your.email@gmail.com"
                     />
                   </div>
                 </div>
@@ -114,7 +114,7 @@ export default function Contact() {
                       value={formData.phone}
                       onChange={handleInputChange}
                       className="font-sans text-sm border border-border-light rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all bg-[#FAFAFA]"
-                      placeholder="+91 98765 43210"
+                      placeholder="+91 99619 92772"
                     />
                   </div>
                   <div className="flex flex-col gap-2">
@@ -128,7 +128,7 @@ export default function Contact() {
                       value={formData.businessName}
                       onChange={handleInputChange}
                       className="font-sans text-sm border border-border-light rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all bg-[#FAFAFA]"
-                      placeholder="Acme Corp"
+                      placeholder="Your Company Name"
                     />
                   </div>
                 </div>
@@ -170,7 +170,7 @@ export default function Contact() {
                 </div>
                 <h4 className="font-heading font-bold text-2xl text-dark">Thank You!</h4>
                 <p className="font-sans text-sm md:text-base text-text-secondary max-w-sm">
-                  Your inquiry was successfully sent. A marketing expert from Dhanya Enterprises will contact you within 24 hours.
+                  Your inquiry was successfully sent. A digital marketing expert from Dhanya Enterprises will contact you within 24 hours.
                 </p>
                 <button
                   onClick={() => setSubmitSuccess(false)}
@@ -207,10 +207,16 @@ export default function Contact() {
               <div className="p-2.5 bg-primary/10 text-primary rounded-xl">
                 <Phone size={18} />
               </div>
-              <div>
-                <h4 className="font-heading font-bold text-sm text-dark mb-1">Phone</h4>
-                <a href="tel:+919840123456" className="font-sans text-xs text-text-secondary hover:text-primary transition-colors">
-                  +91 98401 23456
+              <div className="flex flex-col gap-1">
+                <h4 className="font-heading font-bold text-sm text-dark">Phone</h4>
+                <a href="tel:+919961992772" className="font-sans text-[11px] text-text-secondary hover:text-primary transition-colors font-semibold">
+                  +91 99619 92772 (CEO)
+                </a>
+                <a href="tel:+919961492772" className="font-sans text-[11px] text-text-secondary hover:text-primary transition-colors font-semibold">
+                  +91 99614 92772 (Office)
+                </a>
+                <a href="tel:+919745108772" className="font-sans text-[11px] text-text-secondary hover:text-primary transition-colors font-semibold">
+                  +91 97451 08772 (Sales)
                 </a>
               </div>
             </div>
@@ -219,10 +225,13 @@ export default function Contact() {
               <div className="p-2.5 bg-primary/10 text-primary rounded-xl">
                 <Mail size={18} />
               </div>
-              <div>
-                <h4 className="font-heading font-bold text-sm text-dark mb-1">Email</h4>
-                <a href="mailto:info@dhanyaenterprises.com" className="font-sans text-xs text-text-secondary hover:text-primary transition-colors">
-                  info@dhanyaenterprises.com
+              <div className="flex flex-col gap-1">
+                <h4 className="font-heading font-bold text-sm text-dark">Email</h4>
+                <a href="mailto:dhanyaenterprisesptb@gmail.com" className="font-sans text-[11px] text-text-secondary hover:text-primary transition-colors font-semibold truncate max-w-[180px]">
+                  dhanyaenterprisesptb@gmail.com
+                </a>
+                <a href="mailto:dhanyasasi.at10@gmail.com" className="font-sans text-[11px] text-text-secondary hover:text-primary transition-colors font-semibold truncate max-w-[180px]">
+                  dhanyasasi.at10@gmail.com
                 </a>
               </div>
             </div>
@@ -231,11 +240,20 @@ export default function Contact() {
               <div className="p-2.5 bg-primary/10 text-primary rounded-xl">
                 <MapPin size={18} />
               </div>
-              <div>
+              <div className="flex-1">
                 <h4 className="font-heading font-bold text-sm text-dark mb-1">Address</h4>
-                <p className="font-sans text-xs text-text-secondary leading-relaxed">
-                  Suite 405, Executive Chambers, MG Road, Bangalore, Karnataka - 560001
+                <p className="font-sans text-xs text-text-secondary leading-relaxed mb-2.5">
+                  Hayath Complex, Opp. Police station, Pattambi, Kerala - 679303
                 </p>
+                <a
+                  href="https://maps.app.goo.gl/CcX7dnayUTSRZDFUA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-sans text-xs font-bold text-primary hover:text-primary-hover inline-flex items-center gap-1 group cursor-pointer"
+                >
+                  <Navigation size={12} className="text-primary group-hover:animate-pulse" />
+                  Get Directions
+                </a>
               </div>
             </div>
 
@@ -246,16 +264,16 @@ export default function Contact() {
               <div>
                 <h4 className="font-heading font-bold text-sm text-dark mb-1">Hours</h4>
                 <p className="font-sans text-xs text-text-secondary leading-relaxed">
-                  Mon - Sat: 9:00 AM - 6:30 PM<br />Sunday: Closed
+                  Mon - Sat: 9:00 AM - 7:00 PM<br />Sunday: Closed
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Embedded Google Map */}
+          {/* Embedded Google Map (New Address) */}
           <div className="w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-md border border-border-light relative bg-gray-100">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.9715978168285!2d77.6085189!3d12.9733475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1679904d94b1%3A0xa1fa816e8854de56!2sMG%20Road%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1783070000000!5m2!1sen!2sin"
+              src="https://maps.google.com/maps?q=Hayath%20Complex,%20Opp.%20Police%20station,%20Pattambi&t=&z=16&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}

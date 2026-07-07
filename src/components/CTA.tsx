@@ -40,7 +40,7 @@ export default function CTA() {
                 <Calendar size={18} />
               </Link>
               <a
-                href="tel:+919840123456"
+                href="tel:+919961992772"
                 className="bg-[#C2040F] hover:bg-red-800 text-white border border-white/20 font-sans font-bold text-base px-8 py-4 rounded-full transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center gap-2 shadow-inner cursor-pointer"
               >
                 Call Now
