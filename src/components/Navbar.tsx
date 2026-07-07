@@ -58,12 +58,15 @@ export default function Navbar() {
                 className="h-10 sm:h-12 md:h-14 lg:h-[68px] w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 priority
               />
-              <span className="font-heading font-black text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-tight text-dark leading-none flex flex-col">
-                DHANYA
-                <span className="text-[10px] sm:text-xs font-black tracking-widest text-[var(--brand-red)] uppercase mt-0.5">
-                  ENTERPRISES
-                </span>
-              </span>
+              <div className="relative h-6 sm:h-8 md:h-10 lg:h-12 aspect-[633/276] transition-transform duration-300 group-hover:scale-105">
+                <Image
+                  src="/images/hero-brand.png"
+                  alt="Dhanya Enterprises"
+                  fill
+                  priority
+                  className="object-contain"
+                />
+              </div>
             </Link>
           </div>
 
