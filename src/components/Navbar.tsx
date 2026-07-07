@@ -49,19 +49,11 @@ export default function Navbar() {
           
           {/* Logo & Brand Name - Primary Visual Focus */}
           <div className="flex-shrink-0 z-10">
-            <Link href="/#home" className="flex items-center gap-3.5 group">
-              <Image
-                src="/images/logo.png"
-                alt="Dhanya Enterprises Logo"
-                width={70}
-                height={70}
-                className="h-10 sm:h-12 md:h-14 lg:h-[68px] w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                priority
-              />
-              <div className="relative h-6 sm:h-8 md:h-10 lg:h-12 aspect-[633/276] transition-transform duration-300 group-hover:scale-105">
+            <Link href="/#home" className="flex items-center group">
+              <div className="relative h-10 sm:h-12 md:h-[54px] lg:h-[60px] aspect-[633/276] transition-transform duration-300 group-hover:scale-105">
                 <Image
-                  src="/images/hero-brand.png"
-                  alt="Dhanya Enterprises"
+                  src="/images/navbar-logo.png"
+                  alt="Dhanya Enterprises Logo"
                   fill
                   priority
                   className="object-contain"
