@@ -1,26 +1,88 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: #E30613;
+  --color-primary-hover: #C2040F;
+  --color-dark: #222222;
+  --color-bg-light: #F8F8F8;
+  --color-text-dark: #222222;
+  --color-text-secondary: #555555;
+  --color-card-white: #FFFFFF;
+  --color-border-light: #EAEAEA;
+
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-heading: var(--font-poppins), system-ui, sans-serif;
+
+  --radius-card: 18px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    background-color: var(--color-bg-light);
+    color: var(--color-text-dark);
+    font-family: var(--font-sans);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-dark);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Premium micro-interactions and styling utilities */
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(227, 6, 19, 0.08);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(227, 6, 19, 0.06);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
+}
+
+.dark-glass-card {
+  background: rgba(34, 34, 34, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glow-red-icon {
+  box-shadow: 0 0 20px 0 rgba(227, 6, 19, 0.15);
+}
+
+.glow-red-card-hover:hover {
+  box-shadow: 0 20px 40px -15px rgba(227, 6, 19, 0.08), 0 0 20px 0 rgba(227, 6, 19, 0.04);
+}
+
+/* Swiper custom pagination active styling */
+.swiper-pagination-bullet-active {
+  background: #E30613 !important;
+  width: 24px !important;
+  border-radius: 4px !important;
+}
+
+.swiper-pagination-bullet {
+  transition: all 0.3s ease;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F8F8;
+}
+::-webkit-scrollbar-thumb {
+  background: #E5E7EB;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D1D5DB;
 }
