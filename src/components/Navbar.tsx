@@ -1,12 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Menu, 
   X, 
   ChevronDown, 
-  Code, 
+  Laptop, 
   ShoppingBag, 
   Search, 
   Smartphone, 
@@ -27,6 +28,8 @@ export default function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
 
+  const pathname = usePathname();
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
@@ -40,18 +43,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close dropdown on click outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
-      if (!target.closest(".services-dropdown-container")) {
-        setIsDropdownOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
@@ -63,38 +54,67 @@ export default function Navbar() {
   ];
 
   const servicesList = [
-    { name: "Website Design & Development", href: "/services/website-design-development", icon: Code },
+    { name: "Website Design & Development", href: "/services/website-design-development", icon: Laptop },
     { name: "E-commerce Website Development", href: "/services/ecommerce-website-development", icon: ShoppingBag },
     { name: "Search Engine Optimization (SEO)", href: "/services/seo", icon: Search },
     { name: "Mobile App Marketing", href: "/services/mobile-app-marketing", icon: Smartphone },
-    { name: "Meta Ads (Facebook & Instagram Advertising)", href: "/services/meta-ads", icon: Megaphone },
+    { name: "Meta Ads (Facebook & Instagram)", href: "/services/meta-ads", icon: Megaphone },
     { name: "Graphic Design", href: "/services/graphic-design", icon: Palette },
     { name: "Video Editing & Motion Graphics", href: "/services/video-editing-motion-graphics", icon: Video },
     { name: "Lead Generation Campaigns", href: "/services/lead-generation-campaigns", icon: Users },
-    { name: "Local SEO & Google Business Profile Optimization", href: "/services/local-seo-google-business-profile", icon: MapPin },
+    { name: "Local SEO & Google Profile", href: "/services/local-seo-google-business-profile", icon: MapPin },
     { name: "Marketing Strategy & Consulting", href: "/services/marketing-strategy-consulting", icon: TrendingUp },
-    { name: "Marketplace Marketing (Amazon, Flipkart, etc.)", href: "/services/marketplace-marketing", icon: Globe },
+    { name: "Marketplace Marketing", href: "/services/marketplace-marketing", icon: Globe },
   ];
+
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    if (href.startsWith("/services")) return pathname.startsWith("/services");
+    return pathname === href;
+  };
+
+  const getLinkClass = (href: string) => {
+    const active = isActive(href);
+    const isHome = pathname === "/";
+    const base = "font-sans font-bold text-sm transition-colors duration-300 relative group py-2 cursor-pointer flex items-center gap-1.5 focus:outline-none";
+    
+    let colorClass = "";
+    if (isHome) {
+      colorClass = active ? "text-primary" : "text-text-dark/80 hover:text-primary";
+    } else {
+      if (isScrolled) {
+        colorClass = active ? "text-primary" : "text-text-dark/80 hover:text-primary";
+      } else {
+        // Transparent nav standing on top of subpage dark banner
+        colorClass = active ? "text-white" : "text-white/60 hover:text-white";
+      }
+    }
+    
+    return `${base} ${colorClass}`;
+  };
+
+  const hamburgerColor = (pathname === "/" || isScrolled) ? "text-dark" : "text-white";
 
   return (
     <>
+      {/* Sticky Navigation Bar */}
       <motion.nav
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5 }}
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          isScrolled
-            ? "glass-nav py-3 shadow-sm"
-            : "bg-transparent py-5"
+          isScrolled 
+            ? "py-3.5 glass-nav shadow-lg" 
+            : "py-6 bg-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between relative">
           
-          {/* Logo & Brand Name - Primary Visual Focus */}
-          <div className="flex-shrink-0 z-10">
-            <Link href="/#home" className="flex items-center gap-2.5 group">
+          {/* Logo container */}
+          <div className="flex items-center gap-3 z-10 shrink-0">
+            <Link href="/" className="flex items-center gap-3 group">
               {/* Logo Icon */}
-              <div className="relative h-7 sm:h-[34px] md:h-10 lg:h-[45px] aspect-[415/444] transition-transform duration-300 group-hover:scale-105">
+              <div className="relative w-8 h-8 sm:w-10 sm:h-10 transition-transform duration-300 group-hover:scale-105">
                 <Image
                   src="/images/logo-icon.png"
                   alt="Dhanya Enterprises Icon"
@@ -129,7 +149,7 @@ export default function Navbar() {
                       onMouseLeave={() => setIsDropdownOpen(false)}
                     >
                       <button
-                        className="font-sans font-bold text-sm text-text-dark/80 hover:text-primary transition-colors flex items-center gap-1.5 cursor-pointer focus:outline-none"
+                        className={getLinkClass(link.href)}
                         aria-expanded={isDropdownOpen}
                       >
                         {link.name}
@@ -152,14 +172,26 @@ export default function Navbar() {
                           >
                             {servicesList.map((service) => {
                               const IconComponent = service.icon;
+                              const isServiceActive = pathname === service.href;
                               return (
                                 <Link
                                   key={service.name}
                                   href={service.href}
                                   onClick={() => setIsDropdownOpen(false)}
-                                  className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-text-dark/80 hover:text-[var(--brand-red)] hover:bg-[var(--brand-red)]/5 transition-all duration-200 group font-sans text-xs font-semibold"
+                                  className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 group font-sans text-xs font-semibold ${
+                                    isServiceActive 
+                                      ? "text-primary bg-primary/5 font-bold" 
+                                      : "text-text-dark/80 hover:text-primary hover:bg-primary/5"
+                                  }`}
                                 >
-                                  <IconComponent size={15} className="text-text-secondary/60 group-hover:text-[var(--brand-red)] transition-colors shrink-0" />
+                                  <IconComponent 
+                                    size={15} 
+                                    className={`transition-colors shrink-0 ${
+                                      isServiceActive 
+                                        ? "text-primary" 
+                                        : "text-text-secondary/60 group-hover:text-primary"
+                                    }`} 
+                                  />
                                   <span className="truncate">{service.name}</span>
                                 </Link>
                               );
@@ -175,10 +207,12 @@ export default function Navbar() {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className="font-sans font-bold text-sm text-text-dark/80 hover:text-primary transition-colors relative group py-2"
+                    className={getLinkClass(link.href)}
                   >
                     {link.name}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                    {!isActive(link.href) && (
+                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                    )}
                   </Link>
                 );
               })}
@@ -188,7 +222,7 @@ export default function Navbar() {
           {/* Right CTA */}
           <div className="hidden lg:block z-10">
             <Link
-              href="/#contact"
+              href="/contact"
               className="bg-primary hover:bg-primary-hover text-white font-sans font-bold text-sm px-6 py-3.5 rounded-full transition-all duration-300 shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 transform hover:-translate-y-0.5 inline-block cursor-pointer"
             >
               Get Free Consultation
@@ -198,7 +232,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden text-dark hover:text-primary transition-colors focus:outline-none z-10"
+            className={`lg:hidden hover:text-primary transition-colors focus:outline-none z-10 ${hamburgerColor}`}
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -243,6 +277,7 @@ export default function Navbar() {
                         >
                           {servicesList.map((service) => {
                             const IconComponent = service.icon;
+                            const isServiceActive = pathname === service.href;
                             return (
                               <Link
                                 key={service.name}
@@ -251,9 +286,16 @@ export default function Navbar() {
                                   setIsMobileDropdownOpen(false);
                                   setIsMobileMenuOpen(false);
                                 }}
-                                className="flex items-center gap-3 py-2.5 text-text-dark/75 hover:text-[var(--brand-red)] transition-colors font-sans text-sm font-semibold"
+                                className={`flex items-center gap-3 py-2.5 transition-colors font-sans text-sm font-semibold ${
+                                  isServiceActive 
+                                    ? "text-primary bg-primary/5 px-2 rounded-lg" 
+                                    : "text-text-dark/75 hover:text-primary"
+                                }`}
                               >
-                                <IconComponent size={14} className="text-text-secondary/60 shrink-0" />
+                                <IconComponent 
+                                  size={14} 
+                                  className={`shrink-0 ${isServiceActive ? "text-primary" : "text-text-secondary/60"}`} 
+                                />
                                 <span className="truncate">{service.name}</span>
                               </Link>
                             );
@@ -265,19 +307,23 @@ export default function Navbar() {
                 );
               }
 
+              const isLinkActive = isActive(link.href);
+
               return (
                 <Link
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="font-sans font-semibold text-lg text-text-dark py-2 border-b border-border-light/50 hover:text-primary transition-colors"
+                  className={`font-sans font-semibold text-lg py-2 border-b border-border-light/50 transition-colors ${
+                    isLinkActive ? "text-primary font-bold" : "text-text-dark hover:text-primary"
+                  }`}
                 >
                   {link.name}
                 </Link>
               );
             })}
             <Link
-              href="/#contact"
+              href="/contact"
               onClick={() => setIsMobileMenuOpen(false)}
               className="bg-primary hover:bg-primary-hover text-white font-sans font-semibold text-center py-3.5 rounded-full mt-4 transition-all duration-300 shadow-md cursor-pointer"
             >
