@@ -53,13 +53,13 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "/#home" },
-    { name: "About", href: "/#about" },
-    { name: "Services", href: "/#services", hasDropdown: true },
-    { name: "Portfolio", href: "/#portfolio" },
-    { name: "Testimonials", href: "/#testimonials" },
-    { name: "FAQ", href: "/#faq" },
-    { name: "Contact", href: "/#contact" },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Services", href: "/services", hasDropdown: true },
+    { name: "Projects", href: "/projects" },
+    { name: "Certifications", href: "/certifications" },
+    { name: "Testimonials", href: "/testimonials" },
+    { name: "Contact", href: "/contact" },
   ];
 
   const servicesList = [

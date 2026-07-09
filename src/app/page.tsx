@@ -5,13 +5,9 @@ import Hero from "@/components/Hero";
 import TrustedBrands from "@/components/TrustedBrands";
 import Services from "@/components/Services";
 import About from "@/components/About";
-import Stats from "@/components/Stats";
 import Portfolio from "@/components/Portfolio";
 import Testimonials from "@/components/Testimonials";
-import Process from "@/components/Process";
-import HomeFaq from "@/components/HomeFaq";
 import CTA from "@/components/CTA";
-import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
@@ -29,32 +25,20 @@ export default function Home() {
         {/* Brand Logos Strip */}
         <TrustedBrands />
 
-        {/* About Section */}
+        {/* About Section Preview */}
         <About />
 
         {/* Services Showcase */}
         <Services />
 
-        {/* Animated Counter Stats */}
-        <Stats />
-
-        {/* Portfolio & Case Studies */}
+        {/* Featured Portfolio & Projects */}
         <Portfolio />
 
         {/* Client Reviews */}
         <Testimonials />
 
-        {/* Workflow Process Timeline */}
-        <Process />
-
-        {/* FAQ Accordion Section */}
-        <HomeFaq />
-
         {/* Conversions Call to Action */}
         <CTA />
-
-        {/* Form & Contact Details */}
-        <Contact />
       </main>
 
       {/* Premium Dark Footer */}
