@@ -3,58 +3,86 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { CreditCard, Code, Megaphone, GraduationCap, Palette, Share2, PenTool, ArrowRight } from "lucide-react";
+import { Laptop, ShoppingBag, Search, Smartphone, Megaphone, Palette, Video, Users, MapPin, TrendingUp, Globe, ArrowRight } from "lucide-react";
 
 export default function Services() {
   const services = [
     {
-      id: "digital-business-card",
-      title: "Digital Business Card",
-      icon: <CreditCard size={24} />,
-      image: "/images/portfolio_real_estate.jpg",
-      description: "Create professional NFC and QR-enabled digital visiting cards to share contact info instantly.",
-    },
-    {
-      id: "website-development",
-      title: "Website Development",
-      icon: <Code size={24} />,
+      id: "website-design-development",
+      title: "Website Design & Development",
+      icon: <Laptop size={24} />,
       image: "/images/portfolio_ecommerce.jpg",
-      description: "Responsive websites for businesses, portfolios, schools, hospitals, and startups designed to convert.",
+      description: "Custom Next.js, React, and WordPress sites optimized for extreme loading speed, SEO, and visual excellence.",
     },
     {
-      id: "digital-marketing",
-      title: "Digital Marketing",
-      icon: <Megaphone size={24} />,
-      image: "/images/portfolio_education.jpg",
-      description: "Google Ads, Facebook Ads, Instagram Marketing, SEO, and Content Marketing that generate real leads.",
-    },
-    {
-      id: "sales-marketing-training",
-      title: "Sales & Marketing Training",
-      icon: <GraduationCap size={24} />,
-      image: "/images/hero_team.jpg",
-      description: "Professional and highly interactive training programs for individuals and sales teams.",
-    },
-    {
-      id: "logo-branding",
-      title: "Logo & Branding",
-      icon: <Palette size={24} />,
+      id: "ecommerce-website-development",
+      title: "E-commerce Website Development",
+      icon: <ShoppingBag size={24} />,
       image: "/images/portfolio_fashion.jpg",
-      description: "Modern logo design, brand identity, brochures, and visual marketing collateral.",
+      description: "Sleek online storefronts with secure payment gateways, inventory sync, and seamless buyer checkouts.",
     },
     {
-      id: "social-media-management",
-      title: "Social Media Management",
-      icon: <Share2 size={24} />,
-      image: "/images/portfolio_restaurant.jpg",
-      description: "Daily post creation, scheduling, audience engagement, and organic social growth strategies.",
+      id: "seo",
+      title: "Search Engine Optimization (SEO)",
+      icon: <Search size={24} />,
+      image: "/images/portfolio_education.jpg",
+      description: "Rank #1 on Google with advanced keyword strategies, technical audits, on-page edits, and authority backlinking.",
+    },
+    {
+      id: "mobile-app-marketing",
+      title: "Mobile App Marketing",
+      icon: <Smartphone size={24} />,
+      image: "/images/portfolio_healthcare.jpg",
+      description: "Increase app installs and user retention with structured App Store Optimization (ASO) and cost-efficient user acquisition.",
+    },
+    {
+      id: "meta-ads",
+      title: "Meta Ads (Facebook & Instagram Advertising)",
+      icon: <Megaphone size={24} />,
+      image: "/images/portfolio_real_estate.jpg",
+      description: "Target high-intent customers, create high-converting copy, and optimize ad layouts to scale lead generation.",
     },
     {
       id: "graphic-design",
       title: "Graphic Design",
-      icon: <PenTool size={24} />,
-      image: "/images/portfolio_healthcare.jpg",
-      description: "Posters, flyers, banners, social media creatives, and print advertisements.",
+      icon: <Palette size={24} />,
+      image: "/images/portfolio_fashion.jpg",
+      description: "Premium visual assets including flyers, brochures, custom business profiles, brochures, and brand catalogs.",
+    },
+    {
+      id: "video-editing-motion-graphics",
+      title: "Video Editing & Motion Graphics",
+      icon: <Video size={24} />,
+      image: "/images/portfolio_restaurant.jpg",
+      description: "Capture eyes with engaging daily Reels, professional video edits, text-animations, and premium branding motion assets.",
+    },
+    {
+      id: "lead-generation-campaigns",
+      title: "Lead Generation Campaigns",
+      icon: <Users size={24} />,
+      image: "/images/hero_team.jpg",
+      description: "Scale B2B or B2C queries with advanced landing page forms, CRM automation, and targeted sales funnels.",
+    },
+    {
+      id: "local-seo-google-business-profile",
+      title: "Local SEO & Google Business Profile Optimization",
+      icon: <MapPin size={24} />,
+      image: "/images/portfolio_real_estate.jpg",
+      description: "Dominate local maps searches in your region and attract local walking customers directly to your storefront.",
+    },
+    {
+      id: "marketing-strategy-consulting",
+      title: "Marketing Strategy & Consulting",
+      icon: <TrendingUp size={24} />,
+      image: "/images/hero_team.jpg",
+      description: "Interactive consulting workshops, competitive research, and long-term scaling strategy for startups.",
+    },
+    {
+      id: "marketplace-marketing",
+      title: "Marketplace Marketing (Amazon, Flipkart, etc.)",
+      icon: <Globe size={24} />,
+      image: "/images/portfolio_ecommerce.jpg",
+      description: "Optimize product listings, run cost-efficient marketplace Ads, and design A+ content to boost online store sales.",
     },
   ];
 

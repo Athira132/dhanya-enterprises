@@ -8,7 +8,7 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { motion, AnimatePresence } from "framer-motion";
 import { Check, ChevronRight, X, ChevronLeft, ChevronRight as ChevronRightIcon, Plus, Minus, ArrowLeft } from "lucide-react";
 
-// Full data mapping for all 7 services
+// Full data mapping for all 11 services
 const servicesData: Record<
   string,
   {
@@ -36,571 +36,763 @@ const servicesData: Record<
     faqs: { q: string; a: string }[];
   }
 > = {
-  "digital-business-card": {
-    title: "Digital Business Card",
-    subtitle: "Share your professional contact information instantly with premium NFC and QR visiting cards.",
-    price: "₹999",
-    image: "/images/portfolio_real_estate.jpg",
-    about: "The Digital Business Card by Dhanya Enterprises is the modern way to network. Swap paper cards for a sleek, contact-free solution. Using NFC (Near Field Communication) and QR code technologies, you can share your portfolio, contact details, social links, and business hours with a single tap or scan. No apps required.",
-    whoNeedsIt: [
-      "Entrepreneurs & Startup Founders",
-      "Sales Executives & Realtors",
-      "Freelancers & Creative Professionals",
-      "Corporate Teams & Agency Representatives"
-    ],
-    benefits: [
-      "Instantly share contact details, links, and map location.",
-      "Eco-friendly alternative to printing thousands of paper cards.",
-      "Update your details anytime online without reprinting.",
-      "Includes a premium QR code for devices without NFC compatibility."
-    ],
-    whyUs: "Dhanya Enterprises offers customized premium card designs matching your brand colors. We provide lifetime link hosting with zero monthly fees, fast 2-day delivery across India, and dedicated setup support.",
-    packages: [
-      {
-        name: "Classic QR Card",
-        price: "₹999",
-        description: "Matte-finished PVC card with high-resolution custom QR code printing.",
-        features: [
-          "Custom QR Printing",
-          "Dynamic Profile Dashboard",
-          "Unlimited Profile Edits",
-          "One-Click Save Contact button",
-          "1 Year Dashboard Hosting"
-        ]
-      },
-      {
-        name: "Premium NFC Card",
-        price: "₹1999",
-        description: "Elegant matte-black PVC card embedded with premium NTAG213 NFC chip.",
-        features: [
-          "Tap-to-Share NFC Chip",
-          "Custom Name Engraving",
-          "Lifetime Profile Hosting",
-          "NFC + QR Code Enabled",
-          "Analytics Tracking Enabled",
-          "Priority Customer Support"
-        ],
-        popular: true
-      },
-      {
-        name: "Metal Edition",
-        price: "₹3499",
-        description: "Ultra-premium laser-engraved metal business card.",
-        features: [
-          "Solid Aerospace-Grade Metal Card",
-          "Laser-Engraved Logo & Name",
-          "Premium NFC + QR Features",
-          "Custom Profile Themes",
-          "Dedicated Account Manager",
-          "Lifetime Replacement Warranty"
-        ]
-      }
-    ],
-    posters: [
-      { title: "Tap to Connect", desc: "Share details in a single swipe", bg: "from-red-500 to-red-800", tag: "NFC Power" },
-      { title: "Paperless Networking", desc: "Sleek. Modern. Eco-Friendly.", bg: "from-slate-800 to-slate-900", tag: "Eco Friendly" },
-      { title: "Your Digital Portal", desc: "One link to present your portfolio", bg: "from-red-600 to-neutral-900", tag: "Dynamic QR" },
-      { title: "Corporate Teams Pack", desc: "Cohesive designs for company staff", bg: "from-zinc-900 to-red-700", tag: "Corporate" },
-      { title: "Metal Signature Series", desc: "Make an unforgettable impression", bg: "from-stone-900 to-yellow-600", tag: "Lux Premium" },
-      { title: "Real Estate Special", desc: "Tap to view active home listings", bg: "from-red-500 to-slate-900", tag: "Real Estate" }
-    ],
-    faqs: [
-      { q: "How does the NFC card work?", a: "Simply tap the card on the back of any modern smartphone. A browser window will automatically open showing your digital profile." },
-      { q: "Do people need an app to read my card?", a: "No, they do not need any application or scanner. It uses native NFC technology built into smartphones." },
-      { q: "What if a phone does not support NFC?", a: "Every card includes a high-definition custom QR code on the back. Users can simply scan it with their camera." },
-      { q: "Can I update my details later?", a: "Yes, you can edit your profile links, contact info, and images at any time through our online dashboard." },
-      { q: "Are there monthly subscription charges?", a: "No, our classic and premium packages include lifetime card usage with no ongoing monthly costs." },
-      { q: "Is the metal card heavy?", a: "It weighs around 15g, which gives it a premium, sturdy, and executive feel compared to standard PVC." },
-      { q: "Can I print my custom company logo?", a: "Yes, we accept logo uploads in high resolution vector formats and print them beautifully on the card." },
-      { q: "How long does shipping take?", a: "We design and print within 24 hours. Transit takes 2-4 business days across India." },
-      { q: "What analytics do I get?", a: "You can track profile views, tap counts, and which social/portfolio links were clicked the most." },
-      { q: "Do you offer discounts for corporate teams?", a: "Yes, we offer special bulk pricing starting from 10+ cards. Reach out through our consultation form." }
-    ]
-  },
-  "website-development": {
-    title: "Website Development",
-    subtitle: "High-performance, fully responsive websites designed to convert visitors into loyal clients.",
-    price: "₹1999+",
+  "website-design-development": {
+    title: "Website Design & Development",
+    subtitle: "Custom Next.js, React, and WordPress sites optimized for extreme loading speed, SEO, and visual excellence.",
+    price: "Starting at ₹9,999",
     image: "/images/portfolio_ecommerce.jpg",
-    about: "In the digital age, your website is your virtual storefront. At Dhanya Enterprises, we build modern Next.js, React, and WordPress sites optimized for extreme loading speeds, SEO, and visual excellence. We handle everything from design mocks to hosting configuration.",
+    about: "In the digital age, your website is your virtual storefront. At Dhanya Enterprises, we build modern Next.js, React, and WordPress sites optimized for extreme loading speeds, SEO, and visual excellence. We handle everything from design mocks to hosting configuration, ensuring your website serves as a highly efficient marketing funnel that converts visitors into customers.",
     whoNeedsIt: [
-      "Local Businesses & Retail Shops",
-      "Corporate Agencies & Consulting Firms",
-      "E-commerce Retail Brands",
-      "Clinics, Schools, and Hospitals"
+      "Startup Founders & SMBs",
+      "Corporate Brands & Businesses",
+      "Consultants & Professionals",
+      "Retailers & Service Providers"
     ],
     benefits: [
-      "Stunning custom UI layouts tailored to your industry branding.",
-      "Mobile-first responsive grids that look perfect on all screens.",
-      "Optimized code for high Core Web Vitals and top Google ranking.",
-      "Admin panel integration for easy self-management of content."
+      "Ultra-fast loading speed and core web vitals optimization.",
+      "Mobile-responsive layouts optimized for all modern device sizes.",
+      "SEO-friendly codebase layout for quick organic ranking search index.",
+      "Direct WhatsApp, call click integrations, and custom forms."
     ],
-    whyUs: "We focus on conversion rate optimization (CRO) rather than just templates. Our packages include high-quality copywriting, page speed tuning, custom contact forms, and 30 days of free post-launch support.",
+    whyUs: "Dhanya Enterprises merges premium visual design with clean, high-performance coding frameworks. We offer lifetime hosting support and full project handovers.",
     packages: [
       {
-        name: "One-Page Landing",
-        price: "₹1999",
-        description: "Perfect for startups, portfolios, single product promotions, and event signups.",
+        name: "Basic Brand Page",
+        price: "₹9,999",
+        description: "1 Page layout with modern design elements, static assets, and essential contact buttons.",
         features: [
-          "Premium One-Page Design",
-          "Contact Form Integration",
-          "Mobile Responsive Grid",
-          "Basic SEO Optimization",
-          "Free SSL Setup Assistance"
+          "1 Custom Responsive Page",
+          "Basic On-Page SEO setup",
+          "WhatsApp & Phone Integrations",
+          "Domain Mapping & Launch Support",
+          "1 Year Dashboard Support"
         ]
       },
       {
         name: "Business Website",
-        price: "₹6999",
-        description: "Complete corporate website with administrative control dashboard.",
+        price: "₹19,999",
+        description: "Complete multi-page profile website for companies and agencies.",
         features: [
-          "Up to 5 Pages (Home, About, Services, Blog, Contact)",
-          "WordPress CMS / Custom React Setup",
-          "Contact Form & Map Integration",
-          "Google Analytics & SEO Enabled",
-          "Dynamic Blog/News Section",
-          "30 Days Support Retainer"
+          "5 Dynamic Designed Pages",
+          "Custom UI Design & Copywriting",
+          "Contact & Query Forms",
+          "Page Speed Optimization",
+          "Google Maps & Analytics Integration",
+          "3 Months Revision Warranty"
         ],
         popular: true
       },
       {
-        name: "E-Commerce Suite",
-        price: "₹14999+",
-        description: "Powerful storefront packed with checkout, payment gateways, and inventories.",
+        name: "Enterprise Portal",
+        price: "₹34,999",
+        description: "High-performance React/Next.js dynamic application with full custom layout.",
         features: [
-          "Unlimited Products listing",
-          "Secure Payment Gateways (Razorpay/Paytm)",
-          "Inventory Management Console",
-          "Discount Codes & Coupon Engine",
-          "SMS/Email Order Notifications",
-          "60 Days Dedicated Support"
+          "Custom React/Next.js Architecture",
+          "CMS Integration (WordPress/Strapi)",
+          "Advanced Lead Dashboard",
+          "Top-Tier Security & SSL",
+          "Speed CDN Configuration",
+          "1 Year Priority Tech Support"
         ]
       }
     ],
     posters: [
-      { title: "Ultra-Fast Load Speeds", desc: "No more waiting. Load under 1s.", bg: "from-red-600 to-neutral-900", tag: "Speed Tech" },
-      { title: "Next.js Custom Code", desc: "Bespoke code for premium results.", bg: "from-slate-900 to-red-700", tag: "Web Architecture" },
-      { title: "Shopify Storefronts", desc: "Turn visual visitors into buyers", bg: "from-red-500 to-red-800", tag: "E-commerce" },
-      { title: "Hospital Portals", desc: "Online patient appointment systems", bg: "from-zinc-800 to-stone-900", tag: "Healthcare UI" },
-      { title: "Creative Portfolios", desc: "Showcase your artistic work beautifully", bg: "from-stone-950 to-red-600", tag: "Art/Design" },
-      { title: "SEO Foundation Built-In", desc: "Rank page 1 on Google search", bg: "from-red-800 to-slate-900", tag: "SEO Ready" }
+      { title: "Custom Code", desc: "Next.js performance optimization", bg: "from-red-500 to-red-800", tag: "Frontend" }
     ],
     faqs: [
-      { q: "Which technologies do you use?", a: "We specialize in Next.js, React, TailwindCSS, WordPress, Shopify, and Node.js depending on project needs." },
-      { q: "How long does it take to develop a site?", a: "A single landing page takes 3-5 days. A standard business website takes 7-12 days, and e-commerce portals take 2-3 weeks." },
-      { q: "Do I get email addresses for my domain?", a: "Yes, our packages include support for setting up professional business emails (e.g. info@yourcompany.com)." },
-      { q: "Is domain name and hosting cost included?", a: "We assist you in purchase to ensure you have full ownership, and set it up for free. Hosting fees are paid directly to providers." },
-      { q: "Will my site look good on mobile devices?", a: "Absolutely. 100% of our code is mobile-first responsive and tested across iOS, Android, and tablets." },
-      { q: "Can I update the website content on my own?", a: "Yes, we provide user-friendly Content Management Systems (CMS) like WordPress or custom admin portals with video walkthroughs." },
-      { q: "What security measures do you implement?", a: "We configure free SSL encryption, firewalls, secure admin access, and auto-backup schedules." },
-      { q: "Do you integrate payment gateways?", a: "Yes, we configure payment processors like Razorpay, Stripe, Paytm, and PayPal for seamless checkouts." },
-      { q: "Can you redesign my existing outdated website?", a: "Yes! We can import your current content while completely upgrading the design, speed, and mobile responsiveness." },
-      { q: "What is your post-launch support policy?", a: "We offer 30-60 days of free support for bugs or text modifications. Post that, affordable monthly retention plans are available." }
+      { q: "Do you design custom templates?", a: "Yes, we design all websites from scratch matching your brand guidelines and wireframes." },
+      { q: "Will my website load fast on mobile devices?", a: "We optimize all images, script loads, and code structures to guarantee excellent loading performance." },
+      { q: "Do you offer domain registration and web hosting?", a: "We help you select and purchase your domain and configure secure hosting environments during launch." }
     ]
   },
-  "digital-marketing": {
-    title: "Digital Marketing",
-    subtitle: "ROI-driven advertising campaigns and Google Ads that boost leads, phone calls, and sales.",
-    price: "₹2999+",
-    image: "/images/portfolio_education.jpg",
-    about: "Build a predictable flow of leads with Dhanya Enterprises' digital marketing services. We combine advanced Google Ads, targeted Meta Ads (Facebook/Instagram), local SEO optimization, and audience remarketing to deliver high-quality conversions at the lowest cost-per-click.",
-    whoNeedsIt: [
-      "Local Businesses Seeking Calls",
-      "Real Estate Developers & Brokers",
-      "Professional Consultants & Doctors",
-      "B2B Manufacturers & Wholesalers"
-    ],
-    benefits: [
-      "Ad copy crafted by experienced conversion copywriters.",
-      "Accurate targeting based on interests, location, and search intent.",
-      "Clear analytics tracking calls, form submissions, and sales.",
-      "Continual conversion optimization to lower your cost-per-lead."
-    ],
-    whyUs: "We prioritize ROI over vanity metrics. We run A/B testing on ad designs, build custom high-converting landing pages, and provide transparent dashboards so you always know where your budget is spent.",
-    packages: [
-      {
-        name: "Local Visibility Plan",
-        price: "₹2999",
-        description: "Dominate search inquiries in your local geographic area.",
-        features: [
-          "Google Business Profile optimization",
-          "Local Keyword Citation setups",
-          "5 Custom Social Ads posts",
-          "Basic Analytics Reporting",
-          "Email support"
-        ]
-      },
-      {
-        name: "Lead Generation Booster",
-        price: "₹7999",
-        description: "Optimized pay-per-click lead campaigns on Meta & Google Ads.",
-        features: [
-          "Meta Ads setup & management",
-          "Google Search Ads setup",
-          "A/B Split testing on Copy",
-          "Custom Landing Page build",
-          "Lead Form integration",
-          "Weekly Video Reporting"
-        ],
-        popular: true
-      },
-      {
-        name: "Omnichannel Growth",
-        price: "₹15999+",
-        description: "Dominating SEO, search ads, and social media retargeting concurrently.",
-        features: [
-          "Advanced SEO Strategy",
-          "Google + Meta + LinkedIn Ads",
-          "Dynamic Retargeting Funnels",
-          "Monthly Competitor Audits",
-          "Graphic Ad Creatives designed",
-          "24/7 Account Slack Access"
-        ]
-      }
-    ],
-    posters: [
-      { title: "Google Ads Dominance", desc: "Appear top of page for buyer keywords", bg: "from-red-500 to-red-800", tag: "PPC Ads" },
-      { title: "Facebook Lead Funnels", desc: "Capture phone numbers instantly", bg: "from-slate-900 to-red-700", tag: "Social Gen" },
-      { title: "Instagram Brand Growth", desc: "Build engagement and viral outreach", bg: "from-red-600 to-neutral-900", tag: "Instagram" },
-      { title: "Retargeting Magic", desc: "Bring back past website visitors", bg: "from-slate-800 to-slate-950", tag: "Remarketing" },
-      { title: "High ROI Copy", desc: "Words that convince people to buy", bg: "from-red-700 to-zinc-900", tag: "Copywriting" },
-      { title: "Local Maps Rank Boost", desc: "Be the number 1 clinic/shop nearby", bg: "from-red-800 to-stone-900", tag: "Local SEO" }
-    ],
-    faqs: [
-      { q: "How much ad budget do I need?", a: "You pay ad networks directly. We recommend starting with a minimum of ₹500 to ₹1000 per day for testing." },
-      { q: "How fast will I see leads?", a: "Paid ads on Google and Facebook show results within 24-48 hours of launch." },
-      { q: "How long does SEO take?", a: "SEO is an organic strategy that generally takes 3 to 6 months to start ranking on page 1." },
-      { q: "Do you create the ad graphics?", a: "Yes, our team designs all required images, banners, and copywriting copy for the campaigns." },
-      { q: "Can you guarantee leads?", a: "We guarantee standard-compliant ad execution and top search placement. Lead volume depends on market demand and product pricing." },
-      { q: "What reports do we receive?", a: "We send easy-to-read weekly reports detailing impressions, click-through rates, total leads, and cost-per-lead." },
-      { q: "Are ad costs paid to you?", a: "No, you link your billing card directly to Google/Facebook. You only pay our agency setup and management fee." },
-      { q: "Do you run Ads on YouTube?", a: "Yes, we build and run Video Action Campaigns on YouTube for high brand exposure." },
-      { q: "What is retargeting?", a: "It displays customized ads specifically to users who previously visited your site, leading to high conversions." },
-      { q: "How do we get started?", a: "Complete our enquiry form. We will call you for a free 15-minute consultation to review your business model." }
-    ]
-  },
-  "sales-marketing-training": {
-    title: "Sales & Marketing Training",
-    subtitle: "Empower your startup team or sales force with proven conversion methodologies and marketing structures.",
-    price: "₹3999+",
-    image: "/images/hero_team.jpg",
-    about: "Great products need great selling. At Dhanya Enterprises, we provide professional training workshops for startup founders, sales managers, and marketing executives. Learn practical negotiation, script structure, digital campaign architecture, and closing methods.",
-    whoNeedsIt: [
-      "Startup Founders & Co-founders",
-      "Corporate B2B Sales Executives",
-      "Aspiring Digital Marketers",
-      "Business Management Students"
-    ],
-    benefits: [
-      "Curriculum focused on real Indian market cases.",
-      "Practical interactive pitch sessions and mock calls.",
-      "Takeaway checklists, templates, and tracking spreadsheets.",
-      "Professional course completion certificate signed by experts."
-    ],
-    whyUs: "Our coaches are active agency practitioners who handle multi-million campaigns daily. We teach what works today, not old textbook concepts from decades ago.",
-    packages: [
-      {
-        name: "Individual Bootcamp",
-        price: "₹3999",
-        description: "Deep dive training covering core selling and online lead conversion.",
-        features: [
-          "2 Days Intensive Online Class",
-          "Sales Negotiation Templates",
-          "Script Structure Guides",
-          "Digital Ads Basic Overview",
-          "Q&A session with founder",
-          "Certificate of Completion"
-        ]
-      },
-      {
-        name: "Team Training Masterclass",
-        price: "₹9999",
-        description: "Customized corporate workshop designed for marketing groups (up to 5 staff).",
-        features: [
-          "4 Days Training (Online/Hybrid)",
-          "Bespoke Curriculum matching industry",
-          "Mock Pitch Grading Sessions",
-          "Google/Meta Ad account audit",
-          "Sales Funnel Setup assistance",
-          "15 Days post-class Slack support"
-        ],
-        popular: true
-      },
-      {
-        name: "Enterprise Corporate",
-        price: "₹19999",
-        description: "Complete sales transformation program for large marketing teams (up to 15 staff).",
-        features: [
-          "1 Week Custom Workshop (On-Site/Online)",
-          "Live Call practice sessions",
-          "Automated Email CRM setups",
-          "Sales Playbook Design",
-          "Weekly Performance Audits (1 Month)",
-          "3 Months Support Hotline access"
-        ]
-      }
-    ],
-    posters: [
-      { title: "Perfect the Sales Call", desc: "Proven methods to handle client objections", bg: "from-red-600 to-neutral-900", tag: "Sales Pitch" },
-      { title: "Lead Nurture Playbook", desc: "Turn raw leads into closed deals", bg: "from-slate-900 to-red-700", tag: "Closing Skills" },
-      { title: "Facebook Ads Masterclass", desc: "Master campaign structures step by step", bg: "from-red-500 to-red-800", tag: "Ad Training" },
-      { title: "Negotiation Secrets", desc: "Protect your margins during negotiations", bg: "from-zinc-800 to-slate-950", tag: "Negotiation" },
-      { title: "B2B Sales Outreach", desc: "Cold emailing templates that get replies", bg: "from-stone-900 to-red-600", tag: "Cold Email" },
-      { title: "Analytics Demystified", desc: "Learn to read marketing dashboards", bg: "from-red-800 to-neutral-800", tag: "Metrics" }
-    ],
-    faqs: [
-      { q: "Are classes live or recorded?", a: "Our bootcamps and team masterclasses are conducted live (online or hybrid) to allow direct interaction and feedback." },
-      { q: "Is there any study material provided?", a: "Yes, you receive PDF guides, script worksheets, template links, and Excel tracker spreadsheets." },
-      { q: "Do you offer offline training?", a: "Yes, for corporate and enterprise teams, we can conduct offline workshops at your office premises." },
-      { q: "What size are the class batches?", a: "We keep standard batches under 10-15 members to ensure personalized attention and mock call reviews." },
-      { q: "Is a certificate provided?", a: "Yes, a physical and digital certificate of course completion is issued by Dhanya Enterprises." },
-      { q: "Can I choose specific topics to learn?", a: "Yes, corporate and team packages can have their curriculums fully tailored to cover your industry." },
-      { q: "Do we get hands-on project experience?", a: "We build and audit campaigns using actual live ad accounts during the training." },
-      { q: "What if I miss a live class?", a: "Full high-quality recordings of all sessions are shared with participants for review." },
-      { q: "Do you offer placement support?", a: "We share job openings from our network of clients with standout individual trainees." },
-      { q: "How can my team sign up?", a: "Select your desired corporate package and complete the enquiry form. We will call you to align on scheduling." }
-    ]
-  },
-  "logo-branding": {
-    title: "Logo & Branding",
-    subtitle: "Establish a premium brand identity that builds credibility and leaves a lasting impact.",
-    price: "₹1499+",
+  "ecommerce-website-development": {
+    title: "E-commerce Website Development",
+    subtitle: "Sleek online storefronts with secure payment gateways, inventory sync, and seamless buyer checkouts.",
+    price: "Starting at ₹19,999",
     image: "/images/portfolio_fashion.jpg",
-    about: "Branding is how your customers perceive you. At Dhanya Enterprises, we design custom vector logos, choose sleek typography palettes, and establish color guidelines that represent your business values. Build a consistent brand identity that stands out in the marketplace.",
+    about: "Bring your retail store online with a powerful e-commerce platform. Dhanya Enterprises designs secure, lightning-fast shopping sites utilizing Shopify, WooCommerce, or custom Next.js configurations. From cart optimizations and secure payment gateways (Razorpay, Stripe) to simple inventory trackers, we make online selling simple and profitable.",
     whoNeedsIt: [
-      "New Startup Ventures",
-      "Firms Redesigning Visuals",
-      "Product-Based Brands",
-      "Corporate Agencies"
+      "Retail Brand Owners",
+      "D2C Startups",
+      "Wholesalers & Distributors",
+      "Local Boutique Stores"
     ],
     benefits: [
-      "100% custom vector files that scale to billboards without pixelation.",
-      "Deep study of color psychology matched to your industry vertical.",
-      "Complete set of file formats (AI, SVG, PDF, PNG, JPG).",
-      "Includes corporate business card designs and letterhead drafts."
+      "Optimized single-page checkouts to minimize abandoned carts.",
+      "Fully integrated secure payment methods and automated invoices.",
+      "Mobile-friendly shop displays tailored for mobile buyers.",
+      "Comprehensive dashboard to track sales, orders, and stocks."
     ],
-    whyUs: "We don't buy clip-art templates. Every concept is hand-drafted. Our packages include an in-depth brand guidelines manual detailing correct logo usages, typography rules, and color palettes.",
+    whyUs: "We focus on user experience and speed to maximize conversion rates. Our team provides detailed dashboard training and payment gateway approval support.",
     packages: [
       {
-        name: "Startup Logo Concept",
-        price: "₹1499",
-        description: "Affordable premium vector logo concepts for new startups.",
+        name: "Starter Shop",
+        price: "₹19,999",
+        description: "Begin online sales with a sleek Shopify or WooCommerce storefront.",
         features: [
-          "2 Custom Logo Concepts",
-          "High Resolution Vector Formats",
-          "3 Revision Cycles",
-          "Color Palette Schemes",
-          "2 Days Delivery"
+          "Up to 20 Products Listing",
+          "Razorpay Payment Gateway Setup",
+          "Shopify/WooCommerce Engine",
+          "Order Tracking Dashboard",
+          "Basic Analytics Reporting"
         ]
       },
       {
-        name: "Essential Brand Kit",
-        price: "₹4999",
-        description: "Complete visual kit covering professional business stationery.",
+        name: "Growth E-com",
+        price: "₹34,999",
+        description: "A complete feature-packed e-commerce engine to scale sales.",
         features: [
-          "4 Premium Logo Concepts",
-          "Corporate Business Card Design",
-          "Letterhead & Envelope Layouts",
-          "Social Media Kit (Profile, Banner templates)",
-          "Unlimited Revision cycles",
-          "Dedicated graphic designer"
+          "Up to 100 Products Listing",
+          "Custom Coupon & Discount Codes",
+          "Automatic Shipping Integration",
+          "Advanced Customer Admin Panels",
+          "Abandoned Cart Recovery Setup",
+          "Multi-payment Options Support"
         ],
         popular: true
       },
       {
-        name: "Complete Corporate Identity",
-        price: "₹12999+",
-        description: "The ultimate guidelines package for scaling enterprises.",
+        name: "Enterprise Shop",
+        price: "₹59,999",
+        description: "Custom-built headless next-generation e-commerce engine.",
         features: [
-          "6 Concept Ideas",
-          "Full Brand Style Manual Book (PDF)",
-          "Typography Scale guidelines",
-          "Brochure & Flyer templates",
-          "Corporate PPT Presentation layout",
-          "Trademark Transfer ownership documentation"
+          "Unlimited Product Catalog",
+          "Custom Next.js Headless Engine",
+          "Multi-currency & Global Checkout",
+          "CRM & Order ERP Sync",
+          "Premium Speed CDN Config",
+          "Lifetime Core Security Setup"
         ]
       }
     ],
     posters: [
-      { title: "Vector Scale Design", desc: "No blur. High scalability.", bg: "from-red-600 to-neutral-900", tag: "Logos" },
-      { title: "Color Psychology Book", desc: "Finding shades that drive trust", bg: "from-slate-900 to-red-700", tag: "Brand Colors" },
-      { title: "Sleek Letterheads", desc: "Professional documents matching logos", bg: "from-red-500 to-red-800", tag: "Stationery" },
-      { title: "Social Cover Banners", desc: "Consistent branding on Facebook/LinkedIn", bg: "from-zinc-800 to-slate-950", tag: "Social Kits" },
-      { title: "Brochures & Catalogs", desc: "Foldable prints for marketing teams", bg: "from-stone-900 to-red-600", tag: "Print Media" },
-      { title: "Brand Guidelines Manual", desc: "Rules for corporate consistency", bg: "from-red-800 to-neutral-900", tag: "Rules Book" }
+      { title: "Secure Cart", desc: "Stripe & Razorpay integrated checkouts", bg: "from-red-600 to-red-950", tag: "E-com Engine" }
     ],
     faqs: [
-      { q: "Who owns the copyright of the logo?", a: "Once final payments are done, complete copyrights are transferred to you. We do not reuse your concepts." },
-      { q: "How many logo revisions do I get?", a: "Depending on your selected plan, we provide 3 to unlimited revisions until you are fully satisfied." },
-      { q: "What format will I receive?", a: "We deliver source files (Adobe Illustrator .AI, vector .SVG, print-ready .PDF, and transparent .PNG)." },
-      { q: "Can you redesign my old logo?", a: "Yes, we can modernize your old logo, clean up vectors, and optimize the color gradients." },
-      { q: "How long does branding take?", a: "Startup logos take 2-4 days. Essential kits take 5-7 days, and complete corporate manual books take 10-14 days." },
-      { q: "What is a Social Media Kit?", a: "It includes correctly sized cover templates, profile icons, and post banners for Instagram, Facebook, and LinkedIn." },
-      { q: "Do you design custom packaging?", a: "Yes, we offer box packaging, tag, and wrapper design under custom enterprise additions." },
-      { q: "What is the Brand Guidelines Manual?", a: "A detailed document specifying font styles, hex color codes, minimum sizes, and forbidden modifications for the logo." },
-      { q: "Can I see concepts before final delivery?", a: "Yes, we present high-resolution mockups on realistic items (like shirts, cups, tablets) for your visual review." },
-      { q: "What if I do not like the first drafts?", a: "We review your design feedback and work on fresh concepts until the logo matches your aesthetic." }
+      { q: "Which platforms do you use for E-commerce?", a: "We primarily build on Shopify and WooCommerce, and use custom headless Next.js layouts for large enterprises." },
+      { q: "Is payment gateway integration included?", a: "Yes, we integrate payment pipes like Razorpay, Stripe, and UPI APIs during site setup." },
+      { q: "Can I manage inventory myself?", a: "We build intuitive admin dashboards and provide training videos so you can update products easily." }
     ]
   },
-  "social-media-management": {
-    title: "Social Media Management",
-    subtitle: "Grow your Instagram and Facebook footprint with consistent content curation and organic growth.",
-    price: "₹2499+",
-    image: "/images/portfolio_restaurant.jpg",
-    about: "Building an audience takes consistency. At Dhanya Enterprises, we manage your daily posting, write engaging captions, design beautiful feeds, script Reels, and schedule posts. We keep your target audience engaged while you focus on business execution.",
+  "seo": {
+    title: "Search Engine Optimization (SEO)",
+    subtitle: "Rank #1 on Google with advanced keyword strategies, technical audits, on-page edits, and authority backlinking.",
+    price: "Starting at ₹7,999/mo",
+    image: "/images/portfolio_education.jpg",
+    about: "Be seen where your customers are searching. Our search engine optimization services elevate your organic search rankings on Google, Bing, and other search engines. We handle technical SEO (site speed, schema markup, crawlability), on-page content optimization, targeted keyword mapping, and white-hat domain authority backlinking campaigns.",
     whoNeedsIt: [
-      "Local Cafes & Restaurant Brands",
-      "E-commerce Retail Outlets",
-      "Realtors and Fitness Coaches",
-      "Educational Academies & Colleges"
+      "Local Services & Contractors",
+      "E-commerce Stores",
+      "Corporate Brands & Businesses",
+      "Content Creators & Blogs"
     ],
     benefits: [
-      "Expert content calendar designed a month in advance.",
-      "High-engagement Reels, Carousel, and Single Post templates.",
-      "Niche hashtag research and geolocation tagging.",
-      "Monthly growth analytics detailing reach and followers."
+      "Consistent daily organic search traffic without paying for ads.",
+      "Improved site authority and crawl optimization for search bots.",
+      "Higher trust and brand credibility in local markets.",
+      "Long-term compounding return on marketing investment."
     ],
-    whyUs: "We don't post stock images. We design bespoke brand templates matching your visual guidelines. We script engaging reels and manage direct queries to turn social traffic into leads.",
+    whyUs: "We use strictly white-hat search optimization principles and supply comprehensive monthly keyword ranking and traffic audit reports.",
     packages: [
       {
-        name: "Aesthetic Feed Plan",
-        price: "₹2499",
-        description: "Keep your profile updated with clean, professional posts.",
+        name: "Basic SEO Audit",
+        price: "₹7,999/mo",
+        description: "Essential keyword research and technical on-page setup.",
         features: [
-          "8 Custom Posts / Month",
-          "Caption & Hashtag Research",
-          "Grid Layout curation",
-          "Monthly Performance reports",
-          "Email support"
+          "In-Depth Keyword Research",
+          "Meta Tag & Title Optimization",
+          "10 Target Keyword Trackers",
+          "Google Search Console Setup",
+          "Monthly Technical SEO Audit"
         ]
       },
       {
-        name: "Brand Growth Booster",
-        price: "₹5999",
-        description: "Optimal plan for active businesses targeting Reels and stories.",
+        name: "Rank Booster",
+        price: "₹14,999/mo",
+        description: "Aggressive link building and content optimization campaigns.",
         features: [
-          "15 Custom Graphics + 4 Reels / Month",
-          "Custom Reels Scripting",
-          "Daily Posting & Scheduling",
-          "Story Graphics & Interactive polls",
-          "Competitor Audits",
-          "Priority Chat support"
+          "Technical Schema SEO Markup",
+          "5 Quality Domain Backlinks/mo",
+          "30 Target Keyword Trackers",
+          "Competitor Keyword Auditing",
+          "Monthly Progress & Traffic Reports",
+          "Content Editing Suggestions"
         ],
         popular: true
       },
       {
-        name: "Social Dominance",
-        price: "₹11999+",
-        description: "Omnichannel community building and multi-platform content curation.",
+        name: "Market Leader",
+        price: "₹24,999/mo",
+        description: "Full-scale SEO management with continuous content generation.",
         features: [
-          "30 Custom Posts + 8 Reels / Month",
-          "Full Video/Reel Editing & Music mixing",
-          "Cross-Posting (Insta, FB, LinkedIn, Twitter)",
-          "Direct Message & Comments replying",
-          "Influencer Campaign outreach assistance",
-          "Bi-weekly Strategy video syncs"
+          "Full SEO Content Retainer",
+          "15 High-DA Backlinks/mo",
+          "60 Target Keyword Trackers",
+          "Custom SEO Schema Integrations",
+          "Continuous Speed Optimization reviews",
+          "Dedicated SEO Account Manager"
         ]
       }
     ],
     posters: [
-      { title: "Content Calendar Setup", desc: "30 days of posts organized in advance", bg: "from-red-600 to-neutral-900", tag: "Planning" },
-      { title: "Cohesive Instagram Grid", desc: "Layout templates that look gorgeous", bg: "from-slate-900 to-red-700", tag: "Curation" },
-      { title: "High Retention Reels", desc: "Short video scripts that capture attention", bg: "from-red-500 to-red-800", tag: "Video Content" },
-      { title: "Engagement Boosters", desc: "Stories and Q&As that drive clicks", bg: "from-zinc-800 to-slate-950", tag: "Interactive" },
-      { title: "Hashtag Blueprint", desc: "Find small/medium hashtags that rank", bg: "from-stone-900 to-red-600", tag: "Hashtags" },
-      { title: "Competitor Analysis Map", desc: "Track what graphics work in your niche", bg: "from-red-800 to-neutral-900", tag: "Competitors" }
+      { title: "Organic Scale", desc: "Rank #1 on targeted keywords", bg: "from-red-600 to-red-800", tag: "Search Engine" }
     ],
     faqs: [
-      { q: "Which social networks do you manage?", a: "We manage Instagram, Facebook, LinkedIn, YouTube, Pinterest, and Twitter (X) platforms." },
-      { q: "Do you shoot raw video for Reels?", a: "We edit raw video files sent by your team. For local Kerala / Pattambi clients, offline shoot assistance can be arranged." },
-      { q: "Can I approve posts before they go live?", a: "Yes, we share the entire month's content calendar for your edits and approval before scheduling." },
-      { q: "How do you schedule posts?", a: "We use professional dashboard tools like Meta Business Suite to schedule content at optimal engagement hours." },
-      { q: "How do you increase followers?", a: "We use organic hashtags, reels optimization, shareable infographic templates, and interaction tactics." },
-      { q: "Do you reply to customer comments?", a: "Yes, our higher-tier packages include checking and replying to comments and direct messages based on your FAQs." },
-      { q: "Do you run paid social ads?", a: "This service covers organic management. Paid ads fall under our dynamic Digital Marketing service." },
-      { q: "Can I cancel the plan anytime?", a: "Yes, our plans are monthly retainers with no lock-in contract periods. Cancel with a 7-day notice." },
-      { q: "What tools do you use for graphics?", a: "We design custom layouts using Adobe Illustrator, Photoshop, Figma, and Canva Teams." },
-      { q: "When will I see page growth?", a: "Organic growth is a steady process. Engagement boosts are visible in week 2, while follower increases show in weeks 4-6." }
+      { q: "How long does SEO take to show results?", a: "Typically, organic SEO changes take 3 to 6 months to start moving keyword rankings noticeably on search indexes." },
+      { q: "Do you guarantee #1 ranking on Google?", a: "No ethical agency can guarantee specific positions due to Google algorithm updates, but we use proven white-hat methodologies to rank target pages." },
+      { q: "What is the difference between On-Page and Off-Page SEO?", a: "On-Page refers to changes made directly on your site content, while Off-Page involves acquiring links from other domains to boost authority." }
+    ]
+  },
+  "mobile-app-marketing": {
+    title: "Mobile App Marketing",
+    subtitle: "Increase app installs and user retention with structured App Store Optimization (ASO) and cost-efficient user acquisition.",
+    price: "Starting at ₹11,999",
+    image: "/images/portfolio_healthcare.jpg",
+    about: "Launching an app is only the first step. To succeed, you need steady installs and high retention rates. Dhanya Enterprises designs specialized App Store Optimization (ASO) strategies for iOS App Store and Google Play Store to drive organic visibility, alongside targeted App Install Campaigns on Meta and Google Ads to acquire users at the lowest cost.",
+    whoNeedsIt: [
+      "Mobile App Startups",
+      "SaaS & Software Companies",
+      "Local Business App Owners",
+      "Game Developers"
+    ],
+    benefits: [
+      "Optimized app titles, tags, and screenshots to double conversion rates.",
+      "Lower Cost-Per-Install (CPI) via targeted lookalike campaign funnels.",
+      "In-app event tracking setups to identify bottlenecks and user drops.",
+      "Structured rating and review acquisition campaigns."
+    ],
+    whyUs: "We blend creative ASO graphic assets with data-driven paid advertising to scale app store installations efficiently.",
+    packages: [
+      {
+        name: "Store Optimization",
+        price: "₹11,999",
+        description: "ASO optimization pack to boost organic App Store rankings.",
+        features: [
+          "ASO Keyword Mapping",
+          "5 Sleek Screenshot Designs",
+          "App Store Metadata Setup",
+          "1 App Listing Submission review",
+          "Competitor ASO Analysis"
+        ]
+      },
+      {
+        name: "App Launch Booster",
+        price: "₹24,999",
+        description: "ASO setups combined with targeted paid user acquisition.",
+        features: [
+          "Complete ASO Optimization pack",
+          "Meta/Google Install Ads Setup",
+          "Conversion Pixel API Tracking",
+          "2 Weeks Campaign Management",
+          "Ad creative assets creation",
+          "Weekly Install Analytics reports"
+        ],
+        popular: true
+      },
+      {
+        name: "Enterprise App Scale",
+        price: "₹44,999",
+        description: "Complete growth plan for apps seeking scale and retention.",
+        features: [
+          "Continuous ASO Retainer support",
+          "Google + Meta + Apple Search Ads",
+          "In-App SDK Analytics Integration",
+          "Targeted Retargeting Campaigns",
+          "User retention funnel optimization",
+          "Dedicated UA Growth Manager"
+        ]
+      }
+    ],
+    posters: [
+      { title: "App Scale", desc: "High conversion app store optimizations", bg: "from-red-500 to-red-900", tag: "ASO Strategy" }
+    ],
+    faqs: [
+      { q: "What is ASO?", a: "ASO stands for App Store Optimization, which involves tweaking your store descriptions, title tags, and screenshots to rank higher in store searches." },
+      { q: "How do you track app installations?", a: "We configure Mobile Measurement Partners (MMPs) or Firebase SDKs to accurately attribute installations to campaigns." },
+      { q: "Which platforms do you run ad campaigns on?", a: "We run app promotion campaigns on Google Ads, Meta Ads (Instagram/Facebook), and Apple Search Ads." }
+    ]
+  },
+  "meta-ads": {
+    title: "Meta Ads (Facebook & Instagram Advertising)",
+    subtitle: "Target high-intent customers, create high-converting copy, and optimize ad layouts to scale lead generation.",
+    price: "Starting at ₹9,999/mo",
+    image: "/images/portfolio_real_estate.jpg",
+    about: "Put your brand in front of millions of active users. Dhanya Enterprises structures and manages highly targetable Meta Ads (Facebook & Instagram Ads) customized to drive direct leads, store sales, and visual awareness. We engineer high-converting ad copies, design interactive visual assets, and set up pixel conversion tracking to ensure every rupee spent translates into business growth.",
+    whoNeedsIt: [
+      "D2C Brands & Retailers",
+      "Real Estate Realtors",
+      "Educational Institutes",
+      "Service Providers & Agencies"
+    ],
+    benefits: [
+      "Surgical targeting matching exact customer age, interest, and region.",
+      "Highly-engaging visual creatives optimized for modern mobile feeds.",
+      "Direct leads and sales tracking via Meta Pixel integration.",
+      "Retargeting campaigns to convert previous site visitors."
+    ],
+    whyUs: "We design premium ad creatives and continuously test variables (audience, copy, graphics) to lower your customer acquisition costs.",
+    packages: [
+      {
+        name: "Ad Campaign Setup",
+        price: "₹9,999/mo",
+        description: "Essential setup package for new advertisers on Meta.",
+        features: [
+          "Campaign Structure Setup",
+          "Meta Pixel API Integration",
+          "5 Custom Graphic Ad Creatives",
+          "Target Audience Research",
+          "1 Week Campaign Auditing"
+        ]
+      },
+      {
+        name: "Lead Gen Scale",
+        price: "₹19,999/mo",
+        description: "Ongoing campaign management to generate high volumes of queries.",
+        features: [
+          "Meta Pixel + Conversion API Setup",
+          "12 Custom Graphic Ad Creatives/mo",
+          "Daily Campaign Optimization reviews",
+          "Retargeting & Lookalike Audience mapping",
+          "Ad copywriting and testing",
+          "Weekly Performance Reports"
+        ],
+        popular: true
+      },
+      {
+        name: "Enterprise Growth",
+        price: "₹34,999/mo",
+        description: "Full-scale multi-funnel growth plan for high budget scales.",
+        features: [
+          "Unlimited Active Campaigns",
+          "Video Editing for Ad Reels included",
+          "Sales Lead Funnel Optimization",
+          "Meta CAPI Advanced Integration",
+          "A/B Landing Page testing",
+          "Priority Strategy Consultation"
+        ]
+      }
+    ],
+    posters: [
+      { title: "Meta Growth", desc: "High ROAS lead and sale generation", bg: "from-red-600 to-red-950", tag: "Paid Social" }
+    ],
+    faqs: [
+      { q: "Do you provide the images and videos for the ads?", a: "Yes, our in-house creative design team compiles and designs all image banners and edited video ads." },
+      { q: "What advertising budget is required?", a: "You pay the ad spend directly to Meta. We recommend starting with a minimum of ₹500/day to test audiences effectively." },
+      { q: "How do you track sales from Facebook Ads?", a: "We set up the Meta Pixel and Conversions API on your website to trace user checkout events back to the ads." }
     ]
   },
   "graphic-design": {
     title: "Graphic Design",
-    subtitle: "On-demand premium graphic designs, posters, ads, and brochures for your business marketing.",
-    price: "₹999+",
-    image: "/images/portfolio_healthcare.jpg",
-    about: "Capture your customers' attention with modern visual aesthetics. At Dhanya Enterprises, we design custom flyers, brochures, banners, product packaging, and social media ad creatives that match your brand identity and drive visual curiosity.",
+    subtitle: "Premium visual assets including flyers, brochures, custom business profiles, brochures, and brand catalogs.",
+    price: "Starting at ₹4,999",
+    image: "/images/portfolio_fashion.jpg",
+    about: "High-quality graphics build immediate trust. Dhanya Enterprises designs premium graphics, brochures, catalog folders, and social media flyers that reflect your brand's unique identity. We ensure every canvas aligns with modern typography guidelines, color theories, and clean layout patterns to drive customer action and visual engagement.",
     whoNeedsIt: [
-      "Marketing and Event Coordinators",
-      "E-commerce Retail Outlets",
-      "Corporate HRs (Internal graphics)",
-      "Local Showrooms & Shops"
+      "Corporate Marketing Teams",
+      "Restaurants & Local Cafes",
+      "Event Organizers",
+      "E-commerce Sellers"
     ],
     benefits: [
-      "Bespoke designs constructed from scratch (no overused templates).",
-      "Delivered in print-ready high DPI vector and raster formats.",
-      "Access to premium high-resolution stock graphics library.",
-      "Fast 24-48 hours turnaround time for urgent templates."
+      "Pixel-perfect, high-resolution vector assets ready for print and screen.",
+      "Consistent brand layouts across all print and social banners.",
+      "Fast turnaround times to meet immediate event launch dates.",
+      "Professional typesetting using modern premium font families."
     ],
-    whyUs: "Our design aesthetics are clean, minimal, and premium. We utilize bold typography, correct spacing, and modern color theory to ensure your marketing collateral commands attention.",
+    whyUs: "Our design team has rich experience in color balance, typographic layouts, and brand visual styling to guarantee stunning outputs.",
     packages: [
       {
-        name: "Single Creative",
-        price: "₹999",
-        description: "One custom high-resolution design for digital or print media.",
+        name: "Essential Design",
+        price: "₹4,999",
+        description: "Fast graphic assets package for small social promotions.",
         features: [
-          "1 Custom Graphic Concept",
-          "Digital & Print-Ready format",
-          "2 Revision Cycles",
-          "24-48 Hours Delivery",
-          "Source File included"
+          "5 Custom Social Creatives",
+          "1 Print-Ready Flyer Design",
+          "High-Resolution Export Files",
+          "Source Vector Files included",
+          "3 Review rounds"
         ]
       },
       {
-        name: "Starter Creative Bundle",
-        price: "₹2999",
-        description: "Four custom matching designs for event or campaign promotions.",
+        name: "Professional Branding",
+        price: "₹9,999",
+        description: "Branding collateral upgrade package for growing companies.",
         features: [
-          "4 Custom Graphic Designs",
-          "Consistent layout theme across posts",
-          "4 Revision Cycles",
-          "PNG, PDF, and Vector Source Files",
-          "Priority Delivery schedule"
+          "15 Custom Social Banners",
+          "4-Page Corporate Brochure Layout",
+          "Custom Vector Icon Assets",
+          "Print-Ready Layout Formats",
+          "Unlimited Revision rounds",
+          "Dedicated Graphic Designer"
         ],
         popular: true
       },
       {
-        name: "Monthly Designer Retainer",
-        price: "₹8999+",
-        description: "Your own dedicated graphic designer on demand (up to 15 creatives).",
+        name: "Corporate Retainer",
+        price: "₹19,999/mo",
+        description: "Monthly design partnership for active marketing setups.",
         features: [
-          "Up to 15 Custom Creatives / Month",
-          "Includes flyers, social ads, banners",
-          "Unlimited Revision cycles",
-          "Dedicated designer communication",
-          "Stock photography access",
-          "24h Delivery for urgent edits"
+          "35 Custom Social Creatives/mo",
+          "Full Print Brochure & Banners pack",
+          "Brand Guidelines Alignment setup",
+          "Priority 24-hour turnaround",
+          "Dedicated Account Art Director",
+          "Weekly Creative Sync Calls"
         ]
       }
     ],
     posters: [
-      { title: "Marketing Flyers", desc: "High-impact layouts for printing distribution", bg: "from-red-600 to-neutral-900", tag: "Flyers" },
-      { title: "Event Banners", desc: "Large horizontal displays for booths/stalls", bg: "from-slate-900 to-red-700", tag: "Banners" },
-      { title: "Digital Ad Creatives", desc: "High-click designs for Google/Meta ads", bg: "from-red-500 to-red-800", tag: "Ad Graphics" },
-      { title: "Infographics Curation", desc: "Represent complex data visually and cleanly", bg: "from-zinc-800 to-slate-950", tag: "Data Design" },
-      { title: "Corporate Brochures", desc: "Foldable booklets for sales representatives", bg: "from-stone-900 to-red-600", tag: "Brochures" },
-      { title: "Social Post Templates", desc: "Aesthetic visuals for brand consistency", bg: "from-red-800 to-slate-900", tag: "Templates" }
+      { title: "Visual Balance", desc: "Stunning vector graphics", bg: "from-red-500 to-red-850", tag: "Design Lab" }
     ],
     faqs: [
-      { q: "What source files do you deliver?", a: "We deliver industry-standard vector files (Adobe Illustrator .AI or .EPS) and high DPI .PSD or .Figma files." },
-      { q: "How fast can you deliver a design?", a: "A single poster creative is delivered within 24-48 hours. Retainer bundles are delivered based on content calendar dates." },
-      { q: "Do you design for print?", a: "Yes, we structure layouts in CMYK color profiles with correct bleed lines so you can print instantly." },
-      { q: "Who pays for stock images?", a: "Our packages include access to Shutterstock and Freepik premium databases, so you pay nothing extra." },
-      { q: "Can I request custom illustrations?", a: "We offer vector icon drawings. Complex custom character drawings are priced as custom additions." },
-      { q: "How many changes can I request?", a: "We offer 2-4 revision cycles depending on the package, and unlimited revisions on monthly retainer plans." },
-      { q: "Do you design PowerPoint slides?", a: "Yes, we design premium presentation decks and slide templates matching corporate guidelines." },
-      { q: "How does the retainer plan work?", a: "You pay a monthly fee, and submit design briefs weekly. Your dedicated designer executes them with fast turnaround times." },
-      { q: "Can you match my existing corporate fonts?", a: "Yes, simply send us your typography files or names, and we will build layouts using them." },
-      { q: "Do you write copy for the graphics?", a: "We write short marketing taglines. Long descriptive copywriting is optimized under custom request." }
+      { q: "What vector file formats do you deliver?", a: "We provide designs in EPS, AI, PDF, Figma, SVG, and high-resolution PNG/JPG formats." },
+      { q: "Do you offer physical printing services?", a: "We provide print-ready layouts configured for offset and digital printers, and handle print fulfillment under local request." },
+      { q: "What is your revision turnaround time?", a: "Revision loops are usually completed within 12 to 24 hours depending on complexity." }
+    ]
+  },
+  "video-editing-motion-graphics": {
+    title: "Video Editing & Motion Graphics",
+    subtitle: "Capture eyes with engaging daily Reels, professional video edits, text-animations, and premium branding motion assets.",
+    price: "Starting at ₹7,999",
+    image: "/images/portfolio_restaurant.jpg",
+    about: "Video is the highest-performing content medium online. Dhanya Enterprises produces premium video edits, engaging Instagram Reels, TikTok video layouts, corporate explainers, and slick motion graphics. We compile raw shots, refine audio quality, inject trendy text animations, and add color-grading overlays to construct viral-worthy videos that build audiences.",
+    whoNeedsIt: [
+      "Social Media Creators",
+      "D2C Retail Brands",
+      "Real Estate Developers",
+      "Educational Institutes"
+    ],
+    benefits: [
+      "Engaging sound design, trending music overlays, and subtitles.",
+      "Higher engagement and watch-time metrics on social algorithms.",
+      "Professional motion transitions and dynamic intro graphics.",
+      "Branded logo animation and watermark overlays."
+    ],
+    whyUs: "We analyze trending social media editing structures to design dynamic, fast-paced videos that hook viewers in the first 3 seconds.",
+    packages: [
+      {
+        name: "Reels Booster",
+        price: "₹7,999/mo",
+        description: "Start growing your Instagram with dynamic short videos.",
+        features: [
+          "5 Short Reels (Under 60s)",
+          "Sleek Subtitles & Audio Effects",
+          "Pro Color Grading",
+          "Royalty-free Background Music",
+          "2 Revision rounds"
+        ]
+      },
+      {
+        name: "Content Retainer",
+        price: "₹14,999/mo",
+        description: "Steady stream of reels and video layouts for businesses.",
+        features: [
+          "12 Custom Short Reels/mo",
+          "1 Long Explainer Video (Under 5m)",
+          "Slick Transitions & Text Animations",
+          "Thumbnail Covers included",
+          "Unlimited Revision rounds",
+          "Priority 48-hour delivery"
+        ],
+        popular: true
+      },
+      {
+        name: "Enterprise Producer",
+        price: "₹29,999/mo",
+        description: "Complete video production support for digital channels.",
+        features: [
+          "25 Custom Short Reels/mo",
+          "3 Long Corporate Explainer Videos",
+          "Custom Motion Intros & Logo Outros",
+          "Premium Subtitle animations",
+          "Weekly Script-sync calls",
+          "Priority 24-hour turnaround"
+        ]
+      }
+    ],
+    posters: [
+      { title: "Viral Motion", desc: "Trendy subtitles and motion effects", bg: "from-red-600 to-red-900", tag: "Post Production" }
+    ],
+    faqs: [
+      { q: "Do you write scripts for the videos?", a: "Yes, we draft short hook scripts and conceptual concepts for marketing Reels." },
+      { q: "Can I send raw footage recorded from my smartphone?", a: "Yes, smartphones shoot excellent high-res video. We polish smartphone footage into professional content." },
+      { q: "Is royalty-free music included?", a: "Yes, we use verified licensing pipelines to guarantee your videos won't suffer copyright mute flags." }
+    ]
+  },
+  "lead-generation-campaigns": {
+    title: "Lead Generation Campaigns",
+    subtitle: "Scale B2B or B2C queries with advanced landing page forms, CRM automation, and targeted sales funnels.",
+    price: "Starting at ₹14,999/mo",
+    image: "/images/hero_team.jpg",
+    about: "Stop waiting for customers; actively acquire them. Dhanya Enterprises creates custom Lead Generation Campaigns utilizing multi-channel funnels (Google Search, Meta Ads, Landing Pages). We build highly converting landing pages, set up lead capture forms, configure automated email notifications, and connect lead pipes directly to your CRM, ensuring your sales team gets a consistent stream of qualified, hot leads.",
+    whoNeedsIt: [
+      "Real Estate Agencies",
+      "B2B SaaS Businesses",
+      "Insurance & Financial Advisors",
+      "Educational Centers"
+    ],
+    benefits: [
+      "Steady flow of highly qualified buyers interested in your services.",
+      "Automated email/SMS follow-up alerts to maximize contact rates.",
+      "Optimized high-conversion landing page layouts.",
+      "Measurable Cost-Per-Lead (CPL) statistics for clear ROI mapping."
+    ],
+    whyUs: "We build the entire funnel—from the visual ad to the lead capture page and autoresponder—so you only focus on closing deals.",
+    packages: [
+      {
+        name: "Setup & Launch",
+        price: "₹14,999",
+        description: "Complete funnel architecture build and initial campaign launch.",
+        features: [
+          "1 High-Converting Landing Page",
+          "Meta/Google Ad Campaign Setup",
+          "Secure CRM Integration",
+          "Form Setup & Autoresponder Email",
+          "1 Week Campaign Monitoring"
+        ]
+      },
+      {
+        name: "Lead Engine",
+        price: "₹24,999/mo",
+        description: "Continuous optimization and A/B testing to lower lead costs.",
+        features: [
+          "2 Custom Landing Pages Built",
+          "Google Search + Meta Ad Campaigns",
+          "A/B Conversion Testing",
+          "Lead Quality Scoring Automations",
+          "10 Custom Ad Creatives/mo",
+          "Weekly Lead Count Reports"
+        ],
+        popular: true
+      },
+      {
+        name: "Enterprise Pipeline",
+        price: "₹44,999/mo",
+        description: "Aggressive multi-channel lead acquisition and email nurturing.",
+        features: [
+          "Unlimited Lead Funnels Built",
+          "All Copywriting Retainer tasks",
+          "5-Step Automated Email Drip setups",
+          "Meta Pixel + Google Conversion setups",
+          "Weekly Funnel Optimization reviews",
+          "Dedicated Funnel Manager"
+        ]
+      }
+    ],
+    posters: [
+      { title: "Query Stream", desc: "Consistent hot leads routed to your sales desk", bg: "from-red-500 to-red-900", tag: "Lead Tech" }
+    ],
+    faqs: [
+      { q: "What is a dynamic landing page?", a: "It is a highly optimized single-page website focused entirely on getting a visitor to fill out a contact form." },
+      { q: "Can leads be routed directly to my sales CRM?", a: "Yes, we connect form endpoints to systems like HubSpot, Zoho, Google Sheets, or Zapier APIs." },
+      { q: "What counts as a 'qualified' lead?", a: "We customize form fields (budget, business size, needs) to filter out low-intent queries." }
+    ]
+  },
+  "local-seo-google-business-profile": {
+    title: "Local SEO & Google Business Profile Optimization",
+    subtitle: "Dominate local maps searches in your region and attract local walking customers directly to your storefront.",
+    price: "Starting at ₹5,999/mo",
+    image: "/images/portfolio_real_estate.jpg",
+    about: "When locals search for products or services near them, your business should be the first choice. At Dhanya Enterprises, we specialize in local SEO and Google Business Profile (GBP / Google My Business) optimization. We manage local listings, optimize profile descriptions, set up geo-tagged images, manage local review strategies, and boost local map visibility to direct maps searches straight to your shop doorstep.",
+    whoNeedsIt: [
+      "Retail Storefronts & Showrooms",
+      "Local Service Providers (Plumbers, Builders)",
+      "Clinics, Salons & Restaurants",
+      "Offices serving specific localities"
+    ],
+    benefits: [
+      "Immediate map discovery on local searches like 'near me'.",
+      "Increased local store walk-ins and direct phone inquiries.",
+      "Higher review count and local buyer trust.",
+      "Cost-efficient way to capture local customer intent."
+    ],
+    whyUs: "We are local search marketing specialists. We optimize your profiles based on Google's map rank algorithms to rank you in the top local 3-pack.",
+    packages: [
+      {
+        name: "Basic Profile Setup",
+        price: "₹5,999",
+        description: "Google verification and keyword map structure setup.",
+        features: [
+          "Google Business verification help",
+          "Keyword Listing Optimization",
+          "15 Geo-tagged Photo Uploads",
+          "10 Local Citation Site Listings",
+          "Basic Review QR Code flyer"
+        ]
+      },
+      {
+        name: "Local Domination",
+        price: "₹11,999/mo",
+        description: "Continuous listings maintenance to stay ahead of local rivals.",
+        features: [
+          "Active GBP Dashboard management",
+          "30 Local Citation Site Listings/mo",
+          "Structured Local Review Strategy",
+          "GBP Posts & FAQ setup monthly",
+          "Local map rank audit reports",
+          "Spam business listing cleanup"
+        ],
+        popular: true
+      },
+      {
+        name: "Multi-Location Scale",
+        price: "₹21,999/mo",
+        description: "Map rank domination for franchises with multiple branches.",
+        features: [
+          "Up to 3 Profiles Managed",
+          "Local backlink acquisitions",
+          "Local Schema SEO markup scripts",
+          "Integrated map directions analytics",
+          "Review auto-reply dashboard setup",
+          "Priority account support"
+        ]
+      }
+    ],
+    posters: [
+      { title: "Map Rank", desc: "Top local 3-pack map positioning", bg: "from-red-600 to-red-850", tag: "Local Search" }
+    ],
+    faqs: [
+      { q: "What is the Google local 3-pack?", a: "It is the set of three local business map listings that Google highlights right below search queries." },
+      { q: "Do reviews affect map search rankings?", a: "Yes, the velocity, rating score, and keyword contents of Google reviews significantly affect map rankings." },
+      { q: "How do you handle listing suspensions?", a: "We guide you through compliance audits to submit clean appeals to Google's support dashboard." }
+    ]
+  },
+  "marketing-strategy-consulting": {
+    title: "Marketing Strategy & Consulting",
+    subtitle: "Interactive consulting workshops, competitive research, and long-term scaling strategy for startups.",
+    price: "Starting at ₹14,999",
+    image: "/images/hero_team.jpg",
+    about: "A campaign without a strategy is a waste of budget. Dhanya Enterprises offers professional marketing strategy consulting. We run interactive workshops for business founders, analyze competitor campaigns, define target buyer personas, select optimal marketing channels, and outline a detailed 12-month scaling plan to help you grow your brand predictably and avoid costly mistakes.",
+    whoNeedsIt: [
+      "Startup Founders & Business Owners",
+      "Corporate Sales Directors",
+      "Traditional Brands moving online",
+      "Product Launch Teams"
+    ],
+    benefits: [
+      "Clear step-by-step roadmap to align team and spend budget.",
+      "Deep competitor campaign analysis and keyword positioning maps.",
+      "Identified high-ROI channels to focus campaigns.",
+      "Optimized marketing messaging to stand out from competitors."
+    ],
+    whyUs: "Led by certified marketing consultants with deep industry experience across B2B and B2C markets. We deliver practical roadmaps, not bloated reports.",
+    packages: [
+      {
+        name: "Strategy Session",
+        price: "₹14,999",
+        description: "In-depth one-on-one consulting call to scope marketing strategies.",
+        features: [
+          "2-Hour Dedicated Strategy Call",
+          "Competitor Campaign Auditing",
+          "Growth Channel mapping recommendations",
+          "1-Page Blueprint Growth Guide",
+          "1 Week follow-up email support"
+        ]
+      },
+      {
+        name: "Core Scaling Roadmap",
+        price: "₹29,999",
+        description: "Full research dossier and action plan for business growth.",
+        features: [
+          "Two 2-Hour Strategy Sessions",
+          "Deep Competitor Campaign Analysis",
+          "Detailed 12-Month Campaign Roadmap",
+          "Target Persona Research Dossier",
+          "Standard Operating Procedures (SOPs)",
+          "30 Days of Slack/WhatsApp support"
+        ],
+        popular: true
+      },
+      {
+        name: "Full Advisory Retainer",
+        price: "₹54,999/mo",
+        description: "Ongoing executive marketing advisor retainer for startups.",
+        features: [
+          "Weekly strategy sync calls (60m)",
+          "Marketing Team Training Session",
+          "Campaign setup auditing reviews",
+          "Conversion Funnel UX optimization",
+          "Continuous messaging adjustments",
+          "Priority 24/7 text support access"
+        ]
+      }
+    ],
+    posters: [
+      { title: "Growth Blueprints", desc: "Actionable 12-month scaling roadmaps", bg: "from-red-500 to-red-900", tag: "Consultancy" }
+    ],
+    faqs: [
+      { q: "What does the 12-month strategy report contain?", a: "It maps target audiences, suggests exact ad channels, estimates costs, designs copywriting angles, and sets conversion metrics." },
+      { q: "Do you execute the campaigns as well?", a: "Yes, we offer execution retainers (SEO, Ads, Dev) and consult with your internal teams if you have them." },
+      { q: "How do you analyze competitor campaigns?", a: "We track active competitor ad copies, search volumes, and backlink strategies using premium analysis suites." }
+    ]
+  },
+  "marketplace-marketing": {
+    title: "Marketplace Marketing (Amazon, Flipkart, etc.)",
+    subtitle: "Optimize product listings, run cost-efficient marketplace Ads, and design A+ content to boost online store sales.",
+    price: "Starting at ₹12,999/mo",
+    image: "/images/portfolio_ecommerce.jpg",
+    about: "Scale your e-commerce brand inside the world's largest shopping search engines. Dhanya Enterprises optimizes and manages your presence on marketplace portals like Amazon, Flipkart, Myntra, and others. We run marketplace keyword listing optimizations, design premium A+ content (EBC layouts), set up sponsored product ads, and manage feedback loops to maximize product review scores.",
+    whoNeedsIt: [
+      "E-commerce Brand Sellers",
+      "Manufacturers & Distributors",
+      "Local Product Creators",
+      "D2C Startup Brands"
+    ],
+    benefits: [
+      "Higher search rankings inside Amazon & Flipkart search boxes.",
+      "Lower ACoS (Advertising Cost of Sales) via targeted sponsored ads.",
+      "Higher conversion rates using A+ graphic descriptions.",
+      "Optimized review strategies to boost product scores."
+    ],
+    whyUs: "We understand e-commerce algorithms. Our team blends catalog design, keyword copywriting, and advertising to scale your online marketplace sales.",
+    packages: [
+      {
+        name: "Catalog Launch",
+        price: "₹12,999",
+        description: "SEO optimization setup for new products on marketplaces.",
+        features: [
+          "Up to 10 Product Listing builds",
+          "SEO Title & Bullet copywriting",
+          "Backend Search Terms keyword list",
+          "Image graphic sizing checks",
+          "Initial Store setup validation"
+        ]
+      },
+      {
+        name: "Growth Retainer",
+        price: "₹24,999/mo",
+        description: "Active advertising and listing enhancements to multiply sales.",
+        features: [
+          "Ongoing Listing Optimization",
+          "5 Custom A+ Content (EBC) layouts",
+          "Sponsored Ads Campaign setup",
+          "ACoS Optimization reviews",
+          "Competitor listing monitoring",
+          "Monthly Ads ROI reports"
+        ],
+        popular: true
+      },
+      {
+        name: "Brand Leader",
+        price: "₹44,999/mo",
+        description: "Complete growth plan to dominate marketplace search grids.",
+        features: [
+          "Unlimited Listing Management",
+          "Premium Brand Store Design built",
+          "Multi-portal Ads (Amazon + Flipkart)",
+          "ACoS optimization & negative keywords",
+          "Feedback loop review acquisition strategy",
+          "Priority catalog support"
+        ]
+      }
+    ],
+    posters: [
+      { title: "Marketplace Ads", desc: "Lower ACoS and higher product rankings", bg: "from-red-600 to-red-950", tag: "Marketplace Engine" }
+    ],
+    faqs: [
+      { q: "What is A+ Content or EBC?", a: "A+ Content (Enhanced Brand Content) allows brand registry sellers to add rich images, text grids, and tables to product pages." },
+      { q: "What is a good ACoS target?", a: "ACoS varies by category, but we aim to achieve a target of 15% to 25% to maximize store profit margins." },
+      { q: "Do you manage marketplace logistics?", a: "We optimize listing pages and ads, while you handle product inventory, warehousing, and parcel shipping (FBA/FBM)." }
     ]
   }
 };
@@ -609,8 +801,8 @@ export default function ServicePage({ params }: { params: Promise<{ id: string }
   const resolvedParams = use(params);
   const id = resolvedParams.id;
 
-  // Retrieve service data, fallback to digital business card if invalid slug
-  const service = servicesData[id] || servicesData["digital-business-card"];
+  // Retrieve service data, fallback to website-design-development if invalid slug
+  const service = servicesData[id] || servicesData["website-design-development"];
 
   // Accordion active index state
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
@@ -759,102 +951,63 @@ export default function ServicePage({ params }: { params: Promise<{ id: string }
               {/* Benefits */}
               <div className="bg-white border border-border-light rounded-[18px] p-6 shadow-sm">
                 <h4 className="font-heading font-bold text-base text-dark mb-4 uppercase tracking-wider">
-                  Key Benefits & Outcomes
+                  Key Benefits
                 </h4>
                 <ul className="flex flex-col gap-4">
-                  {service.benefits.map((item, idx) => (
-                    <li key={idx} className="flex gap-3.5 items-start">
-                      <div className="w-6 h-6 rounded-full bg-green-500/10 text-green-600 flex items-center justify-center font-bold text-xs flex-shrink-0 mt-0.5">✔</div>
-                      <p className="font-sans text-sm text-text-secondary leading-normal">{item}</p>
+                  {service.benefits.map((benefit, idx) => (
+                    <li key={idx} className="flex gap-3 items-start font-sans text-sm text-text-secondary leading-relaxed">
+                      <Check size={16} className="text-primary flex-shrink-0 mt-1" />
+                      <span>{benefit}</span>
                     </li>
                   ))}
                 </ul>
-              </div>
-
-              {/* Why Choose Dhanya Enterprises for this */}
-              <div className="bg-primary/5 border border-primary/10 rounded-[18px] p-6">
-                <h4 className="font-heading font-bold text-base text-primary mb-3 uppercase tracking-wider">
-                  Why Choose Dhanya Enterprises?
-                </h4>
-                <p className="font-sans text-sm text-text-secondary leading-relaxed">
-                  {service.whyUs}
-                </p>
               </div>
             </motion.div>
 
           </div>
         </section>
 
-        {/* Poster Gallery Section */}
-        <section className="py-24 bg-[#F8F8F8] relative">
-          <div className="max-w-7xl mx-auto px-6 md:px-12">
-            
-            {/* Header */}
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="font-sans font-semibold text-xs tracking-wider uppercase text-primary mb-2.5 block">
-                Portfolio Showcase
-              </span>
-              <h2 className="font-heading font-black text-2xl md:text-3xl lg:text-4xl text-dark tracking-tight mb-4">
-                Promotional Poster Gallery
-              </h2>
-              <p className="font-sans text-base text-text-secondary">
-                Explore real marketing and design layouts crafted by our agency designers. Click to preview in fullscreen.
-              </p>
-            </div>
+        {/* Visual Showcase (Posters Gallery if any exist) */}
+        {service.posters.length > 0 && (
+          <section className="py-24 bg-[#F8F8F8] relative">
+            <div className="max-w-7xl mx-auto px-6 md:px-12">
+              
+              {/* Header */}
+              <div className="text-center max-w-3xl mx-auto mb-16">
+                <span className="font-sans font-semibold text-xs tracking-wider uppercase text-primary mb-2.5 block">
+                  Creative Portfolio
+                </span>
+                <h2 className="font-heading font-black text-2xl md:text-3xl lg:text-4xl text-dark tracking-tight mb-4">
+                  Layout & Ad Demonstrations
+                </h2>
+                <p className="font-sans text-base text-text-secondary">
+                  Take a look at sample graphic models, visual structures, and layouts designed by our production lab.
+                </p>
+              </div>
 
-            {/* Poster Gallery Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {service.posters.map((poster, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ y: -6 }}
-                  onClick={() => setLightboxIndex(index)}
-                  className="bg-white rounded-[18px] overflow-hidden border border-border-light shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer relative group flex flex-col justify-between"
-                >
-                  {/* Styled Mock Poster Graphic */}
-                  <div className={`relative w-full aspect-[4/5] bg-gradient-to-br ${poster.bg} p-8 flex flex-col justify-between text-white overflow-hidden`}>
-                    {/* Corner decorative circles */}
-                    <div className="absolute -top-10 -right-10 w-32 h-32 bg-white/5 rounded-full blur-xl group-hover:scale-110 transition-transform" />
-                    <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-white/5 rounded-full blur-2xl pointer-events-none" />
-                    
-                    {/* Badge */}
-                    <span className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-sans font-bold text-[10px] uppercase tracking-widest px-3 py-1.5 rounded-full w-fit">
+              {/* Gallery Grid */}
+              <div className="flex flex-wrap justify-center gap-8">
+                {service.posters.map((poster, index) => (
+                  <motion.div
+                    key={index}
+                    whileHover={{ scale: 1.02 }}
+                    onClick={() => setLightboxIndex(index)}
+                    className={`relative w-full max-w-[280px] aspect-[4/5] bg-gradient-to-br ${poster.bg} rounded-2xl p-6 text-white flex flex-col justify-between shadow-lg cursor-pointer group overflow-hidden`}
+                  >
+                    <span className="bg-white/20 border border-white/25 text-white font-sans font-bold text-[9px] uppercase tracking-widest px-3.5 py-1.5 rounded-full w-fit">
                       {poster.tag}
                     </span>
-
-                    {/* Bold Typography */}
-                    <div className="flex flex-col gap-3 relative z-10">
-                      <h4 className="font-heading font-black text-2xl md:text-3xl leading-snug tracking-tight">
-                        {poster.title}
-                      </h4>
-                      <p className="font-sans text-xs text-white/80 font-medium">
-                        {poster.desc}
-                      </p>
+                    <div>
+                      <h4 className="font-heading font-bold text-lg text-white mb-1 group-hover:text-red-200 transition-colors">{poster.title}</h4>
+                      <p className="font-sans text-[11px] text-text-secondary">{poster.tag}</p>
                     </div>
+                  </motion.div>
+                ))}
+              </div>
 
-                    {/* Logo mock corner */}
-                    <div className="flex items-center gap-1.5 opacity-60 self-end mt-4">
-                      <span className="w-2.5 h-2.5 rounded-full bg-white" />
-                      <span className="font-heading font-black text-[10px] tracking-widest">DHANYA</span>
-                    </div>
-
-                    {/* Lightbox Trigger hover overlay */}
-                    <div className="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <span className="bg-white text-dark font-sans font-bold text-xs px-4 py-2.5 rounded-full shadow-lg">Preview Poster</span>
-                    </div>
-                  </div>
-                  
-                  {/* Poster Meta */}
-                  <div className="p-4 bg-white border-t border-border-light">
-                    <h5 className="font-heading font-bold text-sm text-dark mb-0.5">{poster.title}</h5>
-                    <p className="font-sans text-[11px] text-text-secondary">{poster.tag}</p>
-                  </div>
-                </motion.div>
-              ))}
             </div>
-
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* Packages Section */}
         <section className="py-24 bg-white relative">
@@ -1018,7 +1171,7 @@ export default function ServicePage({ params }: { params: Promise<{ id: string }
           </div>
         </section>
 
-        {/* Accordion FAQ Section (10 questions) */}
+        {/* Accordion FAQ Section */}
         <section id="faq" className="py-24 bg-[#F8F8F8] relative">
           <div className="max-w-4xl mx-auto px-6">
             
@@ -1208,32 +1361,32 @@ export default function ServicePage({ params }: { params: Promise<{ id: string }
                         href="https://wa.me/919961992772?text=Hello%20Dhanya%20Enterprises,%20I%20found%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20services.%20Please%20contact%20me."
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-white border border-[#25D366] text-[#25D366] hover:bg-[#25D366]/5 font-sans font-bold text-sm py-4 rounded-xl transition-all duration-300 text-center flex items-center justify-center gap-2 transform hover:-translate-y-0.5 cursor-pointer"
+                        className="bg-[#25D366] hover:bg-[#20BA56] text-white font-sans font-bold text-sm py-4 rounded-xl transition-all duration-300 shadow-md flex items-center justify-center gap-2 cursor-pointer"
                       >
-                        Book Consultation (WhatsApp)
+                        WhatsApp Direct
                       </a>
                     </div>
                   </motion.form>
                 ) : (
                   <motion.div
-                    key="success"
+                    key="consult-success"
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.4 }}
-                    className="flex flex-col items-center justify-center text-center py-12 gap-4"
+                    className="flex flex-col items-center justify-center text-center py-8 gap-3"
                   >
-                    <div className="w-16 h-16 rounded-full bg-green-100 text-green-600 flex items-center justify-center shadow-inner">
-                      ✔
+                    <div className="w-14 h-14 rounded-full bg-green-100 text-green-600 flex items-center justify-center">
+                      <Check size={28} />
                     </div>
-                    <h4 className="font-heading font-bold text-2xl text-dark">Request Sent!</h4>
-                    <p className="font-sans text-sm text-text-secondary max-w-sm">
+                    <h4 className="font-heading font-bold text-xl text-dark">Consultation Requested!</h4>
+                    <p className="font-sans text-xs md:text-sm text-text-secondary max-w-sm">
                       Thank you for contacting Dhanya Enterprises. Our service specialists will call you back within 24 hours.
                     </p>
                     <button
                       onClick={() => setSubmitSuccess(false)}
-                      className="text-primary hover:text-primary-hover font-sans font-semibold text-sm mt-4 underline focus:outline-none cursor-pointer"
+                      className="text-primary hover:text-primary-hover font-sans font-semibold text-xs mt-3 underline"
                     >
-                      Submit another query
+                      Send another request
                     </button>
                   </motion.div>
                 )}

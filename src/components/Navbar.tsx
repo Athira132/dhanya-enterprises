@@ -6,22 +6,17 @@ import {
   Menu, 
   X, 
   ChevronDown, 
-  Megaphone, 
-  Share2, 
-  Search, 
-  Target, 
-  FileText, 
-  Mail, 
-  Palette, 
   Code, 
   ShoppingBag, 
+  Search, 
+  Smartphone, 
+  Megaphone, 
+  Palette, 
   Video, 
-  MessageSquare, 
-  ShieldCheck, 
   Users, 
-  Briefcase, 
-  Printer, 
-  Layers 
+  MapPin, 
+  TrendingUp, 
+  Globe 
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -68,24 +63,17 @@ export default function Navbar() {
   ];
 
   const servicesList = [
-    { name: "Digital Marketing", href: "/services/digital-marketing", icon: Megaphone },
-    { name: "Social Media Marketing (SMM)", href: "/services/social-media-management", icon: Share2 },
-    { name: "Search Engine Optimization (SEO)", href: "/services/digital-marketing", icon: Search },
-    { name: "Google Ads (PPC)", href: "/services/digital-marketing", icon: Target },
-    { name: "Meta Ads (Facebook & Instagram Ads)", href: "/services/digital-marketing", icon: Target },
-    { name: "Content Marketing", href: "/services/digital-marketing", icon: FileText },
-    { name: "Email Marketing", href: "/services/digital-marketing", icon: Mail },
-    { name: "Branding & Graphic Design", href: "/services/logo-branding", icon: Palette },
-    { name: "Website Design & Development", href: "/services/website-development", icon: Code },
-    { name: "E-commerce Website Development", href: "/services/website-development", icon: ShoppingBag },
-    { name: "Video Editing & Motion Graphics", href: "/services/graphic-design", icon: Video },
-    { name: "Search Engine Marketing (SEM)", href: "/services/digital-marketing", icon: Search },
-    { name: "WhatsApp Marketing", href: "/services/digital-marketing", icon: MessageSquare },
-    { name: "Online Reputation Management (ORM)", href: "/services/digital-marketing", icon: ShieldCheck },
-    { name: "Lead Generation", href: "/services/digital-marketing", icon: Users },
-    { name: "Business Consulting", href: "/services/sales-marketing-training", icon: Briefcase },
-    { name: "Printing Services", href: "/services/logo-branding", icon: Printer },
-    { name: "Flex & Sign Board Works", href: "/services/logo-branding", icon: Layers },
+    { name: "Website Design & Development", href: "/services/website-design-development", icon: Code },
+    { name: "E-commerce Website Development", href: "/services/ecommerce-website-development", icon: ShoppingBag },
+    { name: "Search Engine Optimization (SEO)", href: "/services/seo", icon: Search },
+    { name: "Mobile App Marketing", href: "/services/mobile-app-marketing", icon: Smartphone },
+    { name: "Meta Ads (Facebook & Instagram Advertising)", href: "/services/meta-ads", icon: Megaphone },
+    { name: "Graphic Design", href: "/services/graphic-design", icon: Palette },
+    { name: "Video Editing & Motion Graphics", href: "/services/video-editing-motion-graphics", icon: Video },
+    { name: "Lead Generation Campaigns", href: "/services/lead-generation-campaigns", icon: Users },
+    { name: "Local SEO & Google Business Profile Optimization", href: "/services/local-seo-google-business-profile", icon: MapPin },
+    { name: "Marketing Strategy & Consulting", href: "/services/marketing-strategy-consulting", icon: TrendingUp },
+    { name: "Marketplace Marketing (Amazon, Flipkart, etc.)", href: "/services/marketplace-marketing", icon: Globe },
   ];
 
   return (
@@ -160,7 +148,7 @@ export default function Navbar() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: 10 }}
                             transition={{ duration: 0.25, ease: "easeOut" }}
-                            className="absolute left-1/2 -translate-x-1/2 mt-3 w-[300px] max-h-[380px] overflow-y-auto bg-white border border-border-light rounded-xl shadow-xl z-50 p-2 scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-transparent flex flex-col gap-0.5"
+                            className="absolute left-1/2 -translate-x-1/2 mt-3 w-[320px] max-h-[420px] overflow-y-auto bg-white border border-border-light rounded-xl shadow-xl z-50 p-2.5 scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-transparent flex flex-col gap-0.5"
                           >
                             {servicesList.map((service) => {
                               const IconComponent = service.icon;
@@ -251,7 +239,7 @@ export default function Navbar() {
                           animate={{ height: "auto", opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.3, ease: "easeInOut" }}
-                          className="overflow-hidden flex flex-col gap-0.5 pl-4 pb-2 max-h-[250px] overflow-y-auto scrollbar-none"
+                          className="overflow-hidden flex flex-col gap-0.5 pl-4 pb-2 max-h-[300px] overflow-y-auto scrollbar-none"
                         >
                           {servicesList.map((service) => {
                             const IconComponent = service.icon;

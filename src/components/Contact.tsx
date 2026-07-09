@@ -10,12 +10,13 @@ export default function Contact() {
     email: "",
     phone: "",
     businessName: "",
+    service: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -33,6 +34,7 @@ export default function Contact() {
         email: "",
         phone: "",
         businessName: "",
+        service: "",
         message: "",
       });
     }, 1500);
@@ -131,6 +133,33 @@ export default function Contact() {
                       placeholder="Your Company Name"
                     />
                   </div>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="service" className="font-sans text-xs font-semibold text-text-secondary">
+                    Service Required
+                  </label>
+                  <select
+                    id="service"
+                    name="service"
+                    required
+                    value={formData.service}
+                    onChange={handleInputChange}
+                    className="font-sans text-sm border border-border-light rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all bg-[#FAFAFA]"
+                  >
+                    <option value="" disabled>Select a Service</option>
+                    <option value="Website Design & Development">Website Design & Development</option>
+                    <option value="E-commerce Website Development">E-commerce Website Development</option>
+                    <option value="Search Engine Optimization (SEO)">Search Engine Optimization (SEO)</option>
+                    <option value="Mobile App Marketing">Mobile App Marketing</option>
+                    <option value="Meta Ads (Facebook & Instagram Advertising)">Meta Ads (Facebook & Instagram Advertising)</option>
+                    <option value="Graphic Design">Graphic Design</option>
+                    <option value="Video Editing & Motion Graphics">Video Editing & Motion Graphics</option>
+                    <option value="Lead Generation Campaigns">Lead Generation Campaigns</option>
+                    <option value="Local SEO & Google Business Profile Optimization">Local SEO & Google Business Profile Optimization</option>
+                    <option value="Marketing Strategy & Consulting">Marketing Strategy & Consulting</option>
+                    <option value="Marketplace Marketing (Amazon, Flipkart, etc.)">Marketplace Marketing (Amazon, Flipkart, etc.)</option>
+                  </select>
                 </div>
 
                 <div className="flex flex-col gap-2">

@@ -16,13 +16,17 @@ export default function Footer() {
   ];
 
   const services = [
-    { name: "Digital Business Card", href: "/services/digital-business-card" },
-    { name: "Website Development", href: "/services/website-development" },
-    { name: "Digital Marketing", href: "/services/digital-marketing" },
-    { name: "Sales & Marketing Training", href: "/services/sales-marketing-training" },
-    { name: "Logo & Branding", href: "/services/logo-branding" },
-    { name: "Social Media Management", href: "/services/social-media-management" },
+    { name: "Website Design & Development", href: "/services/website-design-development" },
+    { name: "E-commerce Website Development", href: "/services/ecommerce-website-development" },
+    { name: "Search Engine Optimization (SEO)", href: "/services/seo" },
+    { name: "Mobile App Marketing", href: "/services/mobile-app-marketing" },
+    { name: "Meta Ads (Facebook & Instagram Advertising)", href: "/services/meta-ads" },
     { name: "Graphic Design", href: "/services/graphic-design" },
+    { name: "Video Editing & Motion Graphics", href: "/services/video-editing-motion-graphics" },
+    { name: "Lead Generation Campaigns", href: "/services/lead-generation-campaigns" },
+    { name: "Local SEO & Google Business Profile Optimization", href: "/services/local-seo-google-business-profile" },
+    { name: "Marketing Strategy & Consulting", href: "/services/marketing-strategy-consulting" },
+    { name: "Marketplace Marketing (Amazon, Flipkart, etc.)", href: "/services/marketplace-marketing" },
   ];
 
   return (
