@@ -97,7 +97,7 @@ export default function RootLayout({
                   "@id": "https://dhanya-enterprises.vercel.app/#organization",
                   "name": "Dhanya Enterprises",
                   "url": "https://dhanya-enterprises.vercel.app",
-                  "logo": "https://dhanya-enterprises.vercel.app/images/logo-icon.png",
+                  "logo": "https://dhanya-enterprises.vercel.app/images/logo-new.png",
                   "sameAs": [
                     "https://www.facebook.com/dhanyaenterprisesptb",
                     "https://www.instagram.com/dhanyaenterprisesptb/",

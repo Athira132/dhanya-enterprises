@@ -82,7 +82,7 @@ export default function Hero() {
           {/* Main Hero Image Container */}
           <div className="relative w-full max-w-[500px] aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
             <Image
-              src="/images/hero_team.jpg"
+              src="/images/hero-new.png"
               alt="Dhanya Enterprises Workspace"
               fill
               priority

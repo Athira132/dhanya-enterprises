@@ -63,7 +63,7 @@ export default function WhyChooseUs() {
         >
           <div className="relative w-full max-w-[500px] aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
             <Image
-              src="/images/workspace.jpg"
+              src="/images/about-new.jpg"
               alt="Dhanya Enterprises Workspace"
               fill
               className="object-cover"

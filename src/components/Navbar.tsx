@@ -116,23 +116,22 @@ export default function Navbar() {
               {/* Logo Icon */}
               <div className="relative w-8 h-8 sm:w-10 sm:h-10 transition-transform duration-300 group-hover:scale-105">
                 <Image
-                  src="/images/logo-icon.png"
+                  src="/images/logo-new.png"
                   alt="Dhanya Enterprises Icon"
                   fill
                   priority
                   className="object-contain"
                 />
               </div>
-              {/* Brand Image */}
-              <div className="relative h-10 sm:h-12 md:h-[54px] lg:h-[60px] aspect-[633/276] transition-transform duration-300 group-hover:scale-105">
-                <Image
-                  src="/images/navbar-logo.png"
-                  alt="Dhanya Enterprises Logo"
-                  fill
-                  priority
-                  className="object-contain"
-                />
-              </div>
+              {/* Brand Text */}
+              <span className={`font-heading font-black text-lg sm:text-xl tracking-wider leading-none flex flex-col group-hover:text-primary transition-colors ${
+                (pathname === "/" || isScrolled) ? "text-[#1F2937]" : "text-white"
+              }`}>
+                DHANYA
+                <span className="text-[9px] font-black tracking-widest text-primary uppercase mt-0.5">
+                  ENTERPRISES
+                </span>
+              </span>
             </Link>
           </div>
 

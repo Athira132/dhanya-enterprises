@@ -37,7 +37,7 @@ export default function Footer() {
         <div className="flex flex-col gap-6">
           <Link href="/#home" className="flex items-center gap-3.5 group">
             <Image
-              src="/images/logo.png"
+              src="/images/logo-new.png"
               alt="Dhanya Enterprises Logo"
               width={60}
               height={60}
