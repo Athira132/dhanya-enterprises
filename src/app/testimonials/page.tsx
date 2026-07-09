@@ -1,50 +1,72 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { motion } from "framer-motion";
 import { Star, ChevronRight, Quote } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+
+import { staticGoogleReviews, GoogleReview } from "@/data/googleReviews";
 
 export default function TestimonialsPage() {
-  const testimonials = [
-    {
-      name: "Santhosh Kumar",
-      role: "CEO, Malabar Retail Store",
-      review: "Dhanya Enterprises transformed our digital footprint. Our store sales increased by 145% in 3 months! Their local SEO strategies and Google Ads setups are extremely effective.",
-      stars: 5,
-      date: "May 2026",
-    },
-    {
-      name: "Athira Sasi",
-      role: "Founder, Vogue Maison",
-      review: "Our training workshop led by Dhanya Enterprises was outstanding. Our sales teams saw instant performance improvements. The branding materials they designed are state-of-the-art.",
-      stars: 5,
-      date: "June 2026",
-    },
-    {
-      name: "Dr. K. Mehta",
-      role: "Director, Heart Care Clinic",
-      review: "Highly professional service. They built a lightning-fast clinic portal and optimized our Google Map listings. We now get steady patient appointments organically.",
-      stars: 5,
-      date: "April 2026",
-    },
-    {
-      name: "Prakash Raj",
-      role: "Marketing Head, Oakridge Groups",
-      review: "We ran Facebook and Instagram lead campaigns with them and collected over 60 high-intent real estate buyers in just 30 days. The conversion tracking was pixel-perfect.",
-      stars: 5,
-      date: "March 2026",
-    },
-    {
-      name: "Deepa Menon",
-      role: "Principal, Aspirant Academy",
-      review: "Their next-gen website design is fast, responsive, and easy to manage. The setup and domain mapping support they provided were exceptional.",
-      stars: 5,
-      date: "January 2026",
-    },
-  ];
+  const [reviews, setReviews] = useState<GoogleReview[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadReviews() {
+      try {
+        const cached = localStorage.getItem("dhanya_google_reviews");
+        if (cached) {
+          setReviews(JSON.parse(cached));
+          setIsLoading(false);
+          
+          fetch("/api/reviews")
+            .then((res) => {
+              if (!res.ok) throw new Error();
+              return res.json();
+            })
+            .then((data: GoogleReview[]) => {
+              if (Array.isArray(data) && data.length > 0) {
+                const filtered = data.filter((r: GoogleReview) => r.rating >= 4);
+                setReviews(filtered);
+                localStorage.setItem("dhanya_google_reviews", JSON.stringify(filtered));
+              }
+            })
+            .catch(() => {});
+          return;
+        }
+
+        const res = await fetch("/api/reviews");
+        if (!res.ok) throw new Error();
+        const data: GoogleReview[] = await res.json();
+        if (Array.isArray(data) && data.length > 0) {
+          const filtered = data.filter((r: GoogleReview) => r.rating >= 4);
+          setReviews(filtered);
+          localStorage.setItem("dhanya_google_reviews", JSON.stringify(filtered));
+        } else {
+          throw new Error();
+        }
+      } catch (err) {
+        console.error("Failed to load Google Reviews, using cached fallback data:", err);
+        setReviews(staticGoogleReviews);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    loadReviews();
+  }, []);
+
+  const getInitials = (name: string) => {
+    return name
+      .split(" ")
+      .map((n) => n[0])
+      .slice(0, 2)
+      .join("")
+      .toUpperCase();
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -73,7 +95,7 @@ export default function TestimonialsPage() {
                 Client Success Stories
               </h1>
               <p className="font-sans text-base sm:text-lg text-gray-400 leading-relaxed">
-                Read direct reviews from retail brands, clinical groups, and startup developers who trust Dhanya Enterprises to manage their web platforms and marketing ads.
+                Trusted by businesses across Kerala and beyond. Read genuine reviews from our Google Business Profile.
               </p>
             </motion.div>
           </div>
@@ -82,51 +104,107 @@ export default function TestimonialsPage() {
         {/* Testimonials List */}
         <section className="py-24 bg-white relative">
           <div className="max-w-5xl mx-auto px-6 relative z-10">
-            <div className="flex flex-col gap-8">
-              {testimonials.map((test, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.6 }}
-                  className="bg-white border border-border-light rounded-[20px] p-8 shadow-sm flex flex-col md:flex-row gap-8 items-start relative hover:border-primary/20 hover:shadow-lg transition-all duration-300 group"
-                >
-                  {/* Decorative big quote icon */}
-                  <div className="absolute right-8 top-8 opacity-[0.03] text-dark select-none pointer-events-none">
-                    <Quote size={120} />
-                  </div>
-
-                  {/* Left Column: Author meta */}
-                  <div className="w-full md:w-1/4 shrink-0 flex flex-col">
-                    <h4 className="font-heading font-bold text-lg text-dark group-hover:text-primary transition-colors leading-snug mb-1">
-                      {test.name}
-                    </h4>
-                    <span className="font-sans text-xs text-text-secondary font-medium block mb-3">
-                      {test.role}
-                    </span>
-                    
-                    {/* Stars */}
-                    <div className="flex gap-1 mb-2">
-                      {[...Array(test.stars)].map((_, i) => (
-                        <Star key={i} size={14} className="fill-yellow-400 text-yellow-400" />
-                      ))}
+            {isLoading ? (
+              <div className="flex flex-col gap-8 animate-pulse">
+                {[1, 2, 3].map((i) => (
+                  <div key={i} className="bg-white border border-border-light rounded-[20px] p-8 h-48 flex flex-col justify-between" />
+                ))}
+              </div>
+            ) : (
+              <div className="flex flex-col gap-8">
+                {reviews.map((test, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.6 }}
+                    className="bg-white border border-border-light rounded-[20px] p-8 shadow-sm flex flex-col md:flex-row gap-8 items-start relative hover:border-primary/20 hover:shadow-lg transition-all duration-300 group"
+                  >
+                    {/* Decorative big quote icon */}
+                    <div className="absolute right-8 top-8 opacity-[0.03] text-dark select-none pointer-events-none">
+                      <Quote size={120} />
                     </div>
-                    <span className="font-sans text-[10px] text-gray-400 uppercase tracking-wider font-semibold">
-                      {test.date}
-                    </span>
-                  </div>
 
-                  {/* Right Column: Review Text */}
-                  <div className="flex-1 font-sans text-base text-text-secondary leading-relaxed pt-1 md:pt-0">
-                    <p className="relative pl-6">
-                      <span className="absolute left-0 top-0 text-primary font-serif text-3xl leading-none">&ldquo;</span>
-                      {test.review}
-                      <span className="text-primary font-serif text-3xl leading-none">&rdquo;</span>
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
+                    {/* Left Column: Author meta */}
+                    <div className="w-full md:w-1/4 shrink-0 flex flex-col">
+                      <div className="flex gap-3 items-center mb-4">
+                        {test.profile_photo_url ? (
+                          <div className="relative w-11 h-11 rounded-full overflow-hidden border border-border-light bg-gray-50">
+                            <Image
+                              src={test.profile_photo_url}
+                              alt={test.author_name}
+                              fill
+                              sizes="44px"
+                              className="object-cover"
+                              unoptimized
+                            />
+                          </div>
+                        ) : (
+                          <div className="w-11 h-11 rounded-full bg-primary/5 text-primary border border-primary/10 flex items-center justify-center font-sans font-bold text-sm shrink-0">
+                            {getInitials(test.author_name)}
+                          </div>
+                        )}
+                        <div className="flex flex-col">
+                          <h4 className="font-heading font-bold text-sm text-dark leading-tight group-hover:text-primary transition-colors">
+                            {test.author_name}
+                          </h4>
+                          <span className="font-sans text-[10px] text-gray-400 font-semibold tracking-wide block mt-0.5">
+                            {test.relative_time_description}
+                          </span>
+                        </div>
+                      </div>
+                      
+                      {/* Stars */}
+                      <div className="flex gap-1 mb-2">
+                        {[...Array(5)].map((_, i) => (
+                          <Star 
+                            key={i} 
+                            size={14} 
+                            className={i < test.rating ? "fill-yellow-400 text-yellow-400" : "text-gray-200"} 
+                          />
+                        ))}
+                      </div>
+                      
+                      <span className="text-[9px] font-sans font-black bg-[#4285F4]/10 text-[#4285F4] px-2 py-0.5 rounded border border-[#4285F4]/10 uppercase tracking-widest leading-none w-fit mt-1">
+                        Google Verified
+                      </span>
+                    </div>
+
+                    {/* Right Column: Review Text */}
+                    <div className="flex-1 font-sans text-base text-text-secondary leading-relaxed pt-1 md:pt-0 flex flex-col justify-between h-full">
+                      <p className="relative pl-6 mb-6">
+                        <span className="absolute left-0 top-0 text-primary font-serif text-3xl leading-none">&ldquo;</span>
+                        {test.text}
+                        <span className="text-primary font-serif text-3xl leading-none">&rdquo;</span>
+                      </p>
+                      
+                      <a
+                        href={test.author_url || "https://share.google/k78HUfvZnF8SRXVq1"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-sans font-bold text-xs text-primary hover:text-primary-hover flex items-center gap-1.5 transition-colors cursor-pointer w-fit"
+                      >
+                        Read Original Review on Google
+                        <span className="text-[10px]">&rarr;</span>
+                      </a>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            )}
+            
+            {/* Call to Action at Bottom */}
+            <div className="text-center mt-16">
+              <Link
+                href="https://share.google/k78HUfvZnF8SRXVq1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-white border border-border-light text-text-dark font-sans font-bold text-sm px-7 py-3.5 rounded-full hover:bg-primary/5 hover:text-primary hover:border-primary/20 transition-all duration-300 shadow-sm cursor-pointer"
+              >
+                <Star className="fill-yellow-400 text-yellow-400" size={16} />
+                View All Google Reviews
+              </Link>
             </div>
           </div>
         </section>
