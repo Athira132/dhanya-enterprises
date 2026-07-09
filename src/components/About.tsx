@@ -32,6 +32,7 @@ export default function About() {
               alt="About Dhanya Enterprises"
               fill
               className="object-cover"
+              style={{ objectPosition: "center 10%" }}
             />
             {/* Visual glow overlay */}
             <div className="absolute inset-0 bg-gradient-to-tr from-primary/15 via-transparent to-transparent" />

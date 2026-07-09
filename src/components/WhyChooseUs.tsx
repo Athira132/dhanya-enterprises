@@ -67,6 +67,7 @@ export default function WhyChooseUs() {
               alt="Dhanya Enterprises Workspace"
               fill
               className="object-cover"
+              style={{ objectPosition: "center 10%" }}
             />
             {/* Visual glow backdrop overlay */}
             <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-transparent" />
