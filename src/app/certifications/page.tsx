@@ -70,7 +70,7 @@ export default function CertificationsPage() {
               className="max-w-3xl"
             >
               <h1 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl leading-tight text-white mb-4 tracking-tight">
-                Our Industry <span className="text-primary">Credentials</span>
+                Our Industry Credentials
               </h1>
               <p className="font-sans text-base sm:text-lg text-gray-400 leading-relaxed">
                 Dhanya Enterprises is a certified, quality-driven digital marketing agency. We maintain verified credentials with major search and social advertising channels to secure high performance.

@@ -87,7 +87,7 @@ export default function ProjectsPage() {
               className="max-w-3xl"
             >
               <h1 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl leading-tight text-white mb-4 tracking-tight">
-                Our Work <span className="text-primary">Portfolio</span>
+                Our Work Portfolio
               </h1>
               <p className="font-sans text-base sm:text-lg text-gray-400 leading-relaxed">
                 Take a look at how we help diverse industries build high-converting e-commerce engines, local maps visibility, and corporate branding identity systems.

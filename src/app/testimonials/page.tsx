@@ -70,7 +70,7 @@ export default function TestimonialsPage() {
               className="max-w-3xl"
             >
               <h1 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl leading-tight text-white mb-4 tracking-tight">
-                Client <span className="text-primary">Success Stories</span>
+                Client Success Stories
               </h1>
               <p className="font-sans text-base sm:text-lg text-gray-400 leading-relaxed">
                 Read direct reviews from retail brands, clinical groups, and startup developers who trust Dhanya Enterprises to manage their web platforms and marketing ads.

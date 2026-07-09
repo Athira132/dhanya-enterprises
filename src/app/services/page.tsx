@@ -113,7 +113,7 @@ export default function ServicesPage() {
               className="max-w-3xl"
             >
               <h1 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl leading-tight text-white mb-4 tracking-tight">
-                Our Digital <span className="text-primary">Services</span>
+                Our Digital Services
               </h1>
               <p className="font-sans text-base sm:text-lg text-gray-400 leading-relaxed">
                 Explore our full suite of professional services engineered to drive traffic, elevate visual brand identities, and convert organic clicks into customers.

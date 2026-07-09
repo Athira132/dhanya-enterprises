@@ -33,7 +33,7 @@ export default function ContactPage() {
               className="max-w-3xl"
             >
               <h1 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl leading-tight text-white mb-4 tracking-tight">
-                Work With <span className="text-primary">Us</span>
+                Work With Us
               </h1>
               <p className="font-sans text-base sm:text-lg text-gray-400 leading-relaxed">
                 Connect with our local digital marketing agency. Submit your business goals below to schedule a free consultation session with our certified experts.

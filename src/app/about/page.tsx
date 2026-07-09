@@ -34,7 +34,7 @@ export default function AboutPage() {
               className="max-w-3xl"
             >
               <h1 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl leading-tight text-white mb-4 tracking-tight">
-                About <span className="text-primary">Dhanya Enterprises</span>
+                About Dhanya Enterprises
               </h1>
               <p className="font-sans text-base sm:text-lg text-gray-400 leading-relaxed">
                 We are a premium digital marketing and software development agency based in Pattambi, Kerala. We scale local and national businesses through data-driven campaigns, high-converting code, and professional graphic guidelines.
