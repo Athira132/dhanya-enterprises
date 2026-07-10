@@ -3,7 +3,7 @@ import CertificationsClient from "./CertificationsClient";
 
 export const metadata: Metadata = {
   title: "Agency Certifications & Credentials | Dhanya Enterprises",
-  description: "Check our verified marketing partnerships. Dhanya Enterprises holds active Google Ads Search/Display certifications, Meta Certified status, and ISO 9001 quality standards.",
+  description: "Check our verified partnerships. Dhanya Enterprises holds active Google Ads Search/Display certifications, Meta Certified status, and ISO standards.",
   alternates: {
     canonical: "/certifications",
   },

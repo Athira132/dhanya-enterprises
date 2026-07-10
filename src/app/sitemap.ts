@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://dhanya-enterprises.vercel.app";
+  const baseUrl = "https://www.dhanyaenterprises.com";
   const routes = [
     "",
     "/about",

@@ -30,9 +30,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.1 }}
-            className="font-heading font-black text-4xl sm:text-5xl lg:text-[60px] xl:text-[68px] leading-[1.05] text-[#1A1A1A] tracking-[-1.5px]"
+            className="font-heading font-black text-[36px] sm:text-[48px] lg:text-[58px] xl:text-[60px] leading-[1.1] text-[#1A1A1A] tracking-[-1px]"
           >
-            Accelerate <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E50914] to-[#FF5A5F] drop-shadow-[0_2px_10px_rgba(229,9,20,0.05)]">Business Growth</span> through <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E50914] to-[#FF5A5F] drop-shadow-[0_2px_10px_rgba(229,9,20,0.05)]">Digital Marketing</span> with <span className="text-[#E30613]">Dhanya Enterprises</span>
+            Accelerate <span className="text-[#E50914]">Business Growth</span> through <span className="text-[#E50914]">Digital Marketing</span> with <span className="text-[#E50914]">Dhanya Enterprises</span>
           </motion.h1>
 
           <motion.p
@@ -90,7 +90,7 @@ export default function Hero() {
 
         {/* Right Side: Image with Floating Animation */}
         <div className="lg:col-span-6 relative flex justify-center lg:justify-end w-full lg:pt-2">
-          {/* Main Hero Image Container (Reduced by 15% to 520px with Floating loops) */}
+          {/* Main Hero Image Container (Increased by 11.5% to 580px with Floating loops) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ 
@@ -104,7 +104,7 @@ export default function Hero() {
               scale: { duration: 0.8, ease: "easeOut" },
               y: { duration: 5.5, repeat: Infinity, ease: "easeInOut" }
             }}
-            className="relative w-full max-w-[430px] lg:max-w-[520px] aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl hover:shadow-primary/10 border-4 border-white transition-shadow duration-300 cursor-pointer"
+            className="relative w-full max-w-[450px] lg:max-w-[580px] aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl hover:shadow-primary/10 border-4 border-white transition-shadow duration-300 cursor-pointer"
           >
             <Image
               src="/images/hero-new.png"

@@ -17,12 +17,12 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://dhanya-enterprises.vercel.app"),
+  metadataBase: new URL("https://www.dhanyaenterprises.com"),
   title: {
     default: "Dhanya Enterprises | Best Digital Marketing Agency in Pattambi, Kerala",
     template: "%s | Dhanya Enterprises Pattambi",
   },
-  description: "Dhanya Enterprises is the premier digital marketing and website development agency in Pattambi, Kerala. We scale local and national brands with high-performance SEO, Google Ads, Meta campaigns, and graphic design solutions.",
+  description: "Dhanya Enterprises is the top digital marketing and web development agency in Pattambi, Kerala. We scale brands with SEO, Ads, and creative solutions.",
   keywords: [
     "Digital Marketing Agency in Pattambi",
     "Best Digital Marketing Company in Kerala",

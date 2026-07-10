@@ -3,7 +3,7 @@ import TestimonialsClient from "./TestimonialsClient";
 
 export const metadata: Metadata = {
   title: "Client Testimonials & Reviews | Dhanya Enterprises",
-  description: "Read verified customer success stories and live Google Reviews. Trusted by local retail shops, start-ups, and professionals across Kerala.",
+  description: "Read verified customer success stories and live Google Reviews. Trusted by local retail shops, startups, and business professionals across Kerala.",
   alternates: {
     canonical: "/testimonials",
   },
