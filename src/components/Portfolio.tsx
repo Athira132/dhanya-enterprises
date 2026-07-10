@@ -1,92 +1,149 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const categories = ["All", "Websites", "Branding", "Marketing", "Social Media"];
+  const categories = [
+    "All",
+    "Business Websites",
+    "Healthcare",
+    "Education",
+    "Interior & Furniture",
+    "Travel & Tourism",
+    "Hospitality",
+    "Wellness",
+  ];
 
   const projects = [
     {
-      title: "Gourmet Garden Restaurant",
-      category: "Social Media",
-      image: "/images/portfolio_restaurant.jpg",
-      result: "+145% Table Bookings",
-      details: "Organic Content & Local Engagement",
+      title: "New Vishwas Furniture",
+      url: "https://newvishwasfurniture.in/",
+      category: "Interior & Furniture",
+      desc: "Designed and developed a modern furniture business website showcasing premium home and office furniture collections with SEO optimization, responsive layouts, enquiry forms, and product-focused user experience.",
+      features: ["Business Website", "Product Showcase", "SEO Optimized", "Responsive Design", "Lead Generation"],
+      tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
+      gradient: "from-[#8B4513] to-[#D2B48C]", // Warm furniture wood tone
     },
     {
-      title: "Oakridge Luxury Villas",
-      category: "Marketing",
-      image: "/images/portfolio_real_estate.jpg",
-      result: "62 Leads in 30 Days",
-      details: "Targeted Meta Ads Campaigns",
+      title: "Alfa Travel Link",
+      url: "https://alfatravellink.com/",
+      category: "Travel & Tourism",
+      desc: "Developed a professional travel agency website featuring tour packages, visa services, transportation assistance, enquiry forms, and conversion-focused landing pages.",
+      features: ["Travel Booking", "Lead Capture", "Mobile Friendly", "Fast Loading", "SEO Ready"],
+      tech: ["React", "CSS3", "Next.js"],
+      gradient: "from-sky-400 to-blue-600", // Bright travel sky blue
     },
     {
-      title: "Aspirant Elite Academy",
-      category: "Websites",
-      image: "/images/portfolio_education.jpg",
-      result: "Fast & SEO Optimized",
-      details: "Next.js Web Portal Development",
+      title: "Mondari Group",
+      url: "https://mondarigroup.com/",
+      category: "Business Websites",
+      desc: "Built a premium corporate website representing multiple business divisions with a modern UI, company profile, service presentation, and strong brand identity.",
+      features: ["Corporate Website", "Business Profile", "Professional Design", "Responsive", "SEO Optimized"],
+      tech: ["TypeScript", "Next.js", "Tailwind"],
+      gradient: "from-slate-700 to-slate-900", // Dark corporate sleek gray
     },
     {
-      title: "Dr. Mehta's Heart Care",
-      category: "Social Media",
-      image: "/images/portfolio_healthcare.jpg",
-      result: "180+ Doctor Consults",
-      details: "Local SEO & Credibility Growth",
+      title: "Life Care Health Solutions",
+      url: "https://lifecarehealthsolutions.com/",
+      category: "Healthcare",
+      desc: "Designed a healthcare solutions platform highlighting medical services, patient support, healthcare information, and trust-building content with a user-friendly interface.",
+      features: ["Healthcare Website", "Service Showcase", "Appointment CTA", "Mobile Friendly", "SEO Optimized"],
+      tech: ["Next.js", "Tailwind", "Framer Motion"],
+      gradient: "from-teal-400 to-emerald-600", // Calming wellness green/teal
     },
     {
-      title: "ChronoLux Luxury Watches",
-      category: "Websites",
-      image: "/images/portfolio_ecommerce.jpg",
-      result: "4.8x Ad Return (ROAS)",
-      details: "High-Converting Shopify Store",
+      title: "Bloomax Residency",
+      url: "https://bloomaxresidency.com/",
+      category: "Hospitality",
+      desc: "Developed an elegant hospitality website showcasing rooms, amenities, booking information, location details, and customer-friendly navigation.",
+      features: ["Hotel Website", "Room Showcase", "Booking Enquiry", "Responsive", "Fast Loading"],
+      tech: ["React", "Tailwind", "Vite"],
+      gradient: "from-rose-500 to-red-600", // Premium resort rose red
     },
     {
-      title: "Vogue Maison Fashion",
-      category: "Branding",
-      image: "/images/portfolio_fashion.jpg",
-      result: "1.2M+ Reach",
-      details: "Premium Logo & Style Architecture",
+      title: "Classy Wood Interior",
+      url: "https://classywoodinterior.com/",
+      category: "Interior & Furniture",
+      desc: "Built a premium interior design website showcasing residential and commercial interior solutions, portfolio galleries, service pages, and enquiry generation with a modern visual experience.",
+      features: ["Interior Portfolio", "Service Showcase", "Gallery", "Lead Generation", "SEO Friendly"],
+      tech: ["Next.js", "Tailwind", "CSS Grid"],
+      gradient: "from-amber-600 to-orange-850", // High contrast amber interior wood
+    },
+    {
+      title: "Klay Ayurveda",
+      url: "https://klayurveda.com/",
+      category: "Wellness",
+      desc: "Created a wellness-focused website presenting Ayurvedic treatments, natural healthcare solutions, wellness programs, and consultation services with a calming, trustworthy design.",
+      features: ["Healthcare", "Wellness", "Consultation", "Mobile Friendly", "SEO Ready"],
+      tech: ["React", "Tailwind", "Framer Motion"],
+      gradient: "from-emerald-500 to-teal-800", // Herbal green wellness gradient
+    },
+    {
+      title: "SCSB Educational Institution",
+      url: "https://scsb.in/",
+      category: "Education",
+      desc: "Designed an education-focused website with detailed course information, admissions guidance, student resources, enquiry forms, and responsive layouts for a better student experience.",
+      features: ["Educational Website", "Admissions", "Course Listing", "Responsive", "SEO Optimized"],
+      tech: ["Next.js", "Tailwind", "Prisma"],
+      gradient: "from-indigo-650 to-purple-800", // Royal institutional blue-violet
+    },
+    {
+      title: "Chorode SCB",
+      url: "https://chorodescb.in/",
+      category: "Education",
+      desc: "Developed a modern educational platform with structured academic information, admissions workflow, training resources, and streamlined communication for prospective students.",
+      features: ["Institution Website", "Student Enquiries", "Responsive", "SEO Ready", "Fast Performance"],
+      tech: ["Next.js", "Tailwind", "Supabase"],
+      gradient: "from-blue-600 to-indigo-800", // Academy blue gradient
+    },
+    {
+      title: "Lemppaat Academy",
+      url: "https://lemppaatacademy.com/",
+      category: "Education",
+      desc: "Built a professional academy website showcasing training programs, admissions, faculty information, career-oriented courses, and lead-generation features.",
+      features: ["Academy Website", "Course Showcase", "Admissions", "Lead Generation", "Mobile Responsive"],
+      tech: ["Next.js", "Tailwind", "PostgreSQL"],
+      gradient: "from-violet-600 to-fuchsia-800", // Vibrant training fuchsia
     },
   ];
 
-  const filteredProjects = activeCategory === "All" 
-    ? projects 
-    : projects.filter(project => project.category === activeCategory);
+  const filteredProjects = activeCategory === "All"
+    ? projects
+    : projects.filter((project) => project.category === activeCategory);
 
   return (
-    <section id="portfolio" className="py-24 bg-white relative">
+    <section id="portfolio" className="py-24 bg-white relative overflow-hidden border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-6 md:px-12 z-10 relative">
+        
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-          <div>
-            <span className="font-sans font-semibold text-xs tracking-wider uppercase text-primary mb-2.5 block">
-              Case Studies
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div className="flex flex-col gap-3">
+            <span className="font-sans font-bold text-xs tracking-[3px] uppercase text-primary">
+              OUR WORKS
             </span>
             <h2 className="font-heading font-black text-3xl md:text-4xl lg:text-5xl text-dark tracking-tight leading-none">
-              Our Premium <span className="text-primary">Portfolio</span>
+              Web Design & <span className="text-primary">Development</span>
             </h2>
           </div>
-          <p className="font-sans text-base text-text-secondary max-w-md">
-            Discover how we help diverse industries establish digital leadership and hit massive growth benchmarks.
+          <p className="font-sans text-base text-text-secondary max-w-md leading-relaxed">
+            Helping businesses grow through modern websites, digital branding, and SEO-focused development.
           </p>
         </div>
 
         {/* Filter Categories Tabs */}
-        <div className="flex flex-wrap gap-2.5 mb-12 border-b border-border-light pb-6">
+        <div className="flex flex-wrap gap-2 mb-12 border-b border-border-light pb-6">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`font-sans font-bold text-sm px-5 py-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+              className={`font-sans font-bold text-xs px-5 py-2.5 rounded-full transition-all duration-300 cursor-pointer ${
                 activeCategory === cat
                   ? "bg-primary text-white shadow-md shadow-primary/20"
-                  : "bg-[#F8F8F8] text-text-secondary hover:bg-primary/5 hover:text-primary border border-border-light"
+                  : "bg-[#F8F9FA] text-text-secondary hover:bg-primary/5 hover:text-primary border border-border-light/70"
               }`}
             >
               {cat}
@@ -95,64 +152,100 @@ export default function Portfolio() {
         </div>
 
         {/* Portfolio Grid */}
-        <motion.div 
+        <motion.div
           layout
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project) => (
-              <motion.div
+            {filteredProjects.map((project, idx) => (
+              <motion.article
                 key={project.title}
                 layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.4 }}
-                className="bg-white rounded-[18px] overflow-hidden border border-border-light shadow-sm transition-all duration-300 hover:shadow-xl hover:border-primary/10 group cursor-pointer relative"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.5, delay: idx * 0.05 }}
+                className="group relative bg-gradient-to-tr from-gray-100/50 to-gray-200/50 p-[1px] rounded-2xl hover:from-primary/20 hover:to-red-300 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden transform hover:-translate-y-1.5"
               >
-                {/* Image & Overlay Container */}
-                <div className="relative w-full aspect-[3/2] overflow-hidden bg-gray-100">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+                <div className="bg-white rounded-2xl overflow-hidden flex flex-col h-full">
                   
-                  {/* Result Tag Overlay (Top Left) */}
-                  <div className="absolute top-4 left-4 bg-primary text-white font-sans font-bold text-xs px-3.5 py-2 rounded-full shadow-md z-10">
-                    {project.result}
-                  </div>
+                  {/* Simulated Browser Frame Preview */}
+                  <figure className="relative w-full aspect-[16/10] bg-[#F1F3F5] rounded-t-2xl border-b border-gray-100 overflow-hidden flex flex-col shrink-0">
+                    {/* Browser Head Bar */}
+                    <div className="h-8 bg-gray-50 border-b border-gray-150 px-3 flex items-center gap-1.5 shrink-0">
+                      <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
+                      <div className="ml-4 flex-1 max-w-[200px] h-4.5 bg-white border border-gray-200/60 rounded text-[9px] text-gray-400 flex items-center px-2 select-none truncate">
+                        {project.url.replace("https://", "")}
+                      </div>
+                    </div>
 
-                  {/* Dark Hover Overlay with "View Project" */}
-                  <div className="absolute inset-0 bg-dark/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20">
-                    <motion.div 
-                      initial={{ y: 15, opacity: 0 }}
-                      whileInView={{ y: 0, opacity: 1 }}
-                      className="bg-white/10 backdrop-blur-md border border-white/20 px-6 py-3 rounded-full flex items-center gap-2 shadow-lg"
+                    {/* Browser Live Preview Container */}
+                    <div className={`flex-1 bg-gradient-to-tr ${project.gradient} p-5 flex flex-col justify-between text-white relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-500`}>
+                      {/* Decorative glows */}
+                      <div className="absolute top-[-30%] right-[-20%] w-40 h-40 bg-white/10 rounded-full blur-2xl pointer-events-none z-0" />
+                      <div className="absolute bottom-[-20%] left-[-15%] w-32 h-32 bg-white/15 rounded-full blur-xl pointer-events-none z-0" />
+
+                      <div className="flex items-center justify-between z-10 shrink-0">
+                        <span className="text-[9px] font-bold tracking-[2px] uppercase bg-white/10 backdrop-blur-md px-2 py-0.5 rounded border border-white/15">
+                          {project.category}
+                        </span>
+                        <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                      </div>
+
+                      <div className="flex flex-col gap-2 z-10 my-auto">
+                        <figcaption className="font-heading font-black text-lg md:text-xl leading-tight tracking-tight text-white select-none">
+                          {project.title}
+                        </figcaption>
+                        <div className="w-10 h-[2.5px] bg-white/80 rounded" />
+                      </div>
+
+                      <div className="flex flex-wrap gap-1 z-10 shrink-0">
+                        {project.features.slice(0, 3).map((f, i) => (
+                          <span key={i} className="text-[8px] bg-white/10 backdrop-blur-md px-2 py-0.5 rounded font-sans uppercase font-bold tracking-wide">
+                            {f}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </figure>
+
+                  {/* Text Details & Buttons */}
+                  <div className="p-6 flex flex-col flex-1 bg-white justify-between gap-5">
+                    <div className="flex flex-col gap-3">
+                      <p className="font-sans text-xs text-text-secondary leading-relaxed">
+                        {project.desc}
+                      </p>
+
+                      {/* Tech Stacks */}
+                      <div className="flex flex-wrap gap-1.5 pt-2">
+                        {project.tech.map((t, i) => (
+                          <span key={i} className="text-[10px] font-sans font-bold bg-primary/5 text-primary border border-primary/10 px-2.5 py-0.5 rounded-full">
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* CTA Redirect Button */}
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-center gap-1.5 px-4 py-3 bg-[#F8F9FA] hover:bg-primary text-text-dark hover:text-white font-sans font-bold text-xs rounded-xl shadow-sm border border-gray-100 hover:border-primary transition-all duration-300 cursor-pointer"
                     >
-                      <span className="font-sans font-bold text-sm text-white">View Project</span>
-                      <ArrowUpRight size={16} className="text-white" />
-                    </motion.div>
+                      Visit Website
+                      <ArrowUpRight size={14} className="opacity-80" />
+                    </a>
                   </div>
-                </div>
 
-                {/* Text Details */}
-                <div className="p-6 relative z-10 bg-white">
-                  <p className="font-sans font-bold text-[11px] text-primary uppercase tracking-widest mb-1.5">
-                    {project.category}
-                  </p>
-                  <h3 className="font-heading font-bold text-lg text-dark leading-tight mb-2 group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="font-sans text-xs text-text-secondary">
-                    {project.details}
-                  </p>
                 </div>
-              </motion.div>
+              </motion.article>
             ))}
           </AnimatePresence>
         </motion.div>
+
       </div>
     </section>
   );

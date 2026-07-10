@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Mail, MapPin, Clock, CheckCircle, Navigation } from "lucide-react";
 
@@ -293,27 +294,62 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Digital Business Card CTA in Contact Page */}
-          <div className="p-6 bg-white border border-border-light rounded-2xl shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6 border-l-4 border-l-primary">
-            <div className="flex items-center gap-4">
-              <div className="p-3 bg-primary/5 text-primary rounded-xl shrink-0">
-                <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4V6h16v12zM8.5 12C9 12 9.5 11.5 9.5 11s-.5-1-1-1-1 .5-1 1 .5 1 1 1zm0 3c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm7.5-6h-4v2h4V9zm0 4h-4v2h4v-2z"/>
-                </svg>
+          {/* Grid container for vKard Banner + QR Code Card */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
+            
+            {/* Digital Business Card CTA */}
+            <div className="md:col-span-8 p-6 bg-white border border-border-light rounded-2xl shadow-sm flex flex-col justify-between gap-6 border-l-4 border-l-primary">
+              <div className="flex gap-4 items-start">
+                <div className="p-3 bg-primary/5 text-primary rounded-xl shrink-0">
+                  <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4V6h16v12zM8.5 12C9 12 9.5 11.5 9.5 11s-.5-1-1-1-1 .5-1 1 .5 1 1 1zm0 3c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3zm7.5-6h-4v2h4V9zm0 4h-4v2h4v-2z"/>
+                  </svg>
+                </div>
+                <div className="text-left">
+                  <h4 className="font-heading font-bold text-base text-dark">Save Our Contact Instantly</h4>
+                  <p className="font-sans text-xs text-text-secondary leading-relaxed mt-1">Access our official Virtual Business Card (vKard) to download details directly.</p>
+                </div>
               </div>
-              <div className="text-left">
-                <h4 className="font-heading font-bold text-base text-dark">Save Our Contact Instantly</h4>
-                <p className="font-sans text-xs text-text-secondary leading-normal mt-0.5">Access our official Virtual Business Card (vKard) to download details directly.</p>
-              </div>
+              <a
+                href="https://www.vkard.pro/dhanya-enterprises"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-fit px-6 py-3 bg-[#E50914] text-white font-sans font-bold text-xs rounded-xl shadow-md transition-all duration-300 transform hover:-translate-y-0.5 inline-block text-center cursor-pointer hover:bg-[#b80710]"
+              >
+                View Digital Business Card
+              </a>
             </div>
-            <a
-              href="https://www.vkard.pro/dhanya-enterprises"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 bg-[#E50914] text-white font-sans font-bold text-xs rounded-xl shadow-md transition-all duration-300 transform hover:-translate-y-0.5 inline-block text-center shrink-0 cursor-pointer hover:bg-[#b80710]"
+
+            {/* Premium Glassmorphism QR Code Card */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              animate={{ y: [0, -4, 0] }}
+              transition={{
+                y: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+                scale: { duration: 0.3 }
+              }}
+              whileHover={{ scale: 1.02 }}
+              className="md:col-span-4 p-5 bg-white border border-border-light shadow-sm rounded-2xl flex flex-col items-center justify-center text-center gap-3.5"
             >
-              View Digital Business Card
-            </a>
+              <div className="relative w-28 h-28 p-1.5 bg-white border border-gray-150 rounded-xl shadow-inner">
+                <Image
+                  src="/images/contact-qr.png"
+                  alt="Scan to Save Contact"
+                  width={112}
+                  height={112}
+                  className="rounded-lg object-contain"
+                />
+              </div>
+              <div>
+                <h4 className="font-heading font-bold text-xs text-dark tracking-tight">Scan to Save Our Contact</h4>
+                <p className="font-sans text-[10px] text-text-secondary leading-normal mt-0.5 max-w-[150px]">
+                  Instantly save Dhanya Enterprises contact details to your phone.
+                </p>
+              </div>
+            </motion.div>
+
           </div>
 
           {/* Embedded Google Map (New Address) */}
