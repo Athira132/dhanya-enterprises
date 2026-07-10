@@ -2,7 +2,6 @@
 
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import TrustedBrands from "@/components/TrustedBrands";
 import Services from "@/components/Services";
 import About from "@/components/About";
 import Portfolio from "@/components/Portfolio";
@@ -21,9 +20,6 @@ export default function Home() {
       <main className="flex-1">
         {/* Hero Section */}
         <Hero />
-
-        {/* Brand Logos Strip */}
-        <TrustedBrands />
 
         {/* About Section Preview */}
         <About />
