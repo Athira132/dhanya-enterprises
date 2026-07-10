@@ -14,7 +14,7 @@ export default function HomeFaq() {
     },
     {
       q: "Are your services budget-friendly for small startups?",
-      a: "Yes, absolutely! Affordable pricing is one of our primary core values. We offer packages designed specifically for entrepreneurs, local shops, and emerging startups, starting from as low as ₹999 for Digital Business Cards and Graphic Designs.",
+      a: "Yes, absolutely! Providing high-value, scalable solutions is one of our core pillars. We offer custom web development and digital marketing services structured specifically for entrepreneurs, local stores, and growing startups.",
     },
     {
       q: "How fast can you launch a digital marketing campaign or website?",
@@ -46,7 +46,7 @@ export default function HomeFaq() {
             Frequently Asked <span className="text-primary">Questions</span>
           </h2>
           <p className="font-sans text-base text-text-secondary">
-            Find immediate answers to standard questions about our agency, tools, and pricing plans.
+            Find immediate answers to standard questions about our agency, tools, and services.
           </p>
         </div>
 

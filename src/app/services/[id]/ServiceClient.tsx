@@ -977,77 +977,109 @@ export default function ServiceClient({ params }: { params: Promise<{ id: string
         )}
 
         {/* Packages Section */}
-        <section className="py-24 bg-white relative">
-          <div className="max-w-7xl mx-auto px-6 md:px-12">
-            
-            {/* Header */}
-            <div className="text-center max-w-3xl mx-auto mb-20">
-              <span className="font-sans font-semibold text-xs tracking-wider uppercase text-primary mb-2.5 block">
-                Transparent Pricing
-              </span>
-              <h2 className="font-heading font-black text-2xl md:text-3xl lg:text-4xl text-dark tracking-tight mb-4">
-                Service Packages
-              </h2>
-              <p className="font-sans text-base text-text-secondary">
-                Select a budget option customized to match your project size. Get upfront prices with zero hidden costs.
-              </p>
-            </div>
+        {/* Industry Expansion / Discussion CTA (Replaces Package Pricing) */}
+        {id === "website-design-development" ? (
+          <section className="py-24 bg-white relative overflow-hidden border-b border-gray-100">
+            <div className="max-w-7xl mx-auto px-6 md:px-12">
+              
+              {/* Header */}
+              <div className="text-center max-w-3xl mx-auto mb-20">
+                <span className="font-sans font-semibold text-xs tracking-wider uppercase text-primary mb-2.5 block">
+                  Service Highlights
+                </span>
+                <h2 className="font-heading font-black text-2xl md:text-3xl lg:text-4xl text-dark tracking-tight mb-4">
+                  Website Mappings We Develop
+                </h2>
+                <p className="font-sans text-base text-text-secondary">
+                  We design and build premium custom websites tailored for a wide variety of businesses and industries.
+                </p>
+              </div>
 
-            {/* Packages Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-              {service.packages.map((pkg, index) => (
-                <div
-                  key={index}
-                  className={`border rounded-[18px] p-8 flex flex-col justify-between relative transition-all duration-300 ${
-                    pkg.popular
-                      ? "border-primary shadow-xl shadow-primary/5 bg-white scale-102 z-10"
-                      : "border-border-light shadow-sm bg-white hover:border-primary/20"
-                  }`}
-                >
-                  {/* Popular Badge */}
-                  {pkg.popular && (
-                    <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white font-sans font-bold text-[10px] uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md">
-                      Most Popular
-                    </span>
-                  )}
-
-                  <div>
-                    <h4 className="font-heading font-bold text-xl text-dark mb-1">{pkg.name}</h4>
-                    <p className="font-sans text-xs text-text-secondary mb-6">{pkg.description}</p>
-                    
-                    {/* Price */}
-                    <div className="mb-6 flex items-baseline gap-1">
-                      <span className="font-heading font-black text-4xl text-dark">{pkg.price}</span>
-                      <span className="font-sans text-xs text-text-secondary font-medium">/ package</span>
-                    </div>
-
-                    {/* Features List */}
-                    <ul className="flex flex-col gap-3.5 border-t border-border-light/70 pt-6">
-                      {pkg.features.map((feat, idx) => (
-                        <li key={idx} className="flex gap-2.5 items-start font-sans text-sm text-text-dark">
-                          <Check size={16} className="text-primary flex-shrink-0 mt-0.5" />
-                          <span>{feat}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <a
-                    href="#enquiry"
-                    className={`w-full font-sans font-bold text-sm text-center py-3.5 rounded-xl mt-8 transition-all duration-300 inline-block ${
-                      pkg.popular
-                        ? "bg-primary hover:bg-primary-hover text-white shadow-md shadow-primary/20 hover:shadow-lg"
-                        : "bg-[#F8F8F8] border border-border-light text-text-dark hover:bg-primary/5 hover:text-primary hover:border-primary/20"
-                    }`}
+              {/* Mappings Grid (26 Types) */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {[
+                  { title: "Business Websites", desc: "Establish digital authority and showcase your core solutions.", icon: "💼" },
+                  { title: "Corporate Websites", desc: "Multi-divisional portals designed for corporate brand trust.", icon: "🏢" },
+                  { title: "E-commerce Websites", desc: "Scale sales with integrated payment funnels and stock synchronization.", icon: "🛍️" },
+                  { title: "Healthcare Websites", desc: "Patient-centric websites with clean layouts and care guidelines.", icon: "🏥" },
+                  { title: "Hospital Websites", desc: "Clinical directories, departments showcase, and secure patient portals.", icon: "🏨" },
+                  { title: "Clinic Websites", desc: "Patient check-ins, medical services, and doctor profiles.", icon: "🩺" },
+                  { title: "Educational Websites", desc: "Student dashboards, admission guidelines, and course catalogs.", icon: "🎓" },
+                  { title: "School Websites", desc: "Academic calendars, admissions workflow, and circular updates.", icon: "🏫" },
+                  { title: "College Websites", desc: "Syllabus listings, faculty directories, and student resources.", icon: "🏛️" },
+                  { title: "Academy Websites", desc: "Specialized training catalogs and direct student enquiry systems.", icon: "🎯" },
+                  { title: "Travel Websites", desc: "Tour packaging, local guides, and visa processing helpers.", icon: "✈️" },
+                  { title: "Tourism Websites", desc: "Vacation brochures, interactive maps, and sight-seeing funnels.", icon: "🌴" },
+                  { title: "Hotel Websites", desc: "Room bookings, resort amenities, and virtual visits.", icon: "🏨" },
+                  { title: "Resort Websites", desc: "Leisure retreats, booking forms, and luxury features showcase.", icon: "🌅" },
+                  { title: "Interior Design Websites", desc: "Portfolio galleries, material specifications, and consult forms.", icon: "📐" },
+                  { title: "Furniture Websites", desc: "Product catalogs, custom wood specifications, and order inquiries.", icon: "🪑" },
+                  { title: "Real Estate Websites", desc: "Property filters, map locations, and direct builder lead capture.", icon: "🏠" },
+                  { title: "Portfolio Websites", desc: "Showcase personal work, creative skills, and experience chronologies.", icon: "🎨" },
+                  { title: "Personal Brand Websites", desc: "Maximize personal influence and scale consultation bookings.", icon: "👤" },
+                  { title: "Landing Pages", desc: "Single-intent sales flows optimized for maximum conversions.", icon: "📄" },
+                  { title: "Startup Websites", desc: "MVP showcases, pitch decks, and waitlist registration forms.", icon: "🚀" },
+                  { title: "Restaurant Websites", desc: "Interactive food menus, online table booking, and direct delivery links.", icon: "🍔" },
+                  { title: "NGO Websites", desc: "Donation gates, social campaigns, and volunteer registries.", icon: "🤝" },
+                  { title: "Finance Websites", desc: "Loan calculators, financial consulting services, and secure gateways.", icon: "📊" },
+                  { title: "Consultancy Websites", desc: "Expert advisory services, scheduling tools, and client reviews.", icon: "💡" },
+                  { title: "Construction Websites", desc: "Commercial projects portfolio, safety standards, and quote calculators.", icon: "🏗️" },
+                ].map((item, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: (idx % 8) * 0.05 }}
+                    whileHover={{ y: -5, scale: 1.02 }}
+                    className="p-5 bg-white border border-border-light rounded-2xl shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300 flex flex-col gap-3 group"
                   >
-                    Select Plan
-                  </a>
-                </div>
-              ))}
-            </div>
+                    <div className="w-10 h-10 rounded-xl bg-primary/5 text-primary text-xl flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h4 className="font-heading font-bold text-sm text-dark group-hover:text-primary transition-colors">
+                        {item.title}
+                      </h4>
+                      <p className="font-sans text-[11px] text-text-secondary leading-normal mt-1">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
 
-          </div>
-        </section>
+            </div>
+          </section>
+        ) : (
+          <section className="py-24 bg-white relative overflow-hidden border-b border-gray-100">
+            <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 text-center flex flex-col items-center gap-6">
+              <span className="font-sans font-semibold text-xs tracking-wider uppercase text-primary">
+                COLLABORATE WITH US
+              </span>
+              <h2 className="font-heading font-black text-3xl md:text-4xl text-dark tracking-tight max-w-2xl leading-tight">
+                Let&apos;s Discuss Your Project Goals
+              </h2>
+              <p className="font-sans text-base text-text-secondary max-w-xl leading-relaxed">
+                Every business demands custom strategies. We build tailored campaigns and digital platforms designed specifically to achieve your organic growth KPIs.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 mt-4 w-full sm:w-auto items-stretch">
+                <a
+                  href="#enquiry"
+                  className="px-8 py-4 bg-primary text-white font-sans font-bold text-sm rounded-xl shadow-md hover:bg-primary-hover hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 text-center"
+                >
+                  Discuss Your Project
+                </a>
+                <a
+                  href="#enquiry"
+                  className="px-8 py-4 bg-white border border-border-light hover:border-primary/20 text-text-dark hover:text-primary font-sans font-bold text-sm rounded-xl transition-all duration-300 text-center"
+                >
+                  Get a Free Consultation
+                </a>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Why Choose This Service section (Icon cards) */}
         <section className="py-24 bg-[#F8F8F8] relative">
@@ -1295,7 +1327,7 @@ export default function ServiceClient({ params }: { params: Promise<{ id: string
                       <input
                         type="text"
                         disabled
-                        value={`${service.title} (${service.price})`}
+                        value={service.title}
                         className="font-sans text-sm border border-border-light rounded-xl px-4 py-3 bg-gray-200/80 text-gray-600 font-semibold focus:outline-none"
                       />
                     </div>

@@ -5,8 +5,6 @@ import Image from "next/image";
 
 export default function VirtualCardSection() {
   const vKardUrl = "https://www.vkard.pro/dhanya-enterprises";
-  // High quality QR Code API link linking to the official vKard
-  const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(vKardUrl)}`;
 
   return (
     <section className="relative py-24 overflow-hidden bg-gradient-to-b from-white to-[#F8F9FB] border-b border-gray-100">
@@ -87,23 +85,38 @@ export default function VirtualCardSection() {
             </div>
 
             {/* Right Side: QR Code scan section */}
-            <div className="md:col-span-5 flex flex-col items-center gap-4 border-t border-gray-100 md:border-t-0 md:border-l border-gray-100 pt-8 md:pt-0 md:pl-8">
+            <div className="md:col-span-5 flex flex-col items-center pt-8 md:pt-0 md:pl-8">
               
-              {/* QR Image Wrapper */}
-              <div className="relative w-44 h-44 p-2 bg-white border border-gray-200/60 rounded-2xl shadow-inner flex items-center justify-center">
-                <Image
-                  src={qrCodeUrl}
-                  alt="vKard QR Code"
-                  width={160}
-                  height={160}
-                  priority
-                  className="rounded-xl object-contain"
-                />
-              </div>
+              {/* Glassmorphism QR Container */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                animate={{ y: [0, -5, 0] }}
+                transition={{
+                  y: { duration: 5.5, repeat: Infinity, ease: "easeInOut" },
+                  scale: { duration: 0.3 }
+                }}
+                whileHover={{ scale: 1.03 }}
+                className="bg-white/40 backdrop-blur-md border border-white/60 shadow-lg rounded-2xl p-5 flex flex-col items-center gap-3.5 text-center"
+              >
+                <div className="relative w-36 h-36 p-1.5 bg-white border border-gray-150 rounded-xl shadow-inner flex items-center justify-center">
+                  <Image
+                    src="/images/contact-qr.png"
+                    alt="Scan to Save Contact"
+                    width={128}
+                    height={128}
+                    className="rounded-lg object-contain"
+                  />
+                </div>
+                <div>
+                  <h4 className="font-heading font-bold text-xs text-dark tracking-tight">Scan to Save Our Contact</h4>
+                  <p className="font-sans text-[10px] text-text-secondary leading-normal mt-1 max-w-[170px]">
+                    Scan this QR code to instantly save Dhanya Enterprises&apos; contact information to your mobile.
+                  </p>
+                </div>
+              </motion.div>
 
-              <span className="font-sans text-xs text-gray-500 font-bold uppercase tracking-wider">
-                Scan to Save Contact
-              </span>
             </div>
 
           </div>

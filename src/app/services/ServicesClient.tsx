@@ -17,6 +17,10 @@ export default function ServicesClient() {
       icon: <Laptop size={24} />,
       image: "/images/portfolio_ecommerce.jpg",
       description: "Custom Next.js, React, and WordPress sites optimized for extreme loading speed, SEO, and visual excellence.",
+      examples: [
+        { name: "Mondari Group", badge: "Corporate", desc: "Multi-division Business Portal" },
+        { name: "New Vishwas Furniture", badge: "Furniture", desc: "Custom Brand Showcase" }
+      ],
     },
     {
       id: "ecommerce-website-development",
@@ -24,6 +28,10 @@ export default function ServicesClient() {
       icon: <ShoppingBag size={24} />,
       image: "/images/portfolio_fashion.jpg",
       description: "Sleek online storefronts with secure payment gateways, inventory sync, and seamless buyer checkouts.",
+      examples: [
+        { name: "New Vishwas Furniture", badge: "Furniture", desc: "Product-focused User Interface" },
+        { name: "Classy Wood Interior", badge: "Interior", desc: "Catalog Ordering Gateway" }
+      ],
     },
     {
       id: "seo",
@@ -31,6 +39,10 @@ export default function ServicesClient() {
       icon: <Search size={24} />,
       image: "/images/portfolio_education.jpg",
       description: "Rank #1 on Google with advanced keyword strategies, technical audits, on-page edits, and authority backlinking.",
+      examples: [
+        { name: "Klay Ayurveda", badge: "Ayurveda", desc: "Calming Trustworthy Wellness SEO" },
+        { name: "Alfa Travel Link", badge: "Travel", desc: "Search Optimized Package Funnels" }
+      ],
     },
     {
       id: "mobile-app-marketing",
@@ -38,6 +50,9 @@ export default function ServicesClient() {
       icon: <Smartphone size={24} />,
       image: "/images/portfolio_healthcare.jpg",
       description: "Increase app installs and user retention with structured App Store Optimization (ASO) and cost-efficient user acquisition.",
+      examples: [
+        { name: "Alfa Travel Link", badge: "Travel", desc: "Direct App Install Campaigns" }
+      ],
     },
     {
       id: "meta-ads",
@@ -45,6 +60,10 @@ export default function ServicesClient() {
       icon: <Megaphone size={24} />,
       image: "/images/portfolio_real_estate.jpg",
       description: "Target high-intent customers, create high-converting copy, and optimize ad layouts to scale lead generation.",
+      examples: [
+        { name: "Life Care Health Solutions", badge: "Healthcare", desc: "Meta conversions for Home Care" },
+        { name: "Bloomax Residency", badge: "Hospitality", desc: "Targeted Meta Booking Ads" }
+      ],
     },
     {
       id: "graphic-design",
@@ -52,6 +71,9 @@ export default function ServicesClient() {
       icon: <Palette size={24} />,
       image: "/images/portfolio_fashion.jpg",
       description: "Premium visual assets including flyers, brochures, custom business profiles, brochures, and brand catalogs.",
+      examples: [
+        { name: "Mondari Group", badge: "Corporate", desc: "Sleek Corporate Profile Layouts" }
+      ],
     },
     {
       id: "video-editing-motion-graphics",
@@ -59,6 +81,9 @@ export default function ServicesClient() {
       icon: <Video size={24} />,
       image: "/images/portfolio_restaurant.jpg",
       description: "Capture eyes with engaging daily Reels, professional video edits, text-animations, and premium branding motion assets.",
+      examples: [
+        { name: "Bloomax Residency", badge: "Hospitality", desc: "High-engagement Resort Reel edits" }
+      ],
     },
     {
       id: "lead-generation-campaigns",
@@ -66,6 +91,10 @@ export default function ServicesClient() {
       icon: <Users size={24} />,
       image: "/images/hero_team.jpg",
       description: "Scale B2B or B2C queries with advanced landing page forms, CRM automation, and targeted sales funnels.",
+      examples: [
+        { name: "Life Care Health Solutions", badge: "Healthcare", desc: "CRM-integrated Lead Pipelines" },
+        { name: "Classy Wood Interior", badge: "Interior", desc: "Objection-free Query Funnels" }
+      ],
     },
     {
       id: "local-seo-google-business-profile",
@@ -73,6 +102,10 @@ export default function ServicesClient() {
       icon: <MapPin size={24} />,
       image: "/images/portfolio_real_estate.jpg",
       description: "Dominate local maps searches in your region and attract local walking customers directly to your storefront.",
+      examples: [
+        { name: "Klay Ayurveda", badge: "Ayurveda", desc: "GBP local ranking optimization" },
+        { name: "Classy Wood Interior", badge: "Interior", desc: "Local Map Rankings Palakkad" }
+      ],
     },
     {
       id: "marketing-strategy-consulting",
@@ -80,6 +113,9 @@ export default function ServicesClient() {
       icon: <TrendingUp size={24} />,
       image: "/images/hero_team.jpg",
       description: "Interactive consulting workshops, competitive research, and long-term scaling strategy for startups.",
+      examples: [
+        { name: "Mondari Group", badge: "Corporate", desc: "12-month Corporate Strategy Sync" }
+      ],
     },
     {
       id: "marketplace-marketing",
@@ -87,6 +123,9 @@ export default function ServicesClient() {
       icon: <Globe size={24} />,
       image: "/images/portfolio_ecommerce.jpg",
       description: "Optimize product listings, run cost-efficient marketplace Ads, and design A+ content to boost online store sales.",
+      examples: [
+        { name: "New Vishwas Furniture", badge: "Furniture", desc: "Store listing keywords audit" }
+      ],
     },
   ];
 
@@ -136,16 +175,40 @@ export default function ServicesClient() {
                     </div>
 
                     {/* Content */}
-                    <div className="p-8 pt-10">
-                      {/* Title */}
-                      <h3 className="font-heading font-bold text-xl text-dark mb-3 group-hover:text-primary transition-colors duration-300">
-                        {service.title}
-                      </h3>
+                    <div className="p-8 pt-10 flex-1 flex flex-col justify-between">
+                      <div>
+                        {/* Title */}
+                        <h3 className="font-heading font-bold text-xl text-dark mb-3 group-hover:text-primary transition-colors duration-300">
+                          {service.title}
+                        </h3>
 
-                      {/* Description */}
-                      <p className="font-sans text-sm text-text-secondary leading-relaxed mb-6">
-                        {service.description}
-                      </p>
+                        {/* Description */}
+                        <p className="font-sans text-sm text-text-secondary leading-relaxed mb-6">
+                          {service.description}
+                        </p>
+                      </div>
+
+                      {/* Real Examples Showcase */}
+                      {service.examples && service.examples.length > 0 && (
+                        <div className="border-t border-gray-100 pt-4 mt-2">
+                          <span className="text-[10px] font-sans font-bold text-primary uppercase tracking-wider block mb-2 select-none">
+                            Completed Projects:
+                          </span>
+                          <div className="flex flex-col gap-2.5">
+                            {service.examples.map((ex, idx) => (
+                              <div key={idx} className="flex items-start justify-between gap-2 text-xs">
+                                <div className="flex flex-col">
+                                  <span className="font-sans font-semibold text-dark leading-tight">{ex.name}</span>
+                                  <span className="font-sans text-[9px] text-text-secondary mt-0.5 leading-normal">{ex.desc}</span>
+                                </div>
+                                <span className="text-[8px] font-sans font-bold bg-[#F8F9FA] border border-gray-200/60 text-text-secondary px-2 py-0.5 rounded shrink-0">
+                                  {ex.badge}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
 

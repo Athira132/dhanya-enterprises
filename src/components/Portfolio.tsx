@@ -11,7 +11,6 @@ export default function Portfolio() {
     "All",
     "Business Websites",
     "Healthcare",
-    "Education",
     "Interior & Furniture",
     "Travel & Tourism",
     "Hospitality",
@@ -23,6 +22,7 @@ export default function Portfolio() {
       title: "New Vishwas Furniture",
       url: "https://newvishwasfurniture.in/",
       category: "Interior & Furniture",
+      badge: "Interior & Furniture Website",
       desc: "Designed and developed a modern furniture business website showcasing premium home and office furniture collections with SEO optimization, responsive layouts, enquiry forms, and product-focused user experience.",
       features: ["Business Website", "Product Showcase", "SEO Optimized", "Responsive Design", "Lead Generation"],
       tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
@@ -32,6 +32,7 @@ export default function Portfolio() {
       title: "Alfa Travel Link",
       url: "https://alfatravellink.com/",
       category: "Travel & Tourism",
+      badge: "Travel & Tourism Website",
       desc: "Developed a professional travel agency website featuring tour packages, visa services, transportation assistance, enquiry forms, and conversion-focused landing pages.",
       features: ["Travel Booking", "Lead Capture", "Mobile Friendly", "Fast Loading", "SEO Ready"],
       tech: ["React", "CSS3", "Next.js"],
@@ -41,6 +42,7 @@ export default function Portfolio() {
       title: "Mondari Group",
       url: "https://mondarigroup.com/",
       category: "Business Websites",
+      badge: "Corporate Website",
       desc: "Built a premium corporate website representing multiple business divisions with a modern UI, company profile, service presentation, and strong brand identity.",
       features: ["Corporate Website", "Business Profile", "Professional Design", "Responsive", "SEO Optimized"],
       tech: ["TypeScript", "Next.js", "Tailwind"],
@@ -50,6 +52,7 @@ export default function Portfolio() {
       title: "Life Care Health Solutions",
       url: "https://lifecarehealthsolutions.com/",
       category: "Healthcare",
+      badge: "Healthcare Website",
       desc: "Designed a healthcare solutions platform highlighting medical services, patient support, healthcare information, and trust-building content with a user-friendly interface.",
       features: ["Healthcare Website", "Service Showcase", "Appointment CTA", "Mobile Friendly", "SEO Optimized"],
       tech: ["Next.js", "Tailwind", "Framer Motion"],
@@ -59,61 +62,30 @@ export default function Portfolio() {
       title: "Bloomax Residency",
       url: "https://bloomaxresidency.com/",
       category: "Hospitality",
+      badge: "Hotel & Hospitality Website",
       desc: "Developed an elegant hospitality website showcasing rooms, amenities, booking information, location details, and customer-friendly navigation.",
       features: ["Hotel Website", "Room Showcase", "Booking Enquiry", "Responsive", "Fast Loading"],
       tech: ["React", "Tailwind", "Vite"],
       gradient: "from-rose-500 to-red-600", // Premium resort rose red
     },
     {
-      title: "Classy Wood Interior",
-      url: "https://classywoodinterior.com/",
-      category: "Interior & Furniture",
-      desc: "Built a premium interior design website showcasing residential and commercial interior solutions, portfolio galleries, service pages, and enquiry generation with a modern visual experience.",
-      features: ["Interior Portfolio", "Service Showcase", "Gallery", "Lead Generation", "SEO Friendly"],
-      tech: ["Next.js", "Tailwind", "CSS Grid"],
-      gradient: "from-amber-600 to-orange-850", // High contrast amber interior wood
-    },
-    {
       title: "Klay Ayurveda",
       url: "https://klayurveda.com/",
       category: "Wellness",
+      badge: "Ayurveda & Wellness Website",
       desc: "Created a wellness-focused website presenting Ayurvedic treatments, natural healthcare solutions, wellness programs, and consultation services with a calming, trustworthy design.",
       features: ["Healthcare", "Wellness", "Consultation", "Mobile Friendly", "SEO Ready"],
       tech: ["React", "Tailwind", "Framer Motion"],
       gradient: "from-emerald-500 to-teal-800", // Herbal green wellness gradient
     },
-    {
-      title: "SCSB Educational Institution",
-      url: "https://scsb.in/",
-      category: "Education",
-      desc: "Designed an education-focused website with detailed course information, admissions guidance, student resources, enquiry forms, and responsive layouts for a better student experience.",
-      features: ["Educational Website", "Admissions", "Course Listing", "Responsive", "SEO Optimized"],
-      tech: ["Next.js", "Tailwind", "Prisma"],
-      gradient: "from-indigo-650 to-purple-800", // Royal institutional blue-violet
-    },
-    {
-      title: "Chorode SCB",
-      url: "https://chorodescb.in/",
-      category: "Education",
-      desc: "Developed a modern educational platform with structured academic information, admissions workflow, training resources, and streamlined communication for prospective students.",
-      features: ["Institution Website", "Student Enquiries", "Responsive", "SEO Ready", "Fast Performance"],
-      tech: ["Next.js", "Tailwind", "Supabase"],
-      gradient: "from-blue-600 to-indigo-800", // Academy blue gradient
-    },
-    {
-      title: "Lemppaat Academy",
-      url: "https://lemppaatacademy.com/",
-      category: "Education",
-      desc: "Built a professional academy website showcasing training programs, admissions, faculty information, career-oriented courses, and lead-generation features.",
-      features: ["Academy Website", "Course Showcase", "Admissions", "Lead Generation", "Mobile Responsive"],
-      tech: ["Next.js", "Tailwind", "PostgreSQL"],
-      gradient: "from-violet-600 to-fuchsia-800", // Vibrant training fuchsia
-    },
   ];
 
   const filteredProjects = activeCategory === "All"
     ? projects
-    : projects.filter((project) => project.category === activeCategory);
+    : projects.filter((project) => {
+        if (activeCategory === "Business Websites") return project.category === "Business Websites" || project.category === "Corporate Websites";
+        return project.category === activeCategory;
+      });
 
   return (
     <section id="portfolio" className="py-24 bg-white relative overflow-hidden border-b border-gray-100">
@@ -189,7 +161,7 @@ export default function Portfolio() {
 
                       <div className="flex items-center justify-between z-10 shrink-0">
                         <span className="text-[9px] font-bold tracking-[2px] uppercase bg-white/10 backdrop-blur-md px-2 py-0.5 rounded border border-white/15">
-                          {project.category}
+                          {project.badge}
                         </span>
                         <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
                       </div>
