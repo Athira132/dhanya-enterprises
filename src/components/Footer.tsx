@@ -179,6 +179,14 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col sm:flex-row items-center justify-between gap-4 font-sans">
           <p>© 2026 Dhanya Enterprises. All Rights Reserved.</p>
           <div className="flex gap-6">
+            <a
+              href="https://www.vkard.pro/dhanya-enterprises"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
+              Digital Business Card
+            </a>
             <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
           </div>
