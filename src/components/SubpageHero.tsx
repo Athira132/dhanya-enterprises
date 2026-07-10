@@ -45,7 +45,7 @@ export default function SubpageHero({
   };
 
   return (
-    <section className="relative min-h-[75vh] flex items-center pt-48 pb-32 bg-[#FFFFFF] overflow-hidden border-b border-gray-100">
+    <section className="relative min-h-[65vh] flex items-center pt-32 pb-16 bg-[#FFFFFF] overflow-hidden border-b border-gray-100">
       
       {/* LAYER 1: Background team/branding image positioned on the right (Only shown when no standalone heroImage is provided) */}
       {!heroImage && (

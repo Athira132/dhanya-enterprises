@@ -7,7 +7,7 @@ import { ChevronRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden bg-white">
+    <section id="home" className="relative min-h-[90vh] lg:min-h-screen pt-24 pb-12 flex items-center overflow-hidden bg-white">
       {/* Decorative Background Elements - White with subtle abstract red gradient shapes */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-primary/8 rounded-full blur-3xl -z-10" />
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10" />
