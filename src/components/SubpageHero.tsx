@@ -42,42 +42,45 @@ export default function SubpageHero({
   };
 
   return (
-    <section className="relative min-h-[70vh] flex items-center pt-48 pb-32 bg-[#F9F9F9] overflow-hidden border-b border-gray-200/50">
+    <section className="relative min-h-[75vh] flex items-center pt-48 pb-32 bg-[#FFFFFF] overflow-hidden border-b border-gray-100">
       
-      {/* LAYER 1: Background texture image with cover */}
+      {/* LAYER 1: Background team/branding image positioned on the right */}
       <div 
-        className="absolute inset-0 bg-cover bg-center z-0" 
-        style={{ backgroundImage: "url('/images/hero-bg-light.png')" }} 
+        className="absolute inset-y-0 right-0 w-full lg:w-[55%] bg-cover bg-right lg:bg-center z-0" 
+        style={{ backgroundImage: "url('/images/about-new.jpg')" }} 
       />
 
-      {/* LAYER 2: White overlay (85% opacity) + slight blur (8px) for readability */}
-      <div className="absolute inset-0 bg-white/85 backdrop-blur-[8px] z-0" />
+      {/* LAYER 2: White overlay (85% opacity) + slight blur (6px) for readability */}
+      <div className="absolute inset-0 bg-white/85 backdrop-blur-[6px] z-0" />
 
-      {/* LAYER 3: Soft red radial glow (low opacity 5%) */}
+      {/* LAYER 3: Soft left-to-right white gradient to ensure left side text has 100% legibility */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#FFFFFF] via-[#FFFFFF]/90 to-transparent z-0" />
+
+      {/* LAYER 4: Soft red radial glow (low opacity 5%) */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#E50914]/5 rounded-full blur-[250px] pointer-events-none z-0" />
 
-      {/* LAYER 4: Dotted Matrix Grid (Very low opacity < 3%) */}
+      {/* LAYER 5: Dotted Matrix Grid (Very low opacity < 3%) */}
       <div 
-        className="absolute inset-0 opacity-[0.03] pointer-events-none z-0" 
+        className="absolute inset-0 opacity-[0.02] pointer-events-none z-0" 
         style={{ 
           backgroundImage: `radial-gradient(rgba(229, 9, 20, 0.25) 1px, transparent 1px)`, 
           backgroundSize: "28px 28px" 
         }} 
       />
 
-      {/* LAYER 5: Red gradient circles at corners with very low opacity */}
-      <div className="absolute -top-32 -left-32 w-96 h-96 bg-[rgba(229,9,20,0.06)] rounded-full blur-[150px] pointer-events-none z-0" />
-      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-[rgba(229,9,20,0.04)] rounded-full blur-[150px] pointer-events-none z-0" />
+      {/* LAYER 6: Subtle floating red gradient shapes with low opacity */}
+      <div className="absolute -top-32 -left-32 w-96 h-96 bg-[rgba(229,9,20,0.04)] rounded-full blur-[150px] pointer-events-none z-0" />
+      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-[rgba(229,9,20,0.03)] rounded-full blur-[150px] pointer-events-none z-0" />
 
       {/* Slowly Floating Accent Elements */}
-      {[...Array(4)].map((_, i) => (
+      {[...Array(3)].map((_, i) => (
         <motion.div
           key={i}
           className="absolute rounded-full bg-[#E50914]/3 blur-xl pointer-events-none z-0"
           style={{
             width: i * 20 + 30,
             height: i * 20 + 30,
-            left: `${i * 25 + 10}%`,
+            left: `${i * 20 + 10}%`,
             top: `${i * 15 + 25}%`,
           }}
           animate={{
@@ -85,7 +88,7 @@ export default function SubpageHero({
             y: [0, i * 20 - 40, 0],
           }}
           transition={{
-            duration: 20 + i * 3,
+            duration: 22 + i * 3,
             repeat: Infinity,
             ease: "easeInOut",
           }}
@@ -104,13 +107,13 @@ export default function SubpageHero({
         </div>
 
         {/* Hero Grid layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* Main content block */}
-          <div className="lg:col-span-10 flex gap-6 items-start">
+          {/* Left Column: Heading, Description, CTA, Card */}
+          <div className="lg:col-span-8 flex gap-6 items-start">
             
             {/* Red Accent vertical line */}
-            <div className="w-1.5 h-32 bg-gradient-to-b from-[#E50914] to-[#FF4040] rounded-full shadow-[0_0_15px_rgba(229,9,20,0.3)] shrink-0 self-stretch hidden sm:block" />
+            <div className="w-1.5 h-32 bg-gradient-to-b from-[#E50914] to-[#FF4D4D] rounded-full shadow-[0_0_15px_rgba(229,9,20,0.2)] shrink-0 self-stretch hidden sm:block" />
 
             <motion.div
               initial={{ opacity: 0, y: 25 }}
@@ -123,7 +126,7 @@ export default function SubpageHero({
                 {titlePrefix}{" "}
                 
                 {/* Highlighted word using brand red and subtle hover line */}
-                <span className="bg-gradient-to-r from-[#E50914] to-[#FF4040] bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(229,9,20,0.05)] relative inline-block group/highlight">
+                <span className="bg-gradient-to-r from-[#E50914] to-[#FF4D4D] bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(229,9,20,0.05)] relative inline-block group/highlight">
                   {titleHighlight}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#E50914] transition-all duration-300 group-hover/highlight:w-full" />
                 </span>
@@ -150,7 +153,7 @@ export default function SubpageHero({
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="p-5 bg-white/50 backdrop-blur-md border border-gray-200/60 rounded-[18px] flex flex-wrap items-center gap-x-6 gap-y-3 max-w-fit shadow-sm relative overflow-hidden group hover:border-[#E50914]/20 transition-all duration-300"
+                  className="p-5 bg-white/60 backdrop-blur-md border border-gray-200/50 rounded-[18px] flex flex-wrap items-center gap-x-6 gap-y-3 max-w-fit shadow-sm relative overflow-hidden group hover:border-[#E50914]/20 transition-all duration-300"
                 >
                   <div className="absolute inset-0 bg-gradient-to-tr from-[#E50914]/5 via-transparent to-transparent pointer-events-none" />
                   
@@ -184,6 +187,23 @@ export default function SubpageHero({
 
             </motion.div>
           </div>
+
+          {/* Right Column: Branded element aligned similarly to the reference layout */}
+          <div className="lg:col-span-4 hidden lg:flex justify-end items-center relative h-full min-h-[300px]">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="p-6 bg-white/60 backdrop-blur-lg border border-gray-200/50 rounded-[24px] shadow-xl max-w-[280px] hover:border-[#E50914]/20 transition-all duration-300 transform hover:-translate-y-1"
+            >
+              <div className="text-[#E50914] font-heading font-black text-4xl mb-1">100%</div>
+              <div className="text-gray-900 font-sans font-bold text-xs uppercase tracking-wider mb-2">Local Success Rate</div>
+              <div className="text-gray-500 font-sans text-xs leading-relaxed">
+                Empowering businesses across Pattambi, Kerala, with top-tier marketing campaigns.
+              </div>
+            </motion.div>
+          </div>
+
         </div>
 
         {/* Scroll Indicator */}
