@@ -5,9 +5,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronRight, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import SubpageHero from "@/components/SubpageHero";
 
 export default function ProjectsClient() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -69,32 +70,13 @@ export default function ProjectsClient() {
       <Navbar />
 
       <main className="flex-1">
-        {/* Banner Section */}
-        <section className="relative pt-36 pb-20 bg-[#111111] text-white overflow-hidden">
-          <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-primary/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-            {/* Breadcrumbs */}
-            <div className="flex items-center gap-2 text-xs font-sans font-semibold text-gray-400 mb-6 tracking-wider uppercase">
-              <Link href="/" className="hover:text-primary transition-colors">Home</Link>
-              <ChevronRight size={12} className="text-gray-600" />
-              <span className="text-primary font-bold">Projects</span>
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="max-w-3xl"
-            >
-              <h1 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl leading-tight text-white mb-4 tracking-tight">
-                Our Work Portfolio
-              </h1>
-              <p className="font-sans text-base sm:text-lg text-gray-400 leading-relaxed">
-                Take a look at how we help diverse industries build high-converting e-commerce engines, local maps visibility, and corporate branding identity systems.
-              </p>
-            </motion.div>
-          </div>
-        </section>
+        {/* Subpage Hero Section */}
+        <SubpageHero
+          titlePrefix="Building Brands That"
+          titleHighlight="Grow"
+          description="Take a look at how we help diverse industries build high-converting e-commerce engines, local maps visibility, and corporate branding identity systems."
+          breadcrumbCategory="Projects"
+        />
 
         {/* Portfolio Content */}
         <section className="py-24 bg-white relative">

@@ -1,12 +1,12 @@
 "use client";
 
 import { use, useState } from "react";
-import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, ChevronRight, X, ChevronLeft, ChevronRight as ChevronRightIcon, Plus, Minus, ArrowLeft } from "lucide-react";
+import { Check, X, ChevronLeft, ChevronRight as ChevronRightIcon, Plus, Minus } from "lucide-react";
+import SubpageHero from "@/components/SubpageHero";
 
 // Full data mapping for all 11 services
 const servicesData: Record<
@@ -858,47 +858,14 @@ export default function ServiceClient({ params }: { params: Promise<{ id: string
       <Navbar />
 
       <main className="flex-1">
-        {/* Hero Banner Section */}
-        <section className="relative pt-36 pb-20 bg-[#111111] text-white overflow-hidden">
-          {/* Decorative background glows */}
-          <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-primary/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-red-800/10 rounded-full blur-3xl pointer-events-none" />
-          
-          <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-            {/* Breadcrumbs */}
-            <div className="flex items-center gap-2 text-xs font-sans font-semibold text-gray-400 mb-6 tracking-wider uppercase">
-              <Link href="/" className="hover:text-primary transition-colors">Home</Link>
-              <ChevronRight size={12} className="text-gray-600" />
-              <Link href="/#services" className="hover:text-primary transition-colors">Services</Link>
-              <ChevronRight size={12} className="text-gray-600" />
-              <span className="text-primary font-bold">{service.title}</span>
-            </div>
-
-            {/* Back to Home Link */}
-            <Link 
-              href="/#services" 
-              className="inline-flex items-center gap-2 text-xs font-sans font-semibold text-white/70 hover:text-primary transition-colors mb-6 group"
-            >
-              <ArrowLeft size={14} className="transform transition-transform duration-300 group-hover:-translate-x-1" />
-              Back to Services
-            </Link>
-
-            {/* Title Block */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="max-w-3xl"
-            >
-              <h1 className="font-heading font-black text-3xl sm:text-5xl leading-tight text-white mb-4 tracking-tight">
-                {service.title}
-              </h1>
-              <p className="font-sans text-base sm:text-lg text-gray-400 leading-relaxed">
-                {service.subtitle}
-              </p>
-            </motion.div>
-          </div>
-        </section>
+        {/* Subpage Hero Section */}
+        <SubpageHero
+          titlePrefix={service.title.split(" ").slice(0, -1).join(" ")}
+          titleHighlight={service.title.split(" ").slice(-1)[0]}
+          description={service.subtitle}
+          breadcrumbCategory="Services"
+          trustedHighlights={service.whoNeedsIt.slice(0, 3)}
+        />
 
         {/* About the Service Section */}
         <section className="py-24 bg-white relative">

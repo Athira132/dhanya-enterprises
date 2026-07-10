@@ -4,9 +4,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { motion } from "framer-motion";
-import { Laptop, ShoppingBag, Search, Smartphone, Megaphone, Palette, Video, Users, MapPin, TrendingUp, Globe, ChevronRight, ArrowRight } from "lucide-react";
+import { Laptop, ShoppingBag, Search, Smartphone, Megaphone, Palette, Video, Users, MapPin, TrendingUp, Globe, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import SubpageHero from "@/components/SubpageHero";
 
 export default function ServicesClient() {
   const services = [
@@ -95,32 +96,13 @@ export default function ServicesClient() {
       <Navbar />
 
       <main className="flex-1">
-        {/* Banner Section */}
-        <section className="relative pt-36 pb-20 bg-[#111111] text-white overflow-hidden">
-          <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-primary/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-            {/* Breadcrumbs */}
-            <div className="flex items-center gap-2 text-xs font-sans font-semibold text-gray-400 mb-6 tracking-wider uppercase">
-              <Link href="/" className="hover:text-primary transition-colors">Home</Link>
-              <ChevronRight size={12} className="text-gray-600" />
-              <span className="text-primary font-bold">Services</span>
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="max-w-3xl"
-            >
-              <h1 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl leading-tight text-white mb-4 tracking-tight">
-                Our Digital Services
-              </h1>
-              <p className="font-sans text-base sm:text-lg text-gray-400 leading-relaxed">
-                Explore our full suite of professional services engineered to drive traffic, elevate visual brand identities, and convert organic clicks into customers.
-              </p>
-            </motion.div>
-          </div>
-        </section>
+        {/* Subpage Hero Section */}
+        <SubpageHero
+          titlePrefix="Digital Marketing That"
+          titleHighlight="Delivers"
+          description="Explore our full suite of professional Digital Marketing and Website Development services engineered to drive traffic, elevate visual brand identities, and convert organic clicks into customers."
+          breadcrumbCategory="Services"
+        />
 
         {/* Services Grid Section */}
         <section className="py-24 bg-white relative">
