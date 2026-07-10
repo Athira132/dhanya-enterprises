@@ -112,7 +112,7 @@ export default function SubpageHero({
         </div>
 
         {/* Hero Grid layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* Left Column: Heading, Description, CTA, Card */}
           <div className="lg:col-span-8 flex gap-6 items-start">
@@ -194,7 +194,7 @@ export default function SubpageHero({
           </div>
 
           {/* Right Column: Dynamic rendering based on heroImage presence */}
-          <div className="lg:col-span-4 flex justify-center lg:justify-end items-center relative h-full min-h-[300px]">
+          <div className="lg:col-span-4 flex justify-center lg:justify-end items-start relative lg:pt-2 w-full">
             {heroImage ? (
               /* Standalone premium hero image with rounded corners and shadows (perfect for About page 3:4 portrait) */
               <motion.div
