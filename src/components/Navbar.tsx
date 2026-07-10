@@ -114,7 +114,7 @@ export default function Navbar() {
           <div className="flex items-center gap-3 z-10 shrink-0">
             <Link href="/" className="flex items-center gap-3 group">
               {/* Logo Icon */}
-              <div className="relative w-8 h-8 sm:w-10 sm:h-10 transition-transform duration-300 group-hover:scale-105">
+              <div className="relative w-10 h-10 sm:w-14 sm:h-14 transition-transform duration-300 group-hover:scale-105">
                 <Image
                   src="/images/logo-new.png"
                   alt="Dhanya Enterprises Icon"

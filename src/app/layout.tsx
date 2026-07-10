@@ -48,18 +48,18 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/portfolio_ecommerce.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Dhanya Enterprises - Digital Marketing Agency",
+        url: "/images/logo-new.png",
+        width: 415,
+        height: 444,
+        alt: "Dhanya Enterprises Logo",
       }
     ]
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "Dhanya Enterprises | Best Digital Marketing Agency in Pattambi, Kerala",
     description: "Dhanya Enterprises is the premier digital marketing and website development agency in Pattambi, Kerala. We scale brands with SEO, Google Ads, Meta campaigns, and graphic design.",
-    images: ["/images/portfolio_ecommerce.jpg"],
+    images: ["/images/logo-new.png"],
   },
   robots: {
     index: true,
