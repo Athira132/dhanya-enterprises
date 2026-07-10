@@ -41,7 +41,7 @@ const servicesData: Record<
     title: "Website Design & Development",
     subtitle: "Custom Next.js, React, and WordPress sites optimized for extreme loading speed, SEO, and visual excellence.",
     price: "Starting at ₹9,999",
-    image: "/images/portfolio_ecommerce.jpg",
+    image: "/images/service_webdev.jpg",
     about: "In the digital age, your website is your virtual storefront. At Dhanya Enterprises, we build modern Next.js, React, and WordPress sites optimized for extreme loading speeds, SEO, and visual excellence. We handle everything from design mocks to hosting configuration, ensuring your website serves as a highly efficient marketing funnel that converts visitors into customers.",
     whoNeedsIt: [
       "Startup Founders & SMBs",
@@ -110,7 +110,7 @@ const servicesData: Record<
     title: "E-commerce Website Development",
     subtitle: "Sleek online storefronts with secure payment gateways, inventory sync, and seamless buyer checkouts.",
     price: "Starting at ₹19,999",
-    image: "/images/portfolio_fashion.jpg",
+    image: "/images/service_ecommerce.jpg",
     about: "Bring your retail store online with a powerful e-commerce platform. Dhanya Enterprises designs secure, lightning-fast shopping sites utilizing Shopify, WooCommerce, or custom Next.js configurations. From cart optimizations and secure payment gateways (Razorpay, Stripe) to simple inventory trackers, we make online selling simple and profitable.",
     whoNeedsIt: [
       "Retail Brand Owners",
@@ -179,7 +179,7 @@ const servicesData: Record<
     title: "Search Engine Optimization (SEO)",
     subtitle: "Rank #1 on Google with advanced keyword strategies, technical audits, on-page edits, and authority backlinking.",
     price: "Starting at ₹7,999/mo",
-    image: "/images/portfolio_education.jpg",
+    image: "/images/service_seo.jpg",
     about: "Be seen where your customers are searching. Our search engine optimization services elevate your organic search rankings on Google, Bing, and other search engines. We handle technical SEO (site speed, schema markup, crawlability), on-page content optimization, targeted keyword mapping, and white-hat domain authority backlinking campaigns.",
     whoNeedsIt: [
       "Local Services & Contractors",
@@ -248,7 +248,7 @@ const servicesData: Record<
     title: "Mobile App Marketing",
     subtitle: "Increase app installs and user retention with structured App Store Optimization (ASO) and cost-efficient user acquisition.",
     price: "Starting at ₹11,999",
-    image: "/images/portfolio_healthcare.jpg",
+    image: "/images/service_appmarketing.jpg",
     about: "Launching an app is only the first step. To succeed, you need steady installs and high retention rates. Dhanya Enterprises designs specialized App Store Optimization (ASO) strategies for iOS App Store and Google Play Store to drive organic visibility, alongside targeted App Install Campaigns on Meta and Google Ads to acquire users at the lowest cost.",
     whoNeedsIt: [
       "Mobile App Startups",
@@ -317,7 +317,7 @@ const servicesData: Record<
     title: "Meta Ads (Facebook & Instagram Advertising)",
     subtitle: "Target high-intent customers, create high-converting copy, and optimize ad layouts to scale lead generation.",
     price: "Starting at ₹9,999/mo",
-    image: "/images/portfolio_real_estate.jpg",
+    image: "/images/service_metaads.jpg",
     about: "Put your brand in front of millions of active users. Dhanya Enterprises structures and manages highly targetable Meta Ads (Facebook & Instagram Ads) customized to drive direct leads, store sales, and visual awareness. We engineer high-converting ad copies, design interactive visual assets, and set up pixel conversion tracking to ensure every rupee spent translates into business growth.",
     whoNeedsIt: [
       "D2C Brands & Retailers",
@@ -386,7 +386,7 @@ const servicesData: Record<
     title: "Graphic Design",
     subtitle: "Premium visual assets including flyers, brochures, custom business profiles, brochures, and brand catalogs.",
     price: "Starting at ₹4,999",
-    image: "/images/portfolio_fashion.jpg",
+    image: "/images/service_branding.jpg",
     about: "High-quality graphics build immediate trust. Dhanya Enterprises designs premium graphics, brochures, catalog folders, and social media flyers that reflect your brand's unique identity. We ensure every canvas aligns with modern typography guidelines, color theories, and clean layout patterns to drive customer action and visual engagement.",
     whoNeedsIt: [
       "Corporate Marketing Teams",
@@ -455,7 +455,7 @@ const servicesData: Record<
     title: "Video Editing & Motion Graphics",
     subtitle: "Capture eyes with engaging daily Reels, professional video edits, text-animations, and premium branding motion assets.",
     price: "Starting at ₹7,999",
-    image: "/images/portfolio_restaurant.jpg",
+    image: "/images/service_videoediting.jpg",
     about: "Video is the highest-performing content medium online. Dhanya Enterprises produces premium video edits, engaging Instagram Reels, TikTok video layouts, corporate explainers, and slick motion graphics. We compile raw shots, refine audio quality, inject trendy text animations, and add color-grading overlays to construct viral-worthy videos that build audiences.",
     whoNeedsIt: [
       "Social Media Creators",
@@ -524,7 +524,7 @@ const servicesData: Record<
     title: "Lead Generation Campaigns",
     subtitle: "Scale B2B or B2C queries with advanced landing page forms, CRM automation, and targeted sales funnels.",
     price: "Starting at ₹14,999/mo",
-    image: "/images/hero_team.jpg",
+    image: "/images/service_leads.jpg",
     about: "Stop waiting for customers; actively acquire them. Dhanya Enterprises creates custom Lead Generation Campaigns utilizing multi-channel funnels (Google Search, Meta Ads, Landing Pages). We build highly converting landing pages, set up lead capture forms, configure automated email notifications, and connect lead pipes directly to your CRM, ensuring your sales team gets a consistent stream of qualified, hot leads.",
     whoNeedsIt: [
       "Real Estate Agencies",
@@ -593,7 +593,7 @@ const servicesData: Record<
     title: "Local SEO & Google Business Profile Optimization",
     subtitle: "Dominate local maps searches in your region and attract local walking customers directly to your storefront.",
     price: "Starting at ₹5,999/mo",
-    image: "/images/portfolio_real_estate.jpg",
+    image: "/images/service_localseo.jpg",
     about: "When locals search for products or services near them, your business should be the first choice. At Dhanya Enterprises, we specialize in local SEO and Google Business Profile (GBP / Google My Business) optimization. We manage local listings, optimize profile descriptions, set up geo-tagged images, manage local review strategies, and boost local map visibility to direct maps searches straight to your shop doorstep.",
     whoNeedsIt: [
       "Retail Storefronts & Showrooms",
@@ -662,7 +662,7 @@ const servicesData: Record<
     title: "Marketing Strategy & Consulting",
     subtitle: "Interactive consulting workshops, competitive research, and long-term scaling strategy for startups.",
     price: "Starting at ₹14,999",
-    image: "/images/hero_team.jpg",
+    image: "/images/service_consulting.jpg",
     about: "A campaign without a strategy is a waste of budget. Dhanya Enterprises offers professional marketing strategy consulting. We run interactive workshops for business founders, analyze competitor campaigns, define target buyer personas, select optimal marketing channels, and outline a detailed 12-month scaling plan to help you grow your brand predictably and avoid costly mistakes.",
     whoNeedsIt: [
       "Startup Founders & Business Owners",
@@ -731,7 +731,7 @@ const servicesData: Record<
     title: "Marketplace Marketing (Amazon, Flipkart, etc.)",
     subtitle: "Optimize product listings, run cost-efficient marketplace Ads, and design A+ content to boost online store sales.",
     price: "Starting at ₹12,999/mo",
-    image: "/images/portfolio_ecommerce.jpg",
+    image: "/images/service_marketplace.jpg",
     about: "Scale your e-commerce brand inside the world's largest shopping search engines. Dhanya Enterprises optimizes and manages your presence on marketplace portals like Amazon, Flipkart, Myntra, and others. We run marketplace keyword listing optimizations, design premium A+ content (EBC layouts), set up sponsored product ads, and manage feedback loops to maximize product review scores.",
     whoNeedsIt: [
       "E-commerce Brand Sellers",
@@ -989,62 +989,90 @@ export default function ServiceClient({ params }: { params: Promise<{ id: string
                   Service Highlights
                 </span>
                 <h2 className="font-heading font-black text-2xl md:text-3xl lg:text-4xl text-dark tracking-tight mb-4">
-                  Website Mappings We Develop
+                  Completed Client Projects
                 </h2>
                 <p className="font-sans text-base text-text-secondary">
-                  We design and build premium custom websites tailored for a wide variety of businesses and industries.
+                  Take a visual look at a selected set of our successfully deployed corporate and retail web platforms.
                 </p>
               </div>
 
-              {/* Mappings Grid (26 Types) */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {/* Mappings Grid - 2x2 Desktop Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {[
-                  { title: "Business Websites", desc: "Establish digital authority and showcase your core solutions.", icon: "💼" },
-                  { title: "Corporate Websites", desc: "Multi-divisional portals designed for corporate brand trust.", icon: "🏢" },
-                  { title: "E-commerce Websites", desc: "Scale sales with integrated payment funnels and stock synchronization.", icon: "🛍️" },
-                  { title: "Healthcare Websites", desc: "Patient-centric websites with clean layouts and care guidelines.", icon: "🏥" },
-                  { title: "Hospital Websites", desc: "Clinical directories, departments showcase, and secure patient portals.", icon: "🏨" },
-                  { title: "Clinic Websites", desc: "Patient check-ins, medical services, and doctor profiles.", icon: "🩺" },
-                  { title: "Educational Websites", desc: "Student dashboards, admission guidelines, and course catalogs.", icon: "🎓" },
-                  { title: "School Websites", desc: "Academic calendars, admissions workflow, and circular updates.", icon: "🏫" },
-                  { title: "College Websites", desc: "Syllabus listings, faculty directories, and student resources.", icon: "🏛️" },
-                  { title: "Academy Websites", desc: "Specialized training catalogs and direct student enquiry systems.", icon: "🎯" },
-                  { title: "Travel Websites", desc: "Tour packaging, local guides, and visa processing helpers.", icon: "✈️" },
-                  { title: "Tourism Websites", desc: "Vacation brochures, interactive maps, and sight-seeing funnels.", icon: "🌴" },
-                  { title: "Hotel Websites", desc: "Room bookings, resort amenities, and virtual visits.", icon: "🏨" },
-                  { title: "Resort Websites", desc: "Leisure retreats, booking forms, and luxury features showcase.", icon: "🌅" },
-                  { title: "Interior Design Websites", desc: "Portfolio galleries, material specifications, and consult forms.", icon: "📐" },
-                  { title: "Furniture Websites", desc: "Product catalogs, custom wood specifications, and order inquiries.", icon: "🪑" },
-                  { title: "Real Estate Websites", desc: "Property filters, map locations, and direct builder lead capture.", icon: "🏠" },
-                  { title: "Portfolio Websites", desc: "Showcase personal work, creative skills, and experience chronologies.", icon: "🎨" },
-                  { title: "Personal Brand Websites", desc: "Maximize personal influence and scale consultation bookings.", icon: "👤" },
-                  { title: "Landing Pages", desc: "Single-intent sales flows optimized for maximum conversions.", icon: "📄" },
-                  { title: "Startup Websites", desc: "MVP showcases, pitch decks, and waitlist registration forms.", icon: "🚀" },
-                  { title: "Restaurant Websites", desc: "Interactive food menus, online table booking, and direct delivery links.", icon: "🍔" },
-                  { title: "NGO Websites", desc: "Donation gates, social campaigns, and volunteer registries.", icon: "🤝" },
-                  { title: "Finance Websites", desc: "Loan calculators, financial consulting services, and secure gateways.", icon: "📊" },
-                  { title: "Consultancy Websites", desc: "Expert advisory services, scheduling tools, and client reviews.", icon: "💡" },
-                  { title: "Construction Websites", desc: "Commercial projects portfolio, safety standards, and quote calculators.", icon: "🏗️" },
+                  {
+                    title: "Mondari Group",
+                    url: "https://mondarigroup.com/",
+                    category: "Corporate Business",
+                    desc: "A high-end multi-divisional corporate website designed to establish brand authority across diverse business sectors. Features a custom architectural layout, clean services presentation, and interactive user flows.",
+                    image: "/images/portfolio_corporate.png",
+                  },
+                  {
+                    title: "New Vishwas Furniture",
+                    url: "https://newvishwasfurniture.in/",
+                    category: "Furniture Website",
+                    desc: "A premium digital furniture showroom highlighting handcrafted luxury home and office furniture. Optimized with clean layouts, advanced search indexing, and lead-generation product enquiry gateways.",
+                    image: "/images/portfolio_furniture.png",
+                  },
+                  {
+                    title: "Alfa Travel Link",
+                    url: "https://alfatravellink.com/",
+                    category: "Travel & Tourism",
+                    desc: "A full-scale tour and travel management portal streamlining holiday packaging, flight details, and visa processes. Configured for fast search latency, high booking conversions, and mobile responsiveness.",
+                    image: "/images/portfolio_travel.png",
+                  },
+                  {
+                    title: "Classy Wood Interior",
+                    url: "https://classywoodinterior.com/",
+                    category: "Interior Design",
+                    desc: "A visually stunning digital portfolio for premium interior designers showcasing bespoke residential and commercial space architectures. Features immersive image galleries, design consultations, and material blueprints.",
+                    image: "/images/portfolio_interior.png",
+                  },
                 ].map((item, idx) => (
                   <motion.div
                     key={idx}
-                    initial={{ opacity: 0, y: 15 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: (idx % 8) * 0.05 }}
-                    whileHover={{ y: -5, scale: 1.02 }}
-                    className="p-5 bg-white border border-border-light rounded-2xl shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-300 flex flex-col gap-3 group"
+                    transition={{ duration: 0.5, delay: (idx % 2) * 0.1 }}
+                    onClick={() => window.open(item.url, "_blank", "noopener,noreferrer")}
+                    className="group bg-white/70 backdrop-blur-md border border-border-light rounded-2xl overflow-hidden hover:shadow-2xl hover:border-primary/20 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer flex flex-col h-full relative"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-primary/5 text-primary text-xl flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                      {item.icon}
+                    {/* Cover Image */}
+                    <div className="relative w-full aspect-[16/9] bg-gray-100 border-b border-border-light overflow-hidden shrink-0">
+                      <Image
+                        src={item.image}
+                        alt={`${item.title} Screenshot`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        loading="lazy"
+                        className="object-cover transition-transform duration-500 group-hover:scale-103"
+                      />
+                      <div className="absolute inset-0 border border-white/20 rounded-t-2xl pointer-events-none" />
                     </div>
-                    <div>
-                      <h4 className="font-heading font-bold text-sm text-dark group-hover:text-primary transition-colors">
-                        {item.title}
-                      </h4>
-                      <p className="font-sans text-[11px] text-text-secondary leading-normal mt-1">
-                        {item.desc}
-                      </p>
+
+                    {/* Card Content details */}
+                    <div className="p-6 flex flex-col justify-between flex-1 bg-white/40">
+                      <div className="flex flex-col gap-3">
+                        <div className="flex items-center justify-between gap-4">
+                          <h3 className="font-heading font-bold text-lg text-dark group-hover:text-primary transition-colors leading-tight">
+                            {item.title}
+                          </h3>
+                          <span className="font-sans text-[10px] font-bold text-primary uppercase tracking-wider bg-primary/5 px-2.5 py-0.5 rounded shrink-0">
+                            {item.category}
+                          </span>
+                        </div>
+                        <p className="font-sans text-xs text-text-secondary leading-relaxed">
+                          {item.desc}
+                        </p>
+                      </div>
+
+                      <div className="mt-6 pt-4 border-t border-gray-150/60 flex items-center justify-between">
+                        <span className="font-sans font-bold text-xs text-primary group-hover:underline flex items-center gap-1.5">
+                          Visit Website
+                          <ArrowUpRight size={13} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        </span>
+                        <ExternalLink size={13} className="text-gray-400 group-hover:text-primary transition-colors" />
+                      </div>
                     </div>
                   </motion.div>
                 ))}
@@ -1053,17 +1081,17 @@ export default function ServiceClient({ params }: { params: Promise<{ id: string
               {/* Divider */}
               <div className="w-full h-px bg-gray-100 my-20" />
 
-              {/* Subsection: Recent Website Projects */}
-              <div className="mb-24">
+              {/* Subsection: Our Website Portfolio */}
+              <div className="mb-8">
                 <div className="text-center max-w-3xl mx-auto mb-16">
                   <span className="font-sans font-semibold text-xs tracking-wider uppercase text-primary mb-2 block">
                     Portfolio
                   </span>
                   <h3 className="font-heading font-black text-2xl md:text-3xl text-dark tracking-tight mb-3">
-                    Recent Website Projects
+                    Our Website Portfolio
                   </h3>
                   <p className="font-sans text-sm text-text-secondary">
-                    Explore our recently launched client portals built for peak performance and conversion.
+                    Browse our successfully deployed dynamic web solutions, custom portals, and online catalogs designed to power digital growth.
                   </p>
                 </div>
 
@@ -1073,37 +1101,71 @@ export default function ServiceClient({ params }: { params: Promise<{ id: string
                       title: "New Vishwas Furniture",
                       url: "https://newvishwasfurniture.in/",
                       category: "Furniture Website",
+                      desc: "Handcrafted luxury home & office furniture showroom.",
                       image: "/images/portfolio_furniture.png",
                     },
                     {
                       title: "Alfa Travel Link",
                       url: "https://alfatravellink.com/",
                       category: "Travel Website",
+                      desc: "Full-scale global travel management booking gateway.",
                       image: "/images/portfolio_travel.png",
                     },
                     {
                       title: "Mondari Group",
                       url: "https://mondarigroup.com/",
                       category: "Corporate Website",
+                      desc: "Multi-divisional corporate brand authority portal.",
                       image: "/images/portfolio_corporate.png",
                     },
                     {
                       title: "Life Care Health Solutions",
                       url: "https://lifecarehealthsolutions.com/",
                       category: "Healthcare Website",
+                      desc: "Patient-centric home nursing and healthcare services.",
                       image: "/images/portfolio_healthcare.png",
                     },
                     {
                       title: "Bloomax Residency",
                       url: "https://bloomaxresidency.com/",
                       category: "Hotel Website",
+                      desc: "Premium room booking and hotel amenities showcase.",
                       image: "/images/portfolio_residency.png",
                     },
                     {
                       title: "Classy Wood Interior",
                       url: "https://classywoodinterior.com/",
                       category: "Interior Website",
+                      desc: "Immersive design portfolio for custom space architecture.",
                       image: "/images/portfolio_interior.png",
+                    },
+                    {
+                      title: "Klay Ayurveda",
+                      url: "https://klayurveda.com/",
+                      category: "Ayurveda Website",
+                      desc: "Calming wellness portal presenting natural ayurvedic treatments.",
+                      image: "/images/portfolio_ayurveda.png",
+                    },
+                    {
+                      title: "SCSB",
+                      url: "https://scsb.in/",
+                      category: "Banking Website",
+                      desc: "Secure corporate banking and agricultural cooperative portal.",
+                      image: "/images/portfolio_scsb.png",
+                    },
+                    {
+                      title: "Chorode SCB",
+                      url: "https://chorodescb.in/",
+                      category: "Banking Website",
+                      desc: "Dynamic local cooperative bank website for financial resources.",
+                      image: "/images/portfolio_chorode.png",
+                    },
+                    {
+                      title: "Lemppaat Academy",
+                      url: "https://lemppaatacademy.com/",
+                      category: "Educational Academy",
+                      desc: "Professional educational academy listing courses and training.",
+                      image: "/images/portfolio_academy.png",
                     },
                   ].map((project, idx) => (
                     <motion.div
@@ -1111,7 +1173,7 @@ export default function ServiceClient({ params }: { params: Promise<{ id: string
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: (idx % 3) * 0.1 }}
+                      transition={{ duration: 0.5, delay: (idx % 3) * 0.08 }}
                       onClick={() => window.open(project.url, "_blank", "noopener,noreferrer")}
                       className="group bg-white/70 backdrop-blur-md border border-border-light rounded-2xl overflow-hidden hover:shadow-2xl hover:border-primary/20 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer flex flex-col h-full relative"
                     >
@@ -1127,96 +1189,18 @@ export default function ServiceClient({ params }: { params: Promise<{ id: string
                         <div className="absolute inset-0 border border-white/20 rounded-t-2xl pointer-events-none" />
                       </div>
                       <div className="p-5 flex flex-col justify-between flex-1 bg-white/40">
-                        <div className="flex flex-col gap-2">
-                          <h4 className="font-heading font-bold text-base text-dark group-hover:text-primary transition-colors leading-tight">
-                            {project.title}
-                          </h4>
-                          <span className="font-sans text-[10px] font-bold text-primary uppercase tracking-wider bg-primary/5 px-2.5 py-0.5 rounded w-fit">
-                            {project.category}
-                          </span>
-                        </div>
-                        <div className="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between">
-                          <span className="font-sans font-bold text-xs text-primary group-hover:underline flex items-center gap-1">
-                            Visit Website
-                            <ArrowUpRight size={13} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                          </span>
-                          <ExternalLink size={13} className="text-gray-400 group-hover:text-primary transition-colors" />
-                        </div>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Subsection: More Website Projects */}
-              <div>
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                  <span className="font-sans font-semibold text-xs tracking-wider uppercase text-primary mb-2 block">
-                    Extended Works
-                  </span>
-                  <h3 className="font-heading font-black text-2xl md:text-3xl text-dark tracking-tight mb-3">
-                    More Website Projects
-                  </h3>
-                  <p className="font-sans text-sm text-text-secondary">
-                    A wider look at our versatile digital solutions built across diverse banking, wellness, and educational domains.
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                  {[
-                    {
-                      title: "Klay Ayurveda",
-                      url: "https://klayurveda.com/",
-                      category: "Ayurveda Website",
-                      image: "/images/portfolio_ayurveda.png",
-                    },
-                    {
-                      title: "SCSB",
-                      url: "https://scsb.in/",
-                      category: "Banking Website",
-                      image: "/images/portfolio_scsb.png",
-                    },
-                    {
-                      title: "Chorode SCB",
-                      url: "https://chorodescb.in/",
-                      category: "Banking Website",
-                      image: "/images/portfolio_chorode.png",
-                    },
-                    {
-                      title: "Lemppaat Academy",
-                      url: "https://lemppaatacademy.com/",
-                      category: "Educational Academy",
-                      image: "/images/portfolio_academy.png",
-                    },
-                  ].map((project, idx) => (
-                    <motion.div
-                      key={project.title}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: (idx % 4) * 0.08 }}
-                      onClick={() => window.open(project.url, "_blank", "noopener,noreferrer")}
-                      className="group bg-white/70 backdrop-blur-md border border-border-light rounded-2xl overflow-hidden hover:shadow-2xl hover:border-primary/20 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer flex flex-col h-full relative"
-                    >
-                      <div className="relative w-full aspect-[16/10] overflow-hidden bg-gray-100 border-b border-border-light shrink-0">
-                        <Image
-                          src={project.image}
-                          alt={`${project.title} Preview`}
-                          fill
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                          loading="lazy"
-                          className="object-cover transition-transform duration-500 group-hover:scale-103"
-                        />
-                        <div className="absolute inset-0 border border-white/20 rounded-t-2xl pointer-events-none" />
-                      </div>
-                      <div className="p-5 flex flex-col justify-between flex-1 bg-white/40">
-                        <div className="flex flex-col gap-2">
-                          <h4 className="font-heading font-bold text-sm text-dark group-hover:text-primary transition-colors leading-tight">
-                            {project.title}
-                          </h4>
-                          <span className="font-sans text-[10px] font-bold text-primary uppercase tracking-wider bg-primary/5 px-2.5 py-0.5 rounded w-fit">
-                            {project.category}
-                          </span>
+                        <div className="flex flex-col gap-2.5">
+                          <div className="flex items-center justify-between gap-3">
+                            <h4 className="font-heading font-bold text-base text-dark group-hover:text-primary transition-colors leading-tight truncate max-w-[170px]">
+                              {project.title}
+                            </h4>
+                            <span className="font-sans text-[9px] font-bold text-primary uppercase tracking-wider bg-primary/5 px-2.5 py-0.5 rounded shrink-0">
+                              {project.category}
+                            </span>
+                          </div>
+                          <p className="font-sans text-xs text-text-secondary leading-normal">
+                            {project.desc}
+                          </p>
                         </div>
                         <div className="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between">
                           <span className="font-sans font-bold text-xs text-primary group-hover:underline flex items-center gap-1">

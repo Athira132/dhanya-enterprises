@@ -11,7 +11,7 @@ export default function Services() {
       id: "website-design-development",
       title: "Website Design & Development",
       icon: <Laptop size={24} />,
-      image: "/images/portfolio_ecommerce.jpg",
+      image: "/images/service_webdev.jpg",
       description: "Custom Next.js, React, and WordPress sites optimized for extreme loading speed, SEO, and visual excellence.",
       examples: [
         { name: "Mondari Group", badge: "Corporate", desc: "Multi-division Business Portal" },
@@ -22,7 +22,7 @@ export default function Services() {
       id: "ecommerce-website-development",
       title: "E-commerce Website Development",
       icon: <ShoppingBag size={24} />,
-      image: "/images/portfolio_fashion.jpg",
+      image: "/images/service_ecommerce.jpg",
       description: "Sleek online storefronts with secure payment gateways, inventory sync, and seamless buyer checkouts.",
       examples: [
         { name: "New Vishwas Furniture", badge: "Furniture", desc: "Product-focused User Interface" },
@@ -33,7 +33,7 @@ export default function Services() {
       id: "seo",
       title: "Search Engine Optimization (SEO)",
       icon: <Search size={24} />,
-      image: "/images/portfolio_education.jpg",
+      image: "/images/service_seo.jpg",
       description: "Rank #1 on Google with advanced keyword strategies, technical audits, on-page edits, and authority backlinking.",
       examples: [
         { name: "Klay Ayurveda", badge: "Ayurveda", desc: "Calming Trustworthy Wellness SEO" },
@@ -44,7 +44,7 @@ export default function Services() {
       id: "mobile-app-marketing",
       title: "Mobile App Marketing",
       icon: <Smartphone size={24} />,
-      image: "/images/portfolio_healthcare.jpg",
+      image: "/images/service_appmarketing.jpg",
       description: "Increase app installs and user retention with structured App Store Optimization (ASO) and cost-efficient user acquisition.",
       examples: [
         { name: "Alfa Travel Link", badge: "Travel", desc: "Direct App Install Campaigns" }
@@ -54,7 +54,7 @@ export default function Services() {
       id: "meta-ads",
       title: "Meta Ads (Facebook & Instagram Advertising)",
       icon: <Megaphone size={24} />,
-      image: "/images/portfolio_real_estate.jpg",
+      image: "/images/service_metaads.jpg",
       description: "Target high-intent customers, create high-converting copy, and optimize ad layouts to scale lead generation.",
       examples: [
         { name: "Life Care Health Solutions", badge: "Healthcare", desc: "Meta conversions for Home Care" },
@@ -65,7 +65,7 @@ export default function Services() {
       id: "graphic-design",
       title: "Graphic Design",
       icon: <Palette size={24} />,
-      image: "/images/portfolio_fashion.jpg",
+      image: "/images/service_branding.jpg",
       description: "Premium visual assets including flyers, brochures, custom business profiles, brochures, and brand catalogs.",
       examples: [
         { name: "Mondari Group", badge: "Corporate", desc: "Sleek Corporate Profile Layouts" }
@@ -75,7 +75,7 @@ export default function Services() {
       id: "video-editing-motion-graphics",
       title: "Video Editing & Motion Graphics",
       icon: <Video size={24} />,
-      image: "/images/portfolio_restaurant.jpg",
+      image: "/images/service_videoediting.jpg",
       description: "Capture eyes with engaging daily Reels, professional video edits, text-animations, and premium branding motion assets.",
       examples: [
         { name: "Bloomax Residency", badge: "Hospitality", desc: "High-engagement Resort Reel edits" }
@@ -85,7 +85,7 @@ export default function Services() {
       id: "lead-generation-campaigns",
       title: "Lead Generation Campaigns",
       icon: <Users size={24} />,
-      image: "/images/hero_team.jpg",
+      image: "/images/service_leads.jpg",
       description: "Scale B2B or B2C queries with advanced landing page forms, CRM automation, and targeted sales funnels.",
       examples: [
         { name: "Life Care Health Solutions", badge: "Healthcare", desc: "CRM-integrated Lead Pipelines" },
@@ -96,7 +96,7 @@ export default function Services() {
       id: "local-seo-google-business-profile",
       title: "Local SEO & Google Business Profile Optimization",
       icon: <MapPin size={24} />,
-      image: "/images/portfolio_real_estate.jpg",
+      image: "/images/service_localseo.jpg",
       description: "Dominate local maps searches in your region and attract local walking customers directly to your storefront.",
       examples: [
         { name: "Klay Ayurveda", badge: "Ayurveda", desc: "GBP local ranking optimization" },
@@ -107,7 +107,7 @@ export default function Services() {
       id: "marketing-strategy-consulting",
       title: "Marketing Strategy & Consulting",
       icon: <TrendingUp size={24} />,
-      image: "/images/hero_team.jpg",
+      image: "/images/service_consulting.jpg",
       description: "Interactive consulting workshops, competitive research, and long-term scaling strategy for startups.",
       examples: [
         { name: "Mondari Group", badge: "Corporate", desc: "12-month Corporate Strategy Sync" }
@@ -117,7 +117,7 @@ export default function Services() {
       id: "marketplace-marketing",
       title: "Marketplace Marketing (Amazon, Flipkart, etc.)",
       icon: <Globe size={24} />,
-      image: "/images/portfolio_ecommerce.jpg",
+      image: "/images/service_marketplace.jpg",
       description: "Optimize product listings, run cost-efficient marketplace Ads, and design A+ content to boost online store sales.",
       examples: [
         { name: "New Vishwas Furniture", badge: "Furniture", desc: "Store listing keywords audit" }
