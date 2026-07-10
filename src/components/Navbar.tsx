@@ -75,37 +75,21 @@ export default function Navbar() {
 
   const getLinkClass = (href: string) => {
     const active = isActive(href);
-    const isHome = pathname === "/";
-    const base = "font-sans font-bold text-sm transition-colors duration-300 relative group py-2 cursor-pointer flex items-center gap-1.5 focus:outline-none";
-    
-    let colorClass = "";
-    if (isHome) {
-      colorClass = active ? "text-primary" : "text-text-dark/80 hover:text-primary";
-    } else {
-      if (isScrolled) {
-        colorClass = active ? "text-primary" : "text-text-dark/80 hover:text-primary";
-      } else {
-        // Transparent nav standing on top of subpage dark banner
-        colorClass = active ? "text-white" : "text-white/60 hover:text-white";
-      }
-    }
-    
-    return `${base} ${colorClass}`;
+    const base = "font-sans font-semibold text-[16px] transition-colors duration-300 relative group py-2 cursor-pointer flex items-center gap-1.5 focus:outline-none";
+    return `${base} ${active ? "text-[#E50914]" : "text-[#222222] hover:text-[#E50914]"}`;
   };
-
-  const hamburgerColor = (pathname === "/" || isScrolled) ? "text-dark" : "text-white";
 
   return (
     <>
-      {/* Sticky Navigation Bar */}
+      {/* Sticky Navigation Bar with Frosted Glass light background */}
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b ${
           isScrolled 
-            ? "py-3.5 glass-nav shadow-lg" 
-            : "py-6 bg-transparent"
+            ? "py-3.5 bg-white/95 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.08)] border-black/5" 
+            : "py-5.5 bg-white/80 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.06)] border-black/5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between relative">
@@ -124,11 +108,9 @@ export default function Navbar() {
                 />
               </div>
               {/* Brand Text */}
-              <span className={`font-heading font-black text-lg sm:text-xl tracking-wider leading-none flex flex-col group-hover:text-primary transition-colors ${
-                (pathname === "/" || isScrolled) ? "text-[#1F2937]" : "text-white"
-              }`}>
+              <span className="font-heading font-black text-lg sm:text-xl tracking-wider leading-none flex flex-col text-[#1A1A1A] group-hover:text-[#E50914] transition-colors">
                 DHANYA
-                <span className="text-[9px] font-black tracking-widest text-primary uppercase mt-0.5">
+                <span className="text-[9px] font-black tracking-widest text-[#E50914] uppercase mt-0.5">
                   ENTERPRISES
                 </span>
               </span>
@@ -167,7 +149,7 @@ export default function Navbar() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: 10 }}
                             transition={{ duration: 0.25, ease: "easeOut" }}
-                            className="absolute left-1/2 -translate-x-1/2 mt-3 w-[320px] max-h-[420px] overflow-y-auto bg-white border border-border-light rounded-xl shadow-xl z-50 p-2.5 scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-transparent flex flex-col gap-0.5"
+                            className="absolute left-1/2 -translate-x-1/2 mt-3 w-[320px] max-h-[420px] overflow-y-auto bg-white border border-gray-200 rounded-xl shadow-xl z-50 p-2.5 scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-transparent flex flex-col gap-0.5"
                           >
                             {servicesList.map((service) => {
                               const IconComponent = service.icon;
@@ -179,16 +161,16 @@ export default function Navbar() {
                                   onClick={() => setIsDropdownOpen(false)}
                                   className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 group font-sans text-xs font-semibold ${
                                     isServiceActive 
-                                      ? "text-primary bg-primary/5 font-bold" 
-                                      : "text-text-dark/80 hover:text-primary hover:bg-primary/5"
+                                      ? "text-[#E50914] bg-[#E50914]/5 font-bold" 
+                                      : "text-[#222222]/80 hover:text-[#E50914] hover:bg-[#E50914]/5"
                                   }`}
                                 >
                                   <IconComponent 
                                     size={15} 
                                     className={`transition-colors shrink-0 ${
                                       isServiceActive 
-                                        ? "text-primary" 
-                                        : "text-text-secondary/60 group-hover:text-primary"
+                                        ? "text-[#E50914]" 
+                                        : "text-gray-400 group-hover:text-[#E50914]"
                                     }`} 
                                   />
                                   <span className="truncate">{service.name}</span>
@@ -209,9 +191,9 @@ export default function Navbar() {
                     className={getLinkClass(link.href)}
                   >
                     {link.name}
-                    {!isActive(link.href) && (
-                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-                    )}
+                    <span className={`absolute bottom-0 left-0 h-0.5 bg-[#E50914] transition-all duration-300 ${
+                      isActive(link.href) ? "w-full" : "w-0 group-hover:w-full"
+                    }`} />
                   </Link>
                 );
               })}
@@ -222,7 +204,7 @@ export default function Navbar() {
           <div className="hidden lg:block z-10">
             <Link
               href="/contact"
-              className="bg-primary hover:bg-primary-hover text-white font-sans font-bold text-sm px-6 py-3.5 rounded-full transition-all duration-300 shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 transform hover:-translate-y-0.5 inline-block cursor-pointer"
+              className="bg-[#E50914] hover:bg-[#C80012] text-white font-sans font-bold text-sm px-6 py-3.5 rounded-full transition-all duration-300 shadow-md shadow-[#E50914]/20 hover:shadow-lg hover:shadow-[#E50914]/30 transform hover:-translate-y-0.5 inline-block cursor-pointer"
             >
               Get Free Consultation
             </Link>
@@ -231,7 +213,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`lg:hidden hover:text-primary transition-colors focus:outline-none z-10 ${hamburgerColor}`}
+            className="lg:hidden text-[#222222] hover:text-[#E50914] transition-colors focus:outline-none z-10"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -247,15 +229,15 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-x-0 top-[70px] z-40 bg-white shadow-xl border-t border-border-light lg:hidden flex flex-col p-6 gap-4"
+            className="fixed inset-x-0 top-[70px] z-40 bg-white shadow-xl border-t border-gray-100 lg:hidden flex flex-col p-6 gap-4"
           >
             {navLinks.map((link) => {
               if (link.hasDropdown) {
                 return (
-                  <div key={link.name} className="flex flex-col border-b border-border-light/50 py-1">
+                  <div key={link.name} className="flex flex-col border-b border-gray-100 py-1">
                     <button
                       onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
-                      className="font-sans font-semibold text-lg text-text-dark py-2 flex items-center justify-between hover:text-primary transition-colors focus:outline-none"
+                      className="font-sans font-semibold text-lg text-[#222222] py-2 flex items-center justify-between hover:text-[#E50914] transition-colors focus:outline-none"
                     >
                       <span>{link.name}</span>
                       <motion.span
@@ -287,13 +269,13 @@ export default function Navbar() {
                                 }}
                                 className={`flex items-center gap-3 py-2.5 transition-colors font-sans text-sm font-semibold ${
                                   isServiceActive 
-                                    ? "text-primary bg-primary/5 px-2 rounded-lg" 
-                                    : "text-text-dark/75 hover:text-primary"
+                                    ? "text-[#E50914] bg-[#E50914]/5 px-2 rounded-lg" 
+                                    : "text-[#222222]/80 hover:text-[#E50914]"
                                 }`}
                               >
                                 <IconComponent 
                                   size={14} 
-                                  className={`shrink-0 ${isServiceActive ? "text-primary" : "text-text-secondary/60"}`} 
+                                  className={`shrink-0 ${isServiceActive ? "text-[#E50914]" : "text-gray-400"}`} 
                                 />
                                 <span className="truncate">{service.name}</span>
                               </Link>
@@ -313,8 +295,8 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`font-sans font-semibold text-lg py-2 border-b border-border-light/50 transition-colors ${
-                    isLinkActive ? "text-primary font-bold" : "text-text-dark hover:text-primary"
+                  className={`font-sans font-semibold text-lg py-2 border-b border-gray-100 transition-colors ${
+                    isLinkActive ? "text-[#E50914] font-bold" : "text-[#222222] hover:text-[#E50914]"
                   }`}
                 >
                   {link.name}
@@ -324,7 +306,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="bg-primary hover:bg-primary-hover text-white font-sans font-semibold text-center py-3.5 rounded-full mt-4 transition-all duration-300 shadow-md cursor-pointer"
+              className="bg-[#E50914] hover:bg-[#C80012] text-white font-sans font-semibold text-center py-3.5 rounded-full mt-4 transition-all duration-300 shadow-md cursor-pointer"
             >
               Get Free Consultation
             </Link>
