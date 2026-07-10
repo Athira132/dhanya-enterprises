@@ -5,8 +5,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, X, ChevronLeft, ChevronRight as ChevronRightIcon, Plus, Minus } from "lucide-react";
+import { Check, X, ChevronLeft, ChevronRight as ChevronRightIcon, Plus, Minus, ArrowUpRight, ExternalLink } from "lucide-react";
 import SubpageHero from "@/components/SubpageHero";
+import Image from "next/image";
 
 // Full data mapping for all 11 services
 const servicesData: Record<
@@ -1047,6 +1048,187 @@ export default function ServiceClient({ params }: { params: Promise<{ id: string
                     </div>
                   </motion.div>
                 ))}
+              </div>
+
+              {/* Divider */}
+              <div className="w-full h-px bg-gray-100 my-20" />
+
+              {/* Subsection: Recent Website Projects */}
+              <div className="mb-24">
+                <div className="text-center max-w-3xl mx-auto mb-16">
+                  <span className="font-sans font-semibold text-xs tracking-wider uppercase text-primary mb-2 block">
+                    Portfolio
+                  </span>
+                  <h3 className="font-heading font-black text-2xl md:text-3xl text-dark tracking-tight mb-3">
+                    Recent Website Projects
+                  </h3>
+                  <p className="font-sans text-sm text-text-secondary">
+                    Explore our recently launched client portals built for peak performance and conversion.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {[
+                    {
+                      title: "New Vishwas Furniture",
+                      url: "https://newvishwasfurniture.in/",
+                      category: "Furniture Website",
+                      image: "/images/portfolio_furniture.png",
+                    },
+                    {
+                      title: "Alfa Travel Link",
+                      url: "https://alfatravellink.com/",
+                      category: "Travel Website",
+                      image: "/images/portfolio_travel.png",
+                    },
+                    {
+                      title: "Mondari Group",
+                      url: "https://mondarigroup.com/",
+                      category: "Corporate Website",
+                      image: "/images/portfolio_corporate.png",
+                    },
+                    {
+                      title: "Life Care Health Solutions",
+                      url: "https://lifecarehealthsolutions.com/",
+                      category: "Healthcare Website",
+                      image: "/images/portfolio_healthcare.png",
+                    },
+                    {
+                      title: "Bloomax Residency",
+                      url: "https://bloomaxresidency.com/",
+                      category: "Hotel Website",
+                      image: "/images/portfolio_residency.png",
+                    },
+                    {
+                      title: "Classy Wood Interior",
+                      url: "https://classywoodinterior.com/",
+                      category: "Interior Website",
+                      image: "/images/portfolio_interior.png",
+                    },
+                  ].map((project, idx) => (
+                    <motion.div
+                      key={project.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: (idx % 3) * 0.1 }}
+                      onClick={() => window.open(project.url, "_blank", "noopener,noreferrer")}
+                      className="group bg-white/70 backdrop-blur-md border border-border-light rounded-2xl overflow-hidden hover:shadow-2xl hover:border-primary/20 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer flex flex-col h-full relative"
+                    >
+                      <div className="relative w-full aspect-[16/10] overflow-hidden bg-gray-100 border-b border-border-light shrink-0">
+                        <Image
+                          src={project.image}
+                          alt={`${project.title} Preview`}
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          loading="lazy"
+                          className="object-cover transition-transform duration-500 group-hover:scale-103"
+                        />
+                        <div className="absolute inset-0 border border-white/20 rounded-t-2xl pointer-events-none" />
+                      </div>
+                      <div className="p-5 flex flex-col justify-between flex-1 bg-white/40">
+                        <div className="flex flex-col gap-2">
+                          <h4 className="font-heading font-bold text-base text-dark group-hover:text-primary transition-colors leading-tight">
+                            {project.title}
+                          </h4>
+                          <span className="font-sans text-[10px] font-bold text-primary uppercase tracking-wider bg-primary/5 px-2.5 py-0.5 rounded w-fit">
+                            {project.category}
+                          </span>
+                        </div>
+                        <div className="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between">
+                          <span className="font-sans font-bold text-xs text-primary group-hover:underline flex items-center gap-1">
+                            Visit Website
+                            <ArrowUpRight size={13} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                          </span>
+                          <ExternalLink size={13} className="text-gray-400 group-hover:text-primary transition-colors" />
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Subsection: More Website Projects */}
+              <div>
+                <div className="text-center max-w-3xl mx-auto mb-16">
+                  <span className="font-sans font-semibold text-xs tracking-wider uppercase text-primary mb-2 block">
+                    Extended Works
+                  </span>
+                  <h3 className="font-heading font-black text-2xl md:text-3xl text-dark tracking-tight mb-3">
+                    More Website Projects
+                  </h3>
+                  <p className="font-sans text-sm text-text-secondary">
+                    A wider look at our versatile digital solutions built across diverse banking, wellness, and educational domains.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                  {[
+                    {
+                      title: "Klay Ayurveda",
+                      url: "https://klayurveda.com/",
+                      category: "Ayurveda Website",
+                      image: "/images/portfolio_ayurveda.png",
+                    },
+                    {
+                      title: "SCSB",
+                      url: "https://scsb.in/",
+                      category: "Banking Website",
+                      image: "/images/portfolio_scsb.png",
+                    },
+                    {
+                      title: "Chorode SCB",
+                      url: "https://chorodescb.in/",
+                      category: "Banking Website",
+                      image: "/images/portfolio_chorode.png",
+                    },
+                    {
+                      title: "Lemppaat Academy",
+                      url: "https://lemppaatacademy.com/",
+                      category: "Educational Academy",
+                      image: "/images/portfolio_academy.png",
+                    },
+                  ].map((project, idx) => (
+                    <motion.div
+                      key={project.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: (idx % 4) * 0.08 }}
+                      onClick={() => window.open(project.url, "_blank", "noopener,noreferrer")}
+                      className="group bg-white/70 backdrop-blur-md border border-border-light rounded-2xl overflow-hidden hover:shadow-2xl hover:border-primary/20 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer flex flex-col h-full relative"
+                    >
+                      <div className="relative w-full aspect-[16/10] overflow-hidden bg-gray-100 border-b border-border-light shrink-0">
+                        <Image
+                          src={project.image}
+                          alt={`${project.title} Preview`}
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                          loading="lazy"
+                          className="object-cover transition-transform duration-500 group-hover:scale-103"
+                        />
+                        <div className="absolute inset-0 border border-white/20 rounded-t-2xl pointer-events-none" />
+                      </div>
+                      <div className="p-5 flex flex-col justify-between flex-1 bg-white/40">
+                        <div className="flex flex-col gap-2">
+                          <h4 className="font-heading font-bold text-sm text-dark group-hover:text-primary transition-colors leading-tight">
+                            {project.title}
+                          </h4>
+                          <span className="font-sans text-[10px] font-bold text-primary uppercase tracking-wider bg-primary/5 px-2.5 py-0.5 rounded w-fit">
+                            {project.category}
+                          </span>
+                        </div>
+                        <div className="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between">
+                          <span className="font-sans font-bold text-xs text-primary group-hover:underline flex items-center gap-1">
+                            Visit Website
+                            <ArrowUpRight size={13} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                          </span>
+                          <ExternalLink size={13} className="text-gray-400 group-hover:text-primary transition-colors" />
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
 
             </div>
