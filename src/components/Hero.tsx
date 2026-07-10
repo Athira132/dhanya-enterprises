@@ -15,31 +15,42 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start relative z-10">
         {/* Left Side: Copy & Stats */}
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="lg:col-span-5 flex flex-col gap-8 w-full"
-        >
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full w-fit">
+        <div className="lg:col-span-6 flex flex-col gap-8 w-full">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full w-fit"
+          >
             <span className="w-2 h-2 rounded-full bg-primary animate-ping" />
             <span className="font-sans font-semibold text-xs tracking-wider uppercase">Premium Digital Agency</span>
-          </div>
+          </motion.div>
 
-          <h1 className="font-heading font-black text-4xl sm:text-5xl xl:text-6xl leading-[1.1] text-dark tracking-tight">
-            Grow Your Business{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-red-700">
-              Digitally
-            </span>{" "}
-            with <span className="text-[#E30613]">Dhanya Enterprises</span>
-          </h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.1 }}
+            className="font-heading font-black text-4xl sm:text-5xl lg:text-[60px] xl:text-[68px] leading-[1.05] text-[#1A1A1A] tracking-[-1.5px]"
+          >
+            Accelerate <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E50914] to-[#FF5A5F] drop-shadow-[0_2px_10px_rgba(229,9,20,0.05)]">Business Growth</span> through <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E50914] to-[#FF5A5F] drop-shadow-[0_2px_10px_rgba(229,9,20,0.05)]">Digital Marketing</span> with <span className="text-[#E30613]">Dhanya Enterprises</span>
+          </motion.h1>
 
-          <p className="font-sans text-base sm:text-lg text-text-secondary leading-relaxed max-w-xl">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.25 }}
+            className="font-sans text-base sm:text-lg text-text-secondary leading-relaxed max-w-xl"
+          >
             We help businesses build their online presence through websites, branding, digital marketing, and business solutions that generate real results.
-          </p>
+          </motion.p>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.35 }}
+            className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center"
+          >
             <Link
               href="/#contact"
               className="bg-primary hover:bg-primary-hover text-white font-sans font-bold text-base px-8 py-4 rounded-full transition-all duration-300 shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2 cursor-pointer"
@@ -53,10 +64,15 @@ export default function Hero() {
             >
               View Services
             </Link>
-          </div>
+          </motion.div>
 
           {/* Floating Statistics Badges */}
-          <div className="grid grid-cols-3 gap-4 border-t border-border-light pt-8 mt-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.45 }}
+            className="grid grid-cols-3 gap-4 border-t border-border-light pt-8 mt-4"
+          >
             {[
               { label: "Happy Clients", value: "250+" },
               { label: "Projects Done", value: "400+" },
@@ -69,18 +85,27 @@ export default function Hero() {
                 <span className="font-sans text-xs sm:text-sm text-text-secondary font-medium">{stat.label}</span>
               </div>
             ))}
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
 
-        {/* Right Side: Image */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          className="lg:col-span-7 relative flex justify-center lg:justify-end w-full lg:pt-2"
-        >
-          {/* Main Hero Image Container (Increased by 25%) */}
-          <div className="relative w-full max-w-[450px] lg:max-w-[620px] aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-white transform hover:scale-[1.01] transition-transform duration-300">
+        {/* Right Side: Image with Floating Animation */}
+        <div className="lg:col-span-6 relative flex justify-center lg:justify-end w-full lg:pt-2">
+          {/* Main Hero Image Container (Reduced by 15% to 520px with Floating loops) */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ 
+              opacity: 1, 
+              scale: 1,
+              y: [0, -8, 0]
+            }}
+            whileHover={{ scale: 1.02 }}
+            transition={{
+              opacity: { duration: 0.8, ease: "easeOut" },
+              scale: { duration: 0.8, ease: "easeOut" },
+              y: { duration: 5.5, repeat: Infinity, ease: "easeInOut" }
+            }}
+            className="relative w-full max-w-[430px] lg:max-w-[520px] aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl hover:shadow-primary/10 border-4 border-white transition-shadow duration-300 cursor-pointer"
+          >
             <Image
               src="/images/hero-new.png"
               alt="Dhanya Enterprises Workspace"
@@ -89,9 +114,9 @@ export default function Hero() {
               className="object-cover"
             />
             {/* Dark overlay gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-dark/20 via-transparent to-transparent" />
-          </div>
-        </motion.div>
+            <div className="absolute inset-0 bg-gradient-to-t from-dark/20 via-transparent to-transparent pointer-events-none" />
+          </motion.div>
+        </div>
       </div>
     </section>
   );
