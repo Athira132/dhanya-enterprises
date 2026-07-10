@@ -121,7 +121,7 @@ export default function RootLayout({
                   "name": "Dhanya Enterprises",
                   "image": "https://dhanya-enterprises.vercel.app/images/portfolio_ecommerce.jpg",
                   "url": "https://dhanya-enterprises.vercel.app",
-                  "telephone": "+919961992772",
+                  "telephone": ["+919745108772", "+919961992772"],
                   "priceRange": "$$",
                   "address": {
                     "@type": "PostalAddress",

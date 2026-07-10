@@ -1250,7 +1250,7 @@ export default function ServiceClient({ params }: { params: Promise<{ id: string
                           value={formData.phone}
                           onChange={handleInputChange}
                           className="font-sans text-sm border border-border-light rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all bg-white"
-                          placeholder="+91 99619 92772"
+                          placeholder="+91 97451 08772"
                         />
                       </div>
                     </div>
@@ -1325,7 +1325,7 @@ export default function ServiceClient({ params }: { params: Promise<{ id: string
                         {isSubmitting ? "Sending..." : "Enquire Now"}
                       </button>
                       <a
-                        href="https://wa.me/919961992772?text=Hello%20Dhanya%20Enterprises,%20I%20found%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20services.%20Please%20contact%20me."
+                        href="https://wa.me/919745108772?text=Hello%20Dhanya%20Enterprises,%20I%20found%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20services.%20Please%20contact%20me."
                         target="_blank"
                         rel="noopener noreferrer"
                         className="bg-[#25D366] hover:bg-[#20BA56] text-white font-sans font-bold text-sm py-4 rounded-xl transition-all duration-300 shadow-md flex items-center justify-center gap-2 cursor-pointer"

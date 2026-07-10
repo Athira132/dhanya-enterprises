@@ -116,7 +116,7 @@ export default function Contact() {
                       value={formData.phone}
                       onChange={handleInputChange}
                       className="font-sans text-sm border border-border-light rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all bg-[#FAFAFA]"
-                      placeholder="+91 99619 92772"
+                      placeholder="+91 97451 08772"
                     />
                   </div>
                   <div className="flex flex-col gap-2">
@@ -238,14 +238,11 @@ export default function Contact() {
               </div>
               <div className="flex flex-col gap-1">
                 <h4 className="font-heading font-bold text-sm text-dark">Phone</h4>
+                <a href="tel:+919745108772" className="font-sans text-[11px] text-text-secondary hover:text-primary transition-colors font-semibold">
+                  +91 97451 08772 (Office)
+                </a>
                 <a href="tel:+919961992772" className="font-sans text-[11px] text-text-secondary hover:text-primary transition-colors font-semibold">
                   +91 99619 92772 (CEO)
-                </a>
-                <a href="tel:+919961492772" className="font-sans text-[11px] text-text-secondary hover:text-primary transition-colors font-semibold">
-                  +91 99614 92772 (Office)
-                </a>
-                <a href="tel:+919745108772" className="font-sans text-[11px] text-text-secondary hover:text-primary transition-colors font-semibold">
-                  +91 97451 08772 (Sales)
                 </a>
               </div>
             </div>
@@ -258,9 +255,6 @@ export default function Contact() {
                 <h4 className="font-heading font-bold text-sm text-dark">Email</h4>
                 <a href="mailto:dhanyaenterprisesptb@gmail.com" className="font-sans text-[11px] text-text-secondary hover:text-primary transition-colors font-semibold truncate max-w-[180px]">
                   dhanyaenterprisesptb@gmail.com
-                </a>
-                <a href="mailto:dhanyasasi.at10@gmail.com" className="font-sans text-[11px] text-text-secondary hover:text-primary transition-colors font-semibold truncate max-w-[180px]">
-                  dhanyasasi.at10@gmail.com
                 </a>
               </div>
             </div>

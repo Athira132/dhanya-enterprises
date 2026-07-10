@@ -9,7 +9,7 @@ export default function FloatingWhatsApp() {
       <span className="absolute w-14 h-14 bg-green-500/30 rounded-full animate-ping" />
       
       <motion.a
-        href="https://wa.me/919961992772?text=Hello%20Dhanya%20Enterprises,%20I%20found%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20services.%20Please%20contact%20me."
+        href="https://wa.me/919745108772?text=Hello%20Dhanya%20Enterprises,%20I%20found%20your%20website%20and%20would%20like%20to%20know%20more%20about%20your%20services.%20Please%20contact%20me."
         target="_blank"
         rel="noopener noreferrer"
         whileHover={{ scale: 1.1 }}
