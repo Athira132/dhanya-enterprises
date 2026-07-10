@@ -26,16 +26,15 @@ export default function About() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="relative flex justify-center"
         >
-          <div className="relative w-full max-w-[500px] aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+          <div className="relative w-full max-w-[480px] aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-gray-50">
             <Image
               src="/images/about-new.jpg"
               alt="About Dhanya Enterprises"
               fill
-              className="object-cover"
-              style={{ objectPosition: "center 10%" }}
+              className="object-contain"
             />
             {/* Visual glow overlay */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary/15 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary/15 via-transparent to-transparent pointer-events-none" />
           </div>
 
           {/* Floating badge */}

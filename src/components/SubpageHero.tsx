@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Star, ChevronRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface SubpageHeroProps {
   titlePrefix: string;
@@ -10,6 +11,7 @@ interface SubpageHeroProps {
   description: string;
   breadcrumbCategory: string;
   trustedHighlights?: string[];
+  heroImage?: string; // Optional standalone hero image asset
 }
 
 export default function SubpageHero({
@@ -18,6 +20,7 @@ export default function SubpageHero({
   description,
   breadcrumbCategory,
   trustedHighlights = ["Digital Marketing", "Website Development", "Graphic Design"],
+  heroImage,
 }: SubpageHeroProps) {
   
   // Highlighting key business terms automatically for SEO and EEAT compliance in light theme
@@ -44,11 +47,13 @@ export default function SubpageHero({
   return (
     <section className="relative min-h-[75vh] flex items-center pt-48 pb-32 bg-[#FFFFFF] overflow-hidden border-b border-gray-100">
       
-      {/* LAYER 1: Background team/branding image positioned on the right */}
-      <div 
-        className="absolute inset-y-0 right-0 w-full lg:w-[55%] bg-cover bg-right lg:bg-center z-0" 
-        style={{ backgroundImage: "url('/images/about-new.jpg')" }} 
-      />
+      {/* LAYER 1: Background team/branding image positioned on the right (Only shown when no standalone heroImage is provided) */}
+      {!heroImage && (
+        <div 
+          className="absolute inset-y-0 right-0 w-full lg:w-[55%] bg-cover bg-right lg:bg-center z-0" 
+          style={{ backgroundImage: "url('/images/about-new.jpg')" }} 
+        />
+      )}
 
       {/* LAYER 2: White overlay (85% opacity) + slight blur (6px) for readability */}
       <div className="absolute inset-0 bg-white/85 backdrop-blur-[6px] z-0" />
@@ -188,20 +193,39 @@ export default function SubpageHero({
             </motion.div>
           </div>
 
-          {/* Right Column: Branded element aligned similarly to the reference layout */}
-          <div className="lg:col-span-4 hidden lg:flex justify-end items-center relative h-full min-h-[300px]">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="p-6 bg-white/60 backdrop-blur-lg border border-gray-200/50 rounded-[24px] shadow-xl max-w-[280px] hover:border-[#E50914]/20 transition-all duration-300 transform hover:-translate-y-1"
-            >
-              <div className="text-[#E50914] font-heading font-black text-4xl mb-1">100%</div>
-              <div className="text-gray-900 font-sans font-bold text-xs uppercase tracking-wider mb-2">Local Success Rate</div>
-              <div className="text-gray-500 font-sans text-xs leading-relaxed">
-                Empowering businesses across Pattambi, Kerala, with top-tier marketing campaigns.
-              </div>
-            </motion.div>
+          {/* Right Column: Dynamic rendering based on heroImage presence */}
+          <div className="lg:col-span-4 flex justify-center lg:justify-end items-center relative h-full min-h-[300px]">
+            {heroImage ? (
+              /* Standalone premium hero image with rounded corners and shadows (perfect for About page 3:4 portrait) */
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="relative w-full max-w-[320px] sm:max-w-[360px] aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-gray-50 transform hover:scale-[1.01] transition-transform duration-300"
+              >
+                <Image
+                  src={heroImage}
+                  alt="Dhanya Enterprises Branding Hero"
+                  fill
+                  priority
+                  className="object-cover"
+                />
+              </motion.div>
+            ) : (
+              /* Glassmorphic Success card floating on top of right aligned background image */
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="p-6 bg-white/60 backdrop-blur-lg border border-gray-200/50 rounded-[24px] shadow-xl max-w-[280px] hover:border-[#E50914]/20 transition-all duration-300 transform hover:-translate-y-1"
+              >
+                <div className="text-[#E50914] font-heading font-black text-4xl mb-1">100%</div>
+                <div className="text-gray-900 font-sans font-bold text-xs uppercase tracking-wider mb-2">Local Success Rate</div>
+                <div className="text-gray-500 font-sans text-xs leading-relaxed">
+                  Empowering businesses across Pattambi, Kerala, with top-tier marketing campaigns.
+                </div>
+              </motion.div>
+            )}
           </div>
 
         </div>

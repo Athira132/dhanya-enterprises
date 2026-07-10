@@ -16,12 +16,12 @@ export default function AboutClient() {
       <Navbar />
 
       <main className="flex-1">
-        {/* Subpage Hero Section */}
         <SubpageHero
           titlePrefix="Building Brands That"
           titleHighlight="Grow"
           description="We are a premium digital marketing and software development agency based in Pattambi, Kerala. We scale local and national businesses through data-driven campaigns, high-converting code, and professional graphic guidelines."
           breadcrumbCategory="About"
+          heroImage="/images/about-hero-new.jpg"
         />
 
         {/* Narrative / History section */}
