@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, X, ChevronLeft, ChevronRight as ChevronRightIcon, Plus, Minus, ArrowUpRight, ExternalLink } from "lucide-react";
+import { Check, Plus, Minus, ArrowUpRight, ExternalLink } from "lucide-react";
 import SubpageHero from "@/components/SubpageHero";
 import Image from "next/image";
 
@@ -808,9 +808,6 @@ export default function ServiceClient({ params }: { params: Promise<{ id: string
   // Accordion active index state
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
-  // Lightbox index state for gallery posters preview
-  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-
   // Contact form submission state
   const [formData, setFormData] = useState({
     name: "",
@@ -841,16 +838,6 @@ export default function ServiceClient({ params }: { params: Promise<{ id: string
         message: "",
       });
     }, 1500);
-  };
-
-  const handlePrevPoster = () => {
-    if (lightboxIndex === null) return;
-    setLightboxIndex(lightboxIndex === 0 ? service.posters.length - 1 : lightboxIndex - 1);
-  };
-
-  const handleNextPoster = () => {
-    if (lightboxIndex === null) return;
-    setLightboxIndex(lightboxIndex === service.posters.length - 1 ? 0 : lightboxIndex + 1);
   };
 
   return (
@@ -935,47 +922,7 @@ export default function ServiceClient({ params }: { params: Promise<{ id: string
           </div>
         </section>
 
-        {/* Visual Showcase (Posters Gallery if any exist) */}
-        {service.posters.length > 0 && (
-          <section className="py-24 bg-[#F8F8F8] relative">
-            <div className="max-w-7xl mx-auto px-6 md:px-12">
-              
-              {/* Header */}
-              <div className="text-center max-w-3xl mx-auto mb-16">
-                <span className="font-sans font-semibold text-xs tracking-wider uppercase text-primary mb-2.5 block">
-                  Creative Portfolio
-                </span>
-                <h2 className="font-heading font-black text-2xl md:text-3xl lg:text-4xl text-dark tracking-tight mb-4">
-                  Layout & Ad Demonstrations
-                </h2>
-                <p className="font-sans text-base text-text-secondary">
-                  Take a look at sample graphic models, visual structures, and layouts designed by our production lab.
-                </p>
-              </div>
 
-              {/* Gallery Grid */}
-              <div className="flex flex-wrap justify-center gap-8">
-                {service.posters.map((poster, index) => (
-                  <motion.div
-                    key={index}
-                    whileHover={{ scale: 1.02 }}
-                    onClick={() => setLightboxIndex(index)}
-                    className={`relative w-full max-w-[280px] aspect-[4/5] bg-gradient-to-br ${poster.bg} rounded-2xl p-6 text-white flex flex-col justify-between shadow-lg cursor-pointer group overflow-hidden`}
-                  >
-                    <span className="bg-white/20 border border-white/25 text-white font-sans font-bold text-[9px] uppercase tracking-widest px-3.5 py-1.5 rounded-full w-fit">
-                      {poster.tag}
-                    </span>
-                    <div>
-                      <h4 className="font-heading font-bold text-lg text-white mb-1 group-hover:text-red-200 transition-colors">{poster.title}</h4>
-                      <p className="font-sans text-[11px] text-text-secondary">{poster.tag}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-            </div>
-          </section>
-        )}
 
         {/* Packages Section */}
         {/* Industry Expansion / Discussion CTA (Replaces Package Pricing) */}
@@ -1146,13 +1093,7 @@ export default function ServiceClient({ params }: { params: Promise<{ id: string
                       desc: "Calming wellness portal presenting natural ayurvedic treatments.",
                       image: "/images/portfolio_ayurveda.png",
                     },
-                    {
-                      title: "SCSB",
-                      url: "https://scsb.in/",
-                      category: "Banking Website",
-                      desc: "Secure corporate banking and agricultural cooperative portal.",
-                      image: "/images/portfolio_scsb.png",
-                    },
+
                     {
                       title: "Chorode SCB",
                       url: "https://chorodescb.in/",
@@ -1568,73 +1509,7 @@ export default function ServiceClient({ params }: { params: Promise<{ id: string
       {/* Floating WhatsApp Button */}
       <FloatingWhatsApp />
 
-      {/* Lightbox Modal (For mock poster preview) */}
-      <AnimatePresence>
-        {lightboxIndex !== null && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setLightboxIndex(null)}
-            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 md:p-6"
-          >
-            {/* Modal Body Container */}
-            <motion.div
-              initial={{ scale: 0.9, y: 20 }}
-              animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.9, y: 20 }}
-              onClick={(e) => e.stopPropagation()} // Stop closing on clicking poster body
-              className="relative w-full max-w-[450px] aspect-[4/5] bg-gradient-to-br from-red-600 to-red-950 p-10 text-white rounded-3xl flex flex-col justify-between shadow-2xl border border-white/10"
-            >
-              {/* Close Button */}
-              <button
-                onClick={() => setLightboxIndex(null)}
-                className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white p-2.5 rounded-full transition-colors focus:outline-none"
-                aria-label="Close lightbox"
-              >
-                <X size={18} />
-              </button>
 
-              {/* Prev / Next controls */}
-              <button
-                onClick={handlePrevPoster}
-                className="absolute top-1/2 -left-12 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-2.5 rounded-full transition-colors focus:outline-none hidden md:block"
-                aria-label="Previous poster"
-              >
-                <ChevronLeft size={18} />
-              </button>
-              <button
-                onClick={handleNextPoster}
-                className="absolute top-1/2 -right-12 -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-2.5 rounded-full transition-colors focus:outline-none hidden md:block"
-                aria-label="Next poster"
-              >
-                <ChevronRightIcon size={18} />
-              </button>
-
-              {/* Tag / Category */}
-              <span className="bg-white/15 border border-white/20 text-white font-sans font-bold text-xs uppercase tracking-widest px-4 py-2 rounded-full w-fit">
-                {service.posters[lightboxIndex].tag}
-              </span>
-
-              {/* Text content */}
-              <div className="flex flex-col gap-4">
-                <h4 className="font-heading font-black text-3xl md:text-4xl leading-tight">
-                  {service.posters[lightboxIndex].title}
-                </h4>
-                <p className="font-sans text-sm text-white/80 font-medium">
-                  {service.posters[lightboxIndex].desc}
-                </p>
-              </div>
-
-              {/* Watermark branding */}
-              <div className="flex items-center gap-2 opacity-50 justify-between mt-6 pt-4 border-t border-white/10">
-                <span className="font-sans text-xs font-semibold">Mock Layout Demo</span>
-                <span className="font-heading font-black text-xs tracking-wider">DHANYA ENTERPRISES</span>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   );
 }
