@@ -826,9 +826,28 @@ export default function ServiceClient({ params }: { params: Promise<{ id: string
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
+
+    try {
+      const sourcePage = typeof window !== "undefined" ? `${document.title} (${window.location.pathname})` : "Service Detail Page";
+      const timestamp = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
+      
+      const formattedText = `New Website Enquiry
+
+Name: ${formData.name}
+Phone: ${formData.phone}
+Email: ${formData.email}
+Service: ${service.title}
+Company: ${formData.businessName || "Not Specified"}
+Message: ${formData.message}
+Page: ${sourcePage}
+Date & Time: ${timestamp}`;
+
+      const whatsappUrl = `https://wa.me/919745108772?text=${encodeURIComponent(formattedText)}`;
+      
+      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+      
       setSubmitSuccess(true);
       setFormData({
         name: "",
@@ -837,7 +856,12 @@ export default function ServiceClient({ params }: { params: Promise<{ id: string
         businessName: "",
         message: "",
       });
-    }, 1500);
+    } catch (error) {
+      console.error("Failed to redirect to WhatsApp:", error);
+      alert("Enquiry recorded, but we were unable to open WhatsApp automatically. Please contact us directly at +91 97451 08772.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -1087,9 +1111,9 @@ export default function ServiceClient({ params }: { params: Promise<{ id: string
                       image: "/images/portfolio_interior.png",
                     },
                     {
-                      title: "Klay Ayurveda",
+                      title: "KL Ayurvedha",
                       url: "https://klayurveda.com/",
-                      category: "Ayurveda Website",
+                      category: "Ayurvedha Website",
                       desc: "Calming wellness portal presenting natural ayurvedic treatments.",
                       image: "/images/portfolio_ayurveda.png",
                     },

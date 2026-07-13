@@ -36,7 +36,7 @@ export default function Services() {
       image: "/images/service_seo.jpg",
       description: "Rank #1 on Google with advanced keyword strategies, technical audits, on-page edits, and authority backlinking.",
       examples: [
-        { name: "Klay Ayurveda", badge: "Ayurveda", desc: "Calming Trustworthy Wellness SEO" },
+        { name: "KL Ayurvedha", badge: "Ayurveda", desc: "Calming Trustworthy Wellness SEO" },
         { name: "Alfa Travel Link", badge: "Travel", desc: "Search Optimized Package Funnels" }
       ],
     },
@@ -99,7 +99,7 @@ export default function Services() {
       image: "/images/service_localseo.jpg",
       description: "Dominate local maps searches in your region and attract local walking customers directly to your storefront.",
       examples: [
-        { name: "Klay Ayurveda", badge: "Ayurveda", desc: "GBP local ranking optimization" },
+        { name: "KL Ayurvedha", badge: "Ayurveda", desc: "GBP local ranking optimization" },
         { name: "Classy Wood Interior", badge: "Interior", desc: "Local Map Rankings Palakkad" }
       ],
     },

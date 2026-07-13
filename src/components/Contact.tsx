@@ -24,11 +24,28 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
     setIsSubmitting(true);
 
-    // Simulate API request or link to WhatsApp
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const sourcePage = typeof window !== "undefined" ? `${document.title} (${window.location.pathname})` : "Contact Page";
+      const timestamp = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
+      
+      const formattedText = `New Website Enquiry
+
+Name: ${formData.name}
+Phone: ${formData.phone}
+Email: ${formData.email}
+Service: ${formData.service || "General Inquiry"}
+Company: ${formData.businessName || "Not Specified"}
+Message: ${formData.message}
+Page: ${sourcePage}
+Date & Time: ${timestamp}`;
+
+      const whatsappUrl = `https://wa.me/919745108772?text=${encodeURIComponent(formattedText)}`;
+      
+      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+      
       setSubmitSuccess(true);
       setFormData({
         name: "",
@@ -38,7 +55,12 @@ export default function Contact() {
         service: "",
         message: "",
       });
-    }, 1500);
+    } catch (error) {
+      console.error("Failed to redirect to WhatsApp:", error);
+      alert("Enquiry recorded, but we were unable to open WhatsApp automatically. Please contact us directly at +91 97451 08772.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

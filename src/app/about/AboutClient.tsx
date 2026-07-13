@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import Stats from "@/components/Stats";
 import Process from "@/components/Process";
+import Team from "@/components/Team";
 import { motion } from "framer-motion";
 import { ShieldCheck, Target, Heart } from "lucide-react";
 import SubpageHero from "@/components/SubpageHero";
@@ -91,6 +92,9 @@ export default function AboutClient() {
 
         {/* Work Process timeline */}
         <Process />
+
+        {/* Our Team Section */}
+        <Team />
       </main>
 
       {/* Footer */}

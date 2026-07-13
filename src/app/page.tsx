@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import About from "@/components/About";
+import Team from "@/components/Team";
 import VirtualCardSection from "@/components/VirtualCardSection";
 import Portfolio from "@/components/Portfolio";
 import Testimonials from "@/components/Testimonials";
@@ -23,6 +24,9 @@ export default function Home() {
 
         {/* About Section Preview */}
         <About />
+
+        {/* Our Team Section */}
+        <Team />
 
         {/* Premium Virtual Business Card Section */}
         <VirtualCardSection />

@@ -39,8 +39,8 @@ export default function About() {
 
           {/* Floating badge */}
           <div className="absolute -bottom-6 -right-4 glass-card px-6 py-5 rounded-2xl shadow-lg border border-white/50 max-w-[200px] glow-red-icon">
-            <h4 className="font-heading font-black text-3xl text-primary leading-none mb-1">5+</h4>
-            <p className="font-sans text-xs text-text-secondary font-semibold uppercase tracking-wider">Years of Digital Innovation</p>
+            <h4 className="font-heading font-black text-3xl text-primary leading-none mb-1">8+</h4>
+            <p className="font-sans text-xs text-text-secondary font-semibold uppercase tracking-wider">Years of Experience</p>
           </div>
         </motion.div>
 
