@@ -1,69 +1,15 @@
 "use client";
 
-import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
 import Image from "next/image";
 import SubpageHero from "@/components/SubpageHero";
+import { projects } from "@/data/projects";
 
 export default function ProjectsClient() {
-  const [activeCategory, setActiveCategory] = useState("All");
-
-  const categories = ["All", "Websites", "Branding", "Marketing", "Social Media"];
-
-  const projects = [
-    {
-      title: "Gourmet Garden Restaurant",
-      category: "Social Media",
-      image: "/images/portfolio_restaurant.jpg",
-      result: "+145% Table Bookings",
-      details: "Organic Content & Local Engagement",
-    },
-    {
-      title: "Oakridge Luxury Villas",
-      category: "Marketing",
-      image: "/images/portfolio_real_estate.jpg",
-      result: "62 Leads in 30 Days",
-      details: "Targeted Meta Ads Campaigns",
-    },
-    {
-      title: "Aspirant Elite Academy",
-      category: "Websites",
-      image: "/images/portfolio_education.jpg",
-      result: "Fast & SEO Optimized",
-      details: "Next.js Web Portal Development",
-    },
-    {
-      title: "Dr. Mehta's Heart Care",
-      category: "Social Media",
-      image: "/images/portfolio_healthcare.jpg",
-      result: "180+ Doctor Consults",
-      details: "Local SEO & Credibility Growth",
-    },
-    {
-      title: "ChronoLux Luxury Watches",
-      category: "Websites",
-      image: "/images/portfolio_ecommerce.jpg",
-      result: "4.8x Ad Return (ROAS)",
-      details: "High-Converting Shopify Store",
-    },
-    {
-      title: "Vogue Maison Fashion",
-      category: "Branding",
-      image: "/images/portfolio_fashion.jpg",
-      result: "1.2M+ Reach",
-      details: "Premium Logo & Style Architecture",
-    },
-  ];
-
-  const filteredProjects = activeCategory === "All" 
-    ? projects 
-    : projects.filter(project => project.category === activeCategory);
-
   return (
     <div className="flex flex-col min-h-screen">
       {/* Sticky Navbar */}
@@ -74,7 +20,7 @@ export default function ProjectsClient() {
         <SubpageHero
           titlePrefix="Building Brands That"
           titleHighlight="Grow"
-          description="Take a look at how we help diverse industries build high-converting e-commerce engines, local maps visibility, and corporate branding identity systems."
+          description="Browse our portfolio of high-performing deployed websites, custom business engines, and brand catalogs built for exceptional search presence."
           breadcrumbCategory="Projects"
         />
 
@@ -82,81 +28,94 @@ export default function ProjectsClient() {
         <section className="py-24 bg-white relative">
           <div className="max-w-7xl mx-auto px-6 md:px-12 z-10 relative">
             
-            {/* Filter Categories Tabs */}
-            <div className="flex flex-wrap gap-2.5 mb-12 border-b border-border-light pb-6">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`font-sans font-bold text-sm px-5 py-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                    activeCategory === cat
-                      ? "bg-primary text-white shadow-md shadow-primary/20"
-                      : "bg-[#F8F8F8] text-text-secondary hover:bg-primary/5 hover:text-primary border border-border-light"
-                  }`}
+            {/* Projects Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {projects.map((project, idx) => (
+                <motion.article
+                  key={project.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.6, delay: idx * 0.1 }}
+                  onClick={() => window.open(project.url, "_blank", "noopener,noreferrer")}
+                  className="group bg-white/70 backdrop-blur-md border border-border-light rounded-2xl overflow-hidden hover:shadow-2xl hover:border-primary/20 transition-all duration-300 transform hover:-translate-y-1.5 cursor-pointer flex flex-col h-full relative"
                 >
-                  {cat}
-                </button>
+                  {/* Image Preview Container */}
+                  <div className="relative w-full aspect-[16/10] overflow-hidden bg-gray-100 border-b border-border-light shrink-0">
+                    <Image
+                      src={project.image}
+                      alt={`${project.title} Homepage Screenshot`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      loading="lazy"
+                      className="object-cover transition-transform duration-500 group-hover:scale-103"
+                    />
+                    
+                    {/* Visual Glassmorphic Accent Border */}
+                    <div className="absolute inset-0 border border-white/20 rounded-t-2xl pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-dark/10 to-transparent pointer-events-none" />
+                  </div>
+
+                  {/* Project Card Metadata details */}
+                  <div className="p-6 flex flex-col justify-between flex-1 bg-white/70">
+                    <div className="flex flex-col gap-3">
+                      {/* Category Badge */}
+                      <span className="font-sans font-bold text-[10px] tracking-wider uppercase text-primary bg-primary/5 px-2.5 py-1 rounded-md w-fit">
+                        {project.category}
+                      </span>
+                      
+                      {/* Title */}
+                      <h3 className="font-heading font-bold text-lg text-dark group-hover:text-primary transition-colors leading-tight">
+                        {project.title}
+                      </h3>
+
+                      {/* Description */}
+                      <p className="font-sans text-xs text-text-secondary leading-relaxed">
+                        {project.desc}
+                      </p>
+                    </div>
+
+                    {/* Tech Badges & CTAs */}
+                    <div className="mt-6 pt-4 border-t border-gray-100">
+                      {/* Tech stack badges */}
+                      <div className="flex flex-wrap gap-1 mb-4">
+                        {project.tech.map((t) => (
+                          <span key={t} className="text-[9px] font-sans font-bold bg-[#F8F9FA] text-text-secondary border border-gray-200/50 px-2 py-0.5 rounded">
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* Buttons */}
+                      <div className="flex items-center justify-between gap-3">
+                        <span className="font-sans font-bold text-xs text-primary group-hover:text-primary-hover flex items-center gap-1.5 group-hover:underline transition-colors shrink-0">
+                          Visit Website
+                          <ArrowUpRight size={14} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        </span>
+                        
+                        {/* Conditional GitHub Link placeholder to meet requirements */}
+                        {project.github && (
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="p-1.5 rounded-full bg-gray-100 hover:bg-gray-200 text-text-secondary transition-colors flex items-center justify-center"
+                            aria-label="GitHub Repository"
+                          >
+                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                              <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                              <path d="M9 18c-4.51 2-5-2-7-2" />
+                            </svg>
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+
+                </motion.article>
               ))}
             </div>
-
-            {/* Portfolio Grid */}
-            <motion.div 
-              layout
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            >
-              <AnimatePresence mode="popLayout">
-                {filteredProjects.map((project) => (
-                  <motion.div
-                    layout
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
-                    transition={{ duration: 0.4 }}
-                    key={project.title}
-                    className="bg-white border border-border-light rounded-[18px] overflow-hidden shadow-sm hover:shadow-xl hover:border-primary/20 transition-all duration-300 flex flex-col justify-between group h-full"
-                  >
-                    <div>
-                      {/* Image block */}
-                      <div className="relative w-full h-56 bg-gray-100 overflow-hidden">
-                        <Image 
-                          src={project.image} 
-                          alt={project.title}
-                          fill
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-                        <div className="absolute top-4 right-4 bg-white/95 text-primary font-sans font-extrabold text-[10px] tracking-wider uppercase px-4 py-1.5 rounded-full shadow-sm z-20">
-                          {project.result}
-                        </div>
-                      </div>
-
-                      {/* Content block */}
-                      <div className="p-8">
-                        <span className="font-sans font-bold text-[10px] text-primary uppercase tracking-widest block mb-2">
-                          {project.category}
-                        </span>
-                        <h3 className="font-heading font-bold text-xl text-dark mb-2.5 group-hover:text-primary transition-colors">
-                          {project.title}
-                        </h3>
-                        <p className="font-sans text-sm text-text-secondary">
-                          {project.details}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="px-8 pb-8">
-                      <Link 
-                        href="/contact"
-                        className="w-full bg-[#F8F8F8] border border-border-light text-text-dark font-sans font-semibold text-sm py-3 px-4 rounded-xl flex items-center justify-center gap-2 group-hover:bg-primary group-hover:border-primary group-hover:text-white transition-all duration-300 cursor-pointer"
-                      >
-                        Enquire About Similar Project
-                        <ArrowUpRight size={16} />
-                      </Link>
-                    </div>
-                  </motion.div>
-                ))}
-              </AnimatePresence>
-            </motion.div>
 
           </div>
         </section>

@@ -3,58 +3,9 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import { projects } from "@/data/projects";
 
 export default function Portfolio() {
-  const projects = [
-    {
-      title: "New Vishwas Furniture",
-      url: "https://newvishwasfurniture.in/",
-      category: "Furniture & Interiors",
-      desc: "Premium furniture showroom website showcasing luxury home and office collections.",
-      image: "/images/portfolio_furniture.png",
-      tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    },
-    {
-      title: "Alfa Travel Link",
-      url: "https://alfatravellink.com/",
-      category: "Travel & Tourism",
-      desc: "Professional travel agency portal presenting global tours, visa assistance, and flight booking.",
-      image: "/images/portfolio_travel.png",
-      tech: ["React", "CSS3", "Next.js"],
-    },
-    {
-      title: "Mondari Group",
-      url: "https://mondarigroup.com/",
-      category: "Corporate Business",
-      desc: "Multi-divisional corporate enterprise website highlighting group services and values.",
-      image: "/images/portfolio_corporate.png",
-      tech: ["TypeScript", "Next.js", "Tailwind"],
-    },
-    {
-      title: "Life Care Health Solutions",
-      url: "https://lifecarehealthsolutions.com/",
-      category: "Healthcare & Nursing",
-      desc: "Patient-oriented platform presenting home nursing, clinical care, and support details.",
-      image: "/images/portfolio_healthcare.png",
-      tech: ["Next.js", "Tailwind", "Framer Motion"],
-    },
-    {
-      title: "Bloomax Residency",
-      url: "https://bloomaxresidency.com/",
-      category: "Hotel & Residency",
-      desc: "Elegant hospitality booking showcase outlining modern residency rooms and premium amenities.",
-      image: "/images/portfolio_residency.png",
-      tech: ["React", "Tailwind", "Vite"],
-    },
-    {
-      title: "Classy Wood Interior",
-      url: "https://classywoodinterior.com/",
-      category: "Interior Design",
-      desc: "Premium interior designers portfolio displaying custom home space architectures.",
-      image: "/images/portfolio_interior.png",
-      tech: ["Next.js", "Tailwind", "CSS Grid"],
-    },
-  ];
 
   return (
     <section id="portfolio" className="py-24 bg-white relative overflow-hidden border-b border-gray-100">
