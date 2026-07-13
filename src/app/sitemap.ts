@@ -10,6 +10,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/certifications",
     "/testimonials",
     "/contact",
+    "/privacy",
+    "/terms",
     "/services/website-design-development",
     "/services/ecommerce-website-development",
     "/services/seo",

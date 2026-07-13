@@ -37,12 +37,12 @@ export const metadata: Metadata = {
     "Graphic Designing Pattambi"
   ],
   alternates: {
-    canonical: "./",
+    canonical: "/",
   },
   openGraph: {
     title: "Dhanya Enterprises | Best Digital Marketing Agency in Pattambi, Kerala",
     description: "Dhanya Enterprises is the premier digital marketing and website development agency in Pattambi, Kerala. We scale brands with SEO, Google Ads, Meta campaigns, and graphic design.",
-    url: "https://dhanya-enterprises.vercel.app",
+    url: "https://www.dhanyaenterprises.com",
     siteName: "Dhanya Enterprises",
     locale: "en_IN",
     type: "website",
@@ -94,10 +94,10 @@ export default function RootLayout({
               "@graph": [
                 {
                   "@type": "Organization",
-                  "@id": "https://dhanya-enterprises.vercel.app/#organization",
+                  "@id": "https://www.dhanyaenterprises.com/#organization",
                   "name": "Dhanya Enterprises",
-                  "url": "https://dhanya-enterprises.vercel.app",
-                  "logo": "https://dhanya-enterprises.vercel.app/images/logo-new.png",
+                  "url": "https://www.dhanyaenterprises.com",
+                  "logo": "https://www.dhanyaenterprises.com/images/logo-new.png",
                   "sameAs": [
                     "https://www.facebook.com/dhanyaenterprisesptb",
                     "https://www.instagram.com/dhanyaenterprisesptb/",
@@ -108,19 +108,19 @@ export default function RootLayout({
                 },
                 {
                   "@type": "WebSite",
-                  "@id": "https://dhanya-enterprises.vercel.app/#website",
-                  "url": "https://dhanya-enterprises.vercel.app",
+                  "@id": "https://www.dhanyaenterprises.com/#website",
+                  "url": "https://www.dhanyaenterprises.com",
                   "name": "Dhanya Enterprises",
                   "publisher": {
-                    "@id": "https://dhanya-enterprises.vercel.app/#organization"
+                    "@id": "https://www.dhanyaenterprises.com/#organization"
                   }
                 },
                 {
                   "@type": "LocalBusiness",
-                  "@id": "https://dhanya-enterprises.vercel.app/#localbusiness",
+                  "@id": "https://www.dhanyaenterprises.com/#localbusiness",
                   "name": "Dhanya Enterprises",
-                  "image": "https://dhanya-enterprises.vercel.app/images/portfolio_ecommerce.jpg",
-                  "url": "https://dhanya-enterprises.vercel.app",
+                  "image": "https://www.dhanyaenterprises.com/images/portfolio_ecommerce.jpg",
+                  "url": "https://www.dhanyaenterprises.com",
                   "telephone": ["+919745108772", "+919961992772"],
                   "priceRange": "$$",
                   "address": {

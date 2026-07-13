@@ -52,7 +52,7 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center"
           >
             <Link
-              href="/#contact"
+              href="/contact"
               className="bg-primary hover:bg-primary-hover text-white font-sans font-bold text-base px-8 py-4 rounded-full transition-all duration-300 shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2 cursor-pointer"
             >
               Get Started

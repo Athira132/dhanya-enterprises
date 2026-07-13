@@ -88,7 +88,7 @@ export default function About() {
 
           <div className="mt-4">
             <Link
-              href="/#contact"
+              href="/contact"
               className="bg-primary hover:bg-primary-hover text-white font-sans font-bold text-base px-8 py-4 rounded-full transition-all duration-300 shadow-md shadow-primary/10 hover:shadow-lg hover:shadow-primary/20 transform hover:-translate-y-0.5 inline-block text-center cursor-pointer"
             >
               Learn More

@@ -33,7 +33,7 @@ export default function CTA() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center mt-6">
               <Link
-                href="/#contact"
+                href="/contact"
                 className="bg-white hover:bg-gray-50 text-primary font-sans font-bold text-base px-8 py-4 rounded-full transition-all duration-300 shadow-md transform hover:-translate-y-0.5 flex items-center justify-center gap-2 group cursor-pointer"
               >
                 Schedule Meeting
