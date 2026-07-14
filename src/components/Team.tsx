@@ -1,25 +1,31 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
-interface TeamMember {
+interface Member {
   name: string;
+  image: string;
+  alt: string;
 }
 
-const members: TeamMember[] = [
-  { name: "Coach Muhsin" },
-  { name: "Athira K" },
-  { name: "Shahana" },
+const members: Member[] = [
+  {
+    name: "Coach Muhsin",
+    image: "/images/team_muhsin.png",
+    alt: "Coach Muhsin - Team Member",
+  },
+  {
+    name: "Athira K",
+    image: "/images/team_athira.jpg",
+    alt: "Athira K - Team Member",
+  },
+  {
+    name: "Shahana",
+    image: "/images/team_shahana.jpg",
+    alt: "Shahana - Team Member",
+  },
 ];
-
-const NameAvatar = ({ name }: { name: string }) => {
-  const initial = name.charAt(0);
-  return (
-    <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-primary/5 to-primary/15 border border-primary/10 flex items-center justify-center text-primary font-heading font-black text-3xl shadow-sm transition-all duration-500 group-hover:scale-105 group-hover:from-primary group-hover:to-red-600 group-hover:text-white group-hover:shadow-md group-hover:shadow-primary/20">
-      {initial}
-    </div>
-  );
-};
 
 export default function Team() {
   return (
@@ -39,26 +45,36 @@ export default function Team() {
             Meet Our Team
           </h2>
           <p className="font-sans text-base text-text-secondary leading-relaxed max-w-2xl mt-1">
-            The passionate professionals behind Dhanya Enterprises, dedicated to delivering exceptional digital solutions.
+            The people behind Dhanya Enterprises, working together to deliver exceptional digital solutions.
           </p>
         </div>
 
-        {/* Centered Members Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto justify-items-center">
+        {/* Responsive Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto justify-items-center">
           {members.map((member, index) => (
             <motion.div
               key={member.name}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group bg-white/60 backdrop-blur-md border border-border-light rounded-2xl p-8 hover:shadow-2xl hover:border-primary/20 transition-all duration-350 flex flex-col items-center gap-6 w-full max-w-[280px] text-center transform hover:-translate-y-1"
+              transition={{ duration: 0.7, ease: "easeOut", delay: index * 0.1 }}
+              whileHover={{ y: -8 }}
+              className="group bg-white border border-border-light rounded-[18px] p-5 shadow-sm hover:shadow-xl hover:border-primary/20 transition-all duration-300 flex flex-col w-full max-w-[320px] text-center"
             >
-              {/* Premium Circular Avatar */}
-              <NameAvatar name={member.name} />
+              {/* Image Portrait Container */}
+              <div className="relative w-full aspect-[3/4] rounded-xl overflow-hidden bg-gray-50 border border-gray-100 shrink-0 mb-6">
+                <Image
+                  src={member.image}
+                  alt={member.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  loading="lazy"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
 
               {/* Member Name */}
-              <h3 className="font-heading font-black text-xl text-dark group-hover:text-primary transition-colors leading-tight">
+              <h3 className="font-heading font-black text-xl text-dark group-hover:text-primary transition-colors leading-tight mb-2">
                 {member.name}
               </h3>
             </motion.div>
