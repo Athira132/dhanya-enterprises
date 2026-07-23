@@ -62,15 +62,15 @@ export const projects: Project[] = [
     url: "https://velvethaven.in/",
     category: "Resort Website",
     desc: "Premium private pool villa and luxury resort website in Vagamon, Kerala, offering booking integration, room showcases, and a refined brand identity.",
-    image: "/images/velvethaven.jpg",
+    image: "/images/portfolio_velvethaven.png",
     tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
   },
   {
-    title: "iPhonix",
+    title: "iPhonix Mobile Service Centre",
     url: "https://iphonix.in/",
     category: "Business Website",
     desc: "Professional multi-brand smartphone repair service center website in Trivandrum, presenting repair services, booking options, and diagnostic details.",
-    image: "/images/iphonix.jpg",
+    image: "/images/portfolio_iphonix.png",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
   },
 ];
