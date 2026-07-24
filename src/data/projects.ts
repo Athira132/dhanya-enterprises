@@ -73,4 +73,28 @@ export const projects: Project[] = [
     image: "/images/portfolio_iphonix.png",
     tech: ["Next.js", "TypeScript", "Tailwind CSS"],
   },
+  {
+    title: "KL Ayurvedha",
+    url: "https://klayurveda.com/",
+    category: "Wellness Website",
+    desc: "Created a wellness-focused website presenting Ayurvedic treatments, natural healthcare solutions, wellness programs, and consultation services with a calming, trustworthy design.",
+    image: "/images/portfolio_ayurveda.png",
+    tech: ["React", "Tailwind CSS", "Framer Motion"],
+  },
+  {
+    title: "Chorode SCB",
+    url: "https://chorodescb.in/",
+    category: "Banking Website",
+    desc: "Developed a secure corporate banking and agricultural cooperative portal with structured financial services and student cooperative modules.",
+    image: "/images/portfolio_chorode.png",
+    tech: ["Next.js", "Tailwind CSS", "Supabase"],
+  },
+  {
+    title: "Lemppaat Academy",
+    url: "https://lemppaatacademy.com/",
+    category: "Educational Academy",
+    desc: "Built a professional academy website showcasing training programs, admissions, faculty information, career-oriented courses, and lead-generation features.",
+    image: "/images/portfolio_academy.png",
+    tech: ["Next.js", "Tailwind CSS", "PostgreSQL"],
+  },
 ];
