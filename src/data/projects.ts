@@ -102,7 +102,7 @@ export const projects: Project[] = [
     url: "https://shoranururban.bank.in/",
     category: "Banking Website",
     desc: "Designed a secure and modern cooperative banking portal presenting deposit programs, loan options, agricultural services, and streamlined digital customer facilities.",
-    image: "/images/portfolio_shoranur.jpg",
+    image: "/images/portfolio_shoranur.png",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
   },
 ];
