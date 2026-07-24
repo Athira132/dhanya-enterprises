@@ -97,4 +97,12 @@ export const projects: Project[] = [
     image: "/images/portfolio_academy.png",
     tech: ["Next.js", "Tailwind CSS", "PostgreSQL"],
   },
+  {
+    title: "Shoranur Urban Bank",
+    url: "https://shoranururban.bank.in/",
+    category: "Banking Website",
+    desc: "Designed a secure and modern cooperative banking portal presenting deposit programs, loan options, agricultural services, and streamlined digital customer facilities.",
+    image: "/images/portfolio_shoranur.jpg",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+  },
 ];
