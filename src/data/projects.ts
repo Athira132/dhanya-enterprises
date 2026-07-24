@@ -98,11 +98,11 @@ export const projects: Project[] = [
     tech: ["Next.js", "Tailwind CSS", "PostgreSQL"],
   },
   {
-    title: "Shoranur Urban Bank",
-    url: "https://shoranururban.bank.in/",
+    title: "Shoranur Co-operative Service Bank (SCSB)",
+    url: "https://scsb.in/",
     category: "Banking Website",
-    desc: "Designed a secure and modern cooperative banking portal presenting deposit programs, loan options, agricultural services, and streamlined digital customer facilities.",
-    image: "/images/portfolio_shoranur.png",
+    desc: "Designed a secure and modern corporate banking and agricultural cooperative portal for Shoranur Co-operative Service Bank, featuring member facilities, loan programs, and local financial updates.",
+    image: "/images/portfolio_scsb.png",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
   },
 ];
